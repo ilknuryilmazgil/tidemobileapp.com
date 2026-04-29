@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tidemobile Blog</title>
+<meta name="description" content="Tidemobile blog: psikoloji, uluslararası ilişkiler ve uluslararası ticaret ve lojistik üzerine premium içerikler." />
+<link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+<link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" /></noscript>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #fbfaf7;
+  --panel:#ffffff;
+  --soft:#f2eee8;
+  --navy:#1a2a4a;
+  --text:#5a7080;
+  --muted:#8595a5;
+  --teal:#3aa0a0;
+  --line: rgba(26,42,74,0.1);
+  --shadow: rgba(26,42,74,0.08);
+}
+html { scroll-behavior:smooth; }
+body { font-family:'DM Sans',sans-serif; background:linear-gradient(180deg,#fbfaf7 0%, #f4f0e9 100%); color:var(--text); }
+a { color:inherit; }
+nav { position:sticky; top:0; z-index:20; display:flex; justify-content:space-between; align-items:center; padding:18px 6vw; background:rgba(251,250,247,0.88); backdrop-filter:blur(16px); border-bottom:1px solid var(--line); }
+.brand { text-decoration:none; font-family:'Bricolage Grotesque',sans-serif; font-weight:800; color:var(--navy); font-size:1.12rem; }
+.brand small { font-family:'DM Sans',sans-serif; color:var(--muted); font-weight:500; margin-left:8px; }
+.nav-links { display:flex; gap:24px; align-items:center; }
+.nav-links a { text-decoration:none; font-size:0.92rem; color:var(--text); }
+.nav-links a.active, .nav-links a:hover { color:var(--navy); }
+.shell { padding: 48px 6vw 90px; }
+.hero { max-width: 980px; margin: 0 auto 42px; }
+.eyebrow { display:inline-flex; align-items:center; gap:8px; border:1px solid rgba(58,160,160,0.2); background:rgba(58,160,160,0.08); color:var(--teal); border-radius:999px; padding:7px 12px; font-size:0.74rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+.hero h1 { margin-top:18px; font-family:'Bricolage Grotesque',sans-serif; font-size:clamp(2.3rem,5vw,4.2rem); line-height:1.02; color:var(--navy); letter-spacing:-.04em; }
+.hero p { margin-top:18px; max-width:720px; font-size:1.02rem; line-height:1.8; }
+.hero-grid { display:grid; grid-template-columns: 1.2fr .8fr; gap:22px; margin-top:32px; }
+.hero-panel, .metric-card, .post-card { background:rgba(255,255,255,0.78); border:1px solid var(--line); box-shadow:0 18px 50px var(--shadow); backdrop-filter: blur(8px); border-radius:28px; }
+.hero-panel { padding:28px; }
+.metric-stack { display:grid; gap:16px; }
+.metric-card { padding:22px; }
+.metric-card strong { display:block; font-family:'Bricolage Grotesque',sans-serif; font-size:1.8rem; color:var(--navy); }
+.metric-card span { color:var(--muted); font-size:.88rem; }
+.section-title { max-width:980px; margin: 0 auto 18px; display:flex; align-items:end; justify-content:space-between; gap:16px; }
+.section-title h2 { font-family:'Bricolage Grotesque',sans-serif; font-size:clamp(1.5rem,3vw,2.4rem); color:var(--navy); letter-spacing:-.03em; }
+.section-title p { max-width:520px; }
+.filter-wrap { max-width:980px; margin:0 auto 22px; display:flex; flex-wrap:wrap; gap:12px; }
+.filter-btn {
+  appearance:none; border:1px solid var(--line); background:rgba(255,255,255,0.72); color:var(--navy); border-radius:999px;
+  padding:12px 16px; font-size:.9rem; font-weight:700; cursor:pointer; transition:all .25s ease;
+  box-shadow:0 8px 24px rgba(26,42,74,0.04);
+}
+.filter-btn:hover { border-color:rgba(58,160,160,0.28); transform:translateY(-1px); }
+.filter-btn.active { background:var(--navy); color:#fff; border-color:var(--navy); box-shadow:0 16px 30px rgba(26,42,74,0.16); }
+.post-grid { max-width:980px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+.post-card {
+  padding:28px; position:relative; overflow:hidden; transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease, opacity .32s ease, scale .32s ease;
+}
+.post-card:hover { transform:translateY(-4px); box-shadow:0 24px 54px rgba(26,42,74,0.12); border-color:rgba(58,160,160,0.28); }
+.post-card::after { content:''; position:absolute; inset:auto -20% -35% auto; width:180px; height:180px; border-radius:50%; background:radial-gradient(circle, rgba(58,160,160,0.14), transparent 70%); pointer-events:none; }
+.post-card.is-hidden { opacity:0; transform:translateY(10px) scale(.985); pointer-events:none; }
+.post-kicker { color:var(--teal); font-size:.74rem; letter-spacing:.12em; text-transform:uppercase; font-weight:700; }
+.post-card h3 { margin:14px 0 14px; font-family:'Bricolage Grotesque',sans-serif; color:var(--navy); font-size:1.5rem; line-height:1.12; letter-spacing:-.03em; }
+.post-meta { display:flex; gap:14px; flex-wrap:wrap; color:var(--muted); font-size:.82rem; margin-bottom:14px; }
+.post-card p { font-size:.96rem; line-height:1.8; margin-bottom:18px; }
+.post-link { display:inline-flex; align-items:center; gap:10px; text-decoration:none; color:var(--navy); font-weight:700; }
+.post-link:hover { color:var(--teal); }
+.fade-up { opacity:0; transform:translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+.fade-up.visible { opacity:1; transform:translateY(0); }
+footer { padding:26px 6vw 40px; color:var(--muted); font-size:.85rem; text-align:center; }
+@media (max-width:900px){ .hero-grid,.post-grid{grid-template-columns:1fr;} .nav-links{gap:14px; flex-wrap:wrap; justify-content:flex-end;} }
+</style>
+</head>
+<body>
+<nav>
+  <a class="brand" href="index.html">Tidemobile <small>Insights</small></a>
+  <div class="nav-links">
+    <a href="index.html#about">Hakkımızda</a>
+    <a href="index.html#vision">Vizyon</a>
+    <a href="index.html#apps">Uygulamalar</a>
+    <a href="blog.html" class="active">Blog</a>
+    <a href="index.html#contact">İletişim</a>
+  </div>
+</nav>
+<div class="shell">
+  <section class="hero fade-up">
+    <div class="eyebrow">Tidemobile Blog</div>
+    <h1>Psikoloji, uluslararası ilişkiler ve ticaretin görünmeyen katmanları üzerine seçilmiş yazılar.</h1>
+    <p>Blog sayfamız; yalnızca bilgi sunan bir alan değil, düşünce üretiminin daha rafine bir uzantısıdır. Her yazı kendi kategorisi içinde konumlanır, kendi tonu ile ilerler ve daha sakin, premium bir okuma deneyimi sunar.</p>
+    <div class="hero-grid">
+      <div class="hero-panel fade-up">
+        <div class="post-kicker">Editoryal Yaklaşım</div>
+        <h3 style="margin-top:10px;">Kategori filtreli akış, temiz kart yapısı ve detay sayfalarıyla daha bütünlüklü bir blog deneyimi.</h3>
+        <p style="margin-top:10px;">Yazılar artık kendi alanlarında ayrışıyor: Psikoloji, Uluslararası İlişkiler ve Uluslararası Ticaret ve Lojistik. Böylece kullanıcı ne okumak istediğini daha hızlı bulabiliyor.</p>
+      </div>
+      <div class="metric-stack">
+        <div class="metric-card fade-up"><strong>4</strong><span>Yayında olan yazı</span></div>
+        <div class="metric-card fade-up"><strong>2</strong><span>Yazar</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title fade-up">
+      <h2>Yazıları filtrele</h2>
+      <p>İlgi alanına göre seçim yap; geçişler yumuşak, deneyim temiz ve bütünsel kalsın.</p>
+    </div>
+
+    <div class="filter-wrap fade-up" aria-label="Kategori filtresi">
+      <button class="filter-btn active" data-filter="all">Tümü</button>
+      <button class="filter-btn" data-filter="psikoloji">Psikoloji</button>
+      <button class="filter-btn" data-filter="uluslararasi-iliskiler">Uluslararası İlişkiler</button>
+      <button class="filter-btn" data-filter="uluslararasi-ticaret-ve-lojistik">Uluslararası Ticaret ve Lojistik</button>
+    </div>
+
+    <div class="post-grid" id="postGrid">
+      <article class="post-card fade-up" data-category="psikoloji">
+        <div class="post-kicker">Psikoloji</div>
+        <h3>Dijital Ekosistemde İnsan Zihnini Anlamak: Siber Psikolojiye Giriş</h3>
+        <div class="post-meta"><span>İlknur Yılmazgil</span><span>Okuma süresi: 4 dk</span><span>Tidemobile Insights #1</span></div>
+        <p>Yazılım, uygulama ve oyun deneyimlerinin artık yalnızca teknik ürünler olmadığını; insan davranışı, bilişsel yük ve dijital kimlik inşasıyla doğrudan ilişkili yaşayan sistemler haline geldiğini ele alan giriş yazısı.</p>
+        <a class="post-link" href="blog-siber-psikoloji.html">Yazıyı oku →</a>
+      </article>
+
+      <article class="post-card fade-up" data-category="psikoloji">
+        <div class="post-kicker">Psikoloji</div>
+        <h3>Dijital Çağda Psikoloji: Zihinsel Dayanıklılığı ve Odaklanmayı Korumak</h3>
+        <div class="post-meta"><span>İlknur Yılmazgil</span><span>Okuma süresi: 4 dk</span><span>Tidemobile Insights #2</span></div>
+        <p>Dikkat ekonomisinin, FOMO’nun ve yoğun dijital uyaranların zihin üzerindeki etkilerini; etik tasarım ve anlamlı kullanıcı deneyimi ekseninde değerlendiren yazı.</p>
+        <a class="post-link" href="blog-dijital-cagda-psikoloji.html">Yazıyı oku →</a>
+      </article>
+
+      <article class="post-card fade-up" data-category="uluslararasi-iliskiler">
+        <div class="post-kicker">Uluslararası İlişkiler</div>
+        <h3>Sınırlar Değişiyor: Vizeler, Siyaset ve Yeni Dünya Düzeni</h3>
+        <div class="post-meta"><span>Cansun Tanıl Tabakoğlu</span><span>Okuma süresi: 4 dk</span><span>Tidemobile Insights #3</span></div>
+        <p>Vizelerin yalnızca bürokratik belgeler değil; devletlerin güvenlik reflekslerini, diplomatik mesafelerini ve küresel güç dengelerini yansıtan görünmez eşikler olduğunu ele alan yazı.</p>
+        <a class="post-link" href="blog-terravisa.html">Yazıyı oku →</a>
+      </article>
+
+      <article class="post-card fade-up" data-category="uluslararasi-ticaret-ve-lojistik">
+        <div class="post-kicker">Uluslararası Ticaret ve Lojistik</div>
+        <h3>Ticaretin Görünmeyen Katmanı: Lojistik, Akış ve Karar Mekanizmaları</h3>
+        <div class="post-meta"><span>Cansun Tanıl Tabakoğlu</span><span>Okuma süresi: 4 dk</span><span>Tidemobile Insights #4</span></div>
+        <p>Küresel ticaretin görünür kısmının ötesine geçip, akışı gerçekten belirleyen lojistik kararları, kırılgan tedarik ağlarını ve stratejik zamanlama boyutunu ele alan yazı.</p>
+        <a class="post-link" href="blog-lunapara.html">Yazıyı oku →</a>
+      </article>
+    </div>
+  </section>
+</div>
+<footer>© 2026 Tidemobile · İnsan odaklı dijital deneyimler.</footer>
+<script>
+const obs = new IntersectionObserver((entries)=>{
+  entries.forEach((e)=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
+},{threshold:.12});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+
+const buttons = document.querySelectorAll('.filter-btn');
+const cards = [...document.querySelectorAll('.post-card')];
+function applyFilter(filter) {
+  buttons.forEach(btn => btn.classList.toggle('active', btn.dataset.filter === filter));
+  cards.forEach((card, index) => {
+    const match = filter === 'all' || card.dataset.category === filter;
+    if (match) {
+      card.style.display = 'block';
+      requestAnimationFrame(() => {
+        card.classList.remove('is-hidden');
+        card.style.transitionDelay = `${index * 35}ms`;
+      });
+    } else {
+      card.classList.add('is-hidden');
+      card.style.transitionDelay = '0ms';
+      setTimeout(() => {
+        if (card.classList.contains('is-hidden')) card.style.display = 'none';
+      }, 260);
+    }
+  });
+}
+buttons.forEach(btn => btn.addEventListener('click', () => applyFilter(btn.dataset.filter)));
+</script>
+</body>
+</html>

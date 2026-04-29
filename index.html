@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tidemobile — İçgörü Odaklı Mobil Ürünler</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <meta name="description" content="Tidemobile; sektörel içgörüleri analiz ederek fırsatları tespit eden ve bunları finans, seyahat ve zihin sağlığı alanlarında mobil ürünlere dönüştüren bir ürün stüdyosudur." />
+  <link rel="preload" as="image" href="assets/logo.jpg" fetchpriority="high" />
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+  <link rel="dns-prefetch" href="https://play.google.com" />
+  <link rel="dns-prefetch" href="https://formspree.io" />
+  <link rel="dns-prefetch" href="https://groups.google.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" /></noscript>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:          #ffffff;
+      --bg-warm:     #ede9e2;
+      --bg-card:     #f8f5f0;
+      --navy:        #1a2a4a;
+      --navy-dark:   #1c2a3a;
+      --teal:        #3aa0a0;
+      --body-text:   #5a7080;
+      --muted:       #7a90a8;
+      --very-muted:  #9aabb8;
+      --btn-bg:      #1a2a4a;
+      --btn-text:    #ede9e2;
+      --teal-dim:    rgba(58,160,160,0.1);
+      --teal-border: rgba(58,160,160,0.25);
+      --card-border: rgba(26,42,74,0.1);
+      --card-shadow: rgba(26,42,74,0.08);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--body-text);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 0 5vw;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(26,42,74,0.08);
+      transition: box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: 0 2px 20px rgba(26,42,74,0.1); }
+    .nav-logo { display: flex; align-items: center; gap: 9px; text-decoration: none; }
+    .nav-logo img { width: 32px; height: 32px; object-fit: contain; border-radius: 10px; display: block; }
+    .nav-logo-text {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-weight: 700; font-size: 1.1rem;
+      color: var(--navy-dark); letter-spacing: -0.01em;
+    }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a {
+      text-decoration: none; color: var(--body-text);
+      font-size: 0.875rem; font-weight: 400; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--navy); }
+    .nav-lang { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em; color: var(--muted); cursor: pointer; text-decoration: none; }
+    .nav-cta {
+      background: var(--btn-bg) !important; color: var(--btn-text) !important;
+      font-weight: 500 !important; padding: 9px 20px; border-radius: 24px;
+      transition: background 0.2s, transform 0.15s !important; font-size: 0.85rem !important;
+    }
+    .nav-cta:hover { background: var(--teal) !important; color: #fff !important; transform: translateY(-1px); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--navy); border-radius: 2px; }
+
+    /* HERO */
+    #hero {
+      min-height: 100vh;
+      display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center; gap: 60px;
+      padding: 120px 8vw 80px;
+      background: var(--bg);
+    }
+    .hero-left { animation: fadeUp 0.85s ease both; }
+    .hero-right { animation: fadeUp 0.85s 0.18s ease both; }
+
+    /* Hero sol üst logo */
+.hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--teal-dim); border: 1px solid var(--teal-border);
+      border-radius: 20px; padding: 5px 14px 5px 10px; margin-bottom: 22px;
+    }
+    .hero-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); animation: pulse 2s infinite; }
+    .hero-badge span { font-size: 0.72rem; font-weight: 600; color: var(--teal); letter-spacing: 0.1em; text-transform: uppercase; }
+
+    .hero-title {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: clamp(2.6rem, 4.5vw, 3.8rem);
+      font-weight: 800; line-height: 1.06;
+      letter-spacing: -0.03em; color: var(--navy); margin-bottom: 22px;
+    }
+    .hero-title em { font-style: normal; color: var(--teal); }
+    .hero-desc { font-size: 1rem; color: var(--body-text); max-width: 420px; margin-bottom: 36px; font-weight: 300; line-height: 1.7; }
+    .hero-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--btn-bg); color: var(--btn-text);
+      font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 0.9rem;
+      padding: 12px 24px; border-radius: 30px; text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--teal); color: #fff; transform: translateY(-2px); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--body-text); font-family: 'DM Sans', sans-serif;
+      font-weight: 400; font-size: 0.9rem; padding: 12px 20px;
+      border-radius: 30px; text-decoration: none;
+      border: 1px solid rgba(26,42,74,0.18);
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .btn-ghost:hover { border-color: var(--teal); color: var(--teal); background: var(--teal-dim); }
+    .hero-stats {
+      display: flex; gap: 32px; margin-top: 48px;
+      padding-top: 28px; border-top: 1px solid rgba(26,42,74,0.1);
+    }
+    .stat-number { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.8rem; font-weight: 700; color: var(--navy); letter-spacing: -0.03em; line-height: 1; }
+    .stat-label { font-size: 0.73rem; color: var(--very-muted); margin-top: 4px; }
+
+    .hero-apps { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .app-card-mini {
+      background: var(--bg-card); border: 1px solid var(--card-border);
+      border-radius: 20px; padding: 20px;
+      transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+      text-decoration: none; display: block;
+    }
+    .app-card-mini:hover { transform: translateY(-4px); border-color: rgba(58,160,160,0.4); box-shadow: 0 10px 32px var(--card-shadow); }
+    .app-card-mini {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      cursor: pointer;
+      transform-style: preserve-3d;
+    }
+    .app-card-mini::before {
+      content: "";
+      position: absolute;
+      inset: -20%;
+      background: radial-gradient(circle at top left, rgba(58,160,160,0.22), transparent 35%),
+                  radial-gradient(circle at bottom right, rgba(26,42,74,0.16), transparent 32%);
+      opacity: 0;
+      transition: opacity 0.35s ease, transform 0.35s ease;
+      transform: scale(0.92);
+      z-index: 0;
+      pointer-events: none;
+    }
+    .app-card-mini::after {
+      content: "";
+      position: absolute;
+      inset: -120% 35%;
+      background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.32) 46%, transparent 100%);
+      transform: rotate(14deg) translateX(-120%);
+      transition: transform 0.75s ease;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .app-card-mini > * { position: relative; z-index: 2; }
+    .app-card-mini:hover::before,
+    .app-card-mini:focus-visible::before,
+    .app-card-mini.is-pressed::before { opacity: 1; transform: scale(1); }
+    .app-card-mini:hover::after,
+    .app-card-mini:focus-visible::after { transform: rotate(14deg) translateX(180%); }
+    .app-card-mini:hover .app-card-mini-icon,
+    .app-card-mini:focus-visible .app-card-mini-icon,
+    .app-card-mini.is-pressed .app-card-mini-icon {
+      transform: translateY(-2px) scale(1.04);
+      box-shadow: 0 14px 26px rgba(58,160,160,0.18);
+      border-color: rgba(58,160,160,0.28);
+    }
+    .app-card-mini-icon {
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease, filter 0.35s ease;
+      border: 1px solid rgba(26,42,74,0.08);
+      filter: saturate(0.98);
+    }
+    .app-card-mini:hover .app-card-mini-icon img,
+    .app-card-mini:focus-visible .app-card-mini-icon img,
+    .app-card-mini.is-pressed .app-card-mini-icon img {
+      filter: saturate(1.12) contrast(1.04);
+      transform: scale(1.05);
+    }
+    .app-card-mini-icon img { transition: transform 0.35s ease, filter 0.35s ease; }
+
+    .split-section {
+      padding: 100px 8vw;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .team-wrap { background: var(--bg); }
+    .team-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .team-card {
+      background: var(--bg-card);
+      border: 1px solid var(--card-border);
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: 0 8px 30px rgba(26,42,74,0.05);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .team-card:hover { transform: translateY(-4px); border-color: rgba(58,160,160,0.34); box-shadow: 0 16px 42px rgba(26,42,74,0.08); }
+    .team-avatar {
+      width: 54px; height: 54px; border-radius: 16px;
+      display: inline-flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, rgba(58,160,160,0.14), rgba(26,42,74,0.1));
+      border: 1px solid rgba(58,160,160,0.18);
+      color: var(--navy); font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .team-name { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .team-role { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; font-weight: 600; }
+    .team-bio { font-size: 0.9rem; color: var(--body-text); line-height: 1.7; }
+    .team-points { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .team-point {
+      padding: 6px 11px;
+      border-radius: 999px;
+      background: rgba(58,160,160,0.08);
+      border: 1px solid rgba(58,160,160,0.18);
+      font-size: 0.74rem; color: var(--teal); font-weight: 500;
+    }
+
+    .roadmap-wrap { background: var(--bg-warm); }
+    .roadmap-list { display: grid; gap: 16px; }
+    .roadmap-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 86px 1fr;
+      gap: 18px;
+      padding: 24px;
+      border-radius: 20px;
+      background: var(--bg);
+      border: 1px solid var(--card-border);
+      box-shadow: 0 8px 30px rgba(26,42,74,0.05);
+    }
+    .roadmap-badge {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 46px; padding: 0 14px; border-radius: 999px;
+      background: rgba(58,160,160,0.1);
+      border: 1px solid rgba(58,160,160,0.22);
+      color: var(--teal); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .roadmap-title {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 1.08rem; font-weight: 700; color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .roadmap-text { font-size: 0.9rem; color: var(--body-text); line-height: 1.7; }
+
+    .blog-teaser {
+      margin-top: 30px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--btn-bg);
+      color: var(--btn-text);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 16px 24px;
+      border-radius: 28px;
+      box-shadow: 0 10px 30px rgba(26,42,74,0.12);
+      transition: background 0.25s ease, transform 0.18s ease, box-shadow 0.25s ease;
+    }
+    .blog-teaser:hover {
+      background: var(--teal);
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 16px 36px rgba(26,42,74,0.16);
+    }
+
+    @media (max-width: 900px) {
+      .split-section { grid-template-columns: 1fr; gap: 40px; padding: 84px 6vw; }
+      .team-grid { grid-template-columns: 1fr; }
+      .roadmap-item { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: 1fr; gap: 14px; }
+      #process { padding: 28px 6vw 0; }
+      .process-shell { padding: 22px; overflow: hidden; }
+      .process-card { padding: 18px; }
+      .process-intro { max-width: 100%; }
+      .process-note { border-radius: 18px; }
+    }
+
+    .app-card-mini-icon { width: 48px; height: 48px; border-radius: 13px; margin-bottom: 12px; overflow: hidden; }
+    .app-card-mini-icon img { width: 100%; height: 100%; object-fit: cover; }
+    .app-card-mini-name { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: 0.95rem; color: var(--navy); margin-bottom: 3px; }
+    .app-card-mini-cat { font-size: 0.73rem; color: var(--muted); }
+    .app-card-mini-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--teal); margin-top: 10px; animation: pulse 2s infinite; }
+
+    /* ABOUT */
+    #about { padding: 100px 8vw; background: var(--bg-warm); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .section-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; }
+    .section-title { font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(1.9rem, 3.2vw, 2.7rem); font-weight: 700; line-height: 1.12; letter-spacing: -0.025em; color: var(--navy); margin-bottom: 18px; }
+    .section-body { font-size: 0.97rem; color: var(--body-text); font-weight: 300; max-width: 480px; line-height: 1.72; }
+    .about-pillars { display: flex; flex-direction: column; gap: 18px; }
+    .pillar {
+      background: var(--bg); border: 1px solid var(--card-border);
+      border-radius: 16px; padding: 20px 22px;
+      display: flex; align-items: flex-start; gap: 14px;
+      transition: border-color 0.25s, box-shadow 0.25s;
+    }
+    .pillar:hover { border-color: var(--teal-border); box-shadow: 0 4px 20px var(--card-shadow); }
+    .pillar-icon { width: 36px; height: 36px; border-radius: 10px; background: var(--teal-dim); border: 1px solid var(--teal-border); display: flex; align-items: center; justify-content: center; font-size: 17px; flex-shrink: 0; }
+    .pillar-name { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: 0.93rem; color: var(--navy); margin-bottom: 4px; }
+    .pillar-desc { font-size: 0.82rem; color: var(--body-text); line-height: 1.55; }
+
+    /* VISION */
+    #vision { padding: 100px 8vw; background: var(--bg); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .vision-quote { font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(1.5rem, 2.8vw, 2.2rem); font-weight: 600; line-height: 1.28; color: var(--navy); letter-spacing: -0.02em; border-left: 3px solid var(--teal); padding-left: 24px; margin-top: 22px; }
+    .vision-cards { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    .vision-card { background: var(--bg-card); border: 1px solid var(--card-border); border-radius: 16px; padding: 24px; }
+    .vision-card-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 10px; }
+    .vision-card-text { font-size: 0.87rem; color: var(--body-text); line-height: 1.65; }
+
+    /* APPS */
+    #apps { padding: 100px 8vw; background: var(--bg-warm); }
+    .apps-header { text-align: center; margin-bottom: 56px; }
+    .apps-header .section-body { margin: 0 auto; text-align: center; }
+    .apps-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+    .app-card {
+      background: var(--bg); border: 1px solid var(--card-border);
+      border-radius: 22px; padding: 30px;
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+      display: flex; flex-direction: column; gap: 14px;
+    }
+    .app-card:hover { transform: translateY(-5px); border-color: rgba(58,160,160,0.35); box-shadow: 0 16px 48px var(--card-shadow); }
+    .app-card-header { display: flex; align-items: center; gap: 14px; }
+    .app-icon { width: 56px; height: 56px; border-radius: 15px; overflow: hidden; flex-shrink: 0; border: 1px solid var(--card-border); }
+    .app-icon img { width: 100%; height: 100%; object-fit: cover; }
+    .app-category { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 3px; }
+    .app-name { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 1.25rem; color: var(--navy); letter-spacing: -0.02em; }
+    .app-desc { font-size: 0.87rem; color: var(--body-text); line-height: 1.65; }
+    .app-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 2px; }
+    .app-tag { font-size: 0.71rem; color: var(--teal); background: var(--teal-dim); border: 1px solid var(--teal-border); padding: 3px 10px; border-radius: 12px; font-weight: 500; }
+    .app-footer { display: flex; flex-direction: column; gap: 12px; margin-top: auto; padding-top: 16px; border-top: 1px solid rgba(26,42,74,0.07); }
+    .app-footer-tagline { font-size: 0.8rem; color: var(--body-text); font-style: italic; line-height: 1.5; }
+    .app-footer-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.55; }
+    .app-blog-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      color: var(--navy);
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding-bottom: 3px;
+      border-bottom: 1px solid rgba(26,42,74,0.14);
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+    .app-blog-link:hover { color: var(--teal); border-color: rgba(58,160,160,0.45); }
+    .app-footer-buttons { display: flex; flex-wrap: wrap; gap: 8px; }
+    .app-btn { display: inline-flex; align-items: center; gap: 6px; font-size: 0.75rem; font-weight: 600; padding: 7px 14px; border-radius: 20px; text-decoration: none; transition: transform 0.15s, box-shadow 0.15s; }
+    .app-btn-primary { background: var(--teal); color: #fff; }
+    .app-btn-primary:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(58,160,160,0.3); }
+    .app-btn-secondary { background: var(--teal-dim); color: var(--teal); border: 1px solid var(--teal-border); }
+    .app-btn-secondary:hover { transform: translateY(-1px); }
+    .app-btn-store { background: var(--navy); color: #fff; }
+    .app-btn-store:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(26,42,74,0.2); }
+    .app-btn-store svg.android-icon,
+    .btn-primary svg.android-icon {
+      width: 14px;
+      height: 14px;
+      display: inline-block;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+    .app-status { display: flex; align-items: center; gap: 7px; font-size: 0.74rem; color: var(--muted); }
+    .app-status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); animation: pulse 2s infinite; }
+
+
+    /* PROCESS */
+    #process {
+      padding: 44px 8vw 0;
+      background: var(--bg);
+    }
+    .process-shell {
+      background: linear-gradient(180deg, rgba(58,160,160,0.06), rgba(58,160,160,0.02));
+      border: 1px solid rgba(58,160,160,0.16);
+      border-radius: 28px;
+      padding: 30px;
+      box-shadow: 0 12px 30px rgba(26,42,74,0.04);
+    }
+    .process-topline {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 10px;
+    }
+    .process-title {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      color: var(--navy);
+      font-size: clamp(1.35rem, 2.4vw, 2rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+    .process-intro {
+      max-width: 760px;
+      color: var(--body-text);
+      font-size: 0.92rem;
+      line-height: 1.7;
+      margin-bottom: 22px;
+    }
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      align-items: stretch;
+    }
+    .process-card {
+      min-width: 0;
+      background: rgba(255,255,255,0.82);
+      border: 1px solid rgba(26,42,74,0.08);
+      border-radius: 20px;
+      padding: 22px;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    .process-step {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: var(--navy);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .process-name {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      color: var(--navy);
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .process-text {
+      color: var(--body-text);
+      font-size: 0.84rem;
+      line-height: 1.65;
+      overflow-wrap: break-word;
+      word-break: normal;
+      hyphens: auto;
+    }
+    .process-note {
+      margin-top: 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      max-width: 100%;
+      background: rgba(255,255,255,0.8);
+      border: 1px solid rgba(26,42,74,0.08);
+      border-radius: 999px;
+      padding: 10px 16px;
+      color: var(--navy);
+      font-size: 0.8rem;
+      font-weight: 600;
+      white-space: normal;
+    }
+    .process-note span {
+      color: var(--teal);
+      font-weight: 700;
+    }
+
+    .hero-insight {
+      margin-top: 18px;
+      margin-bottom: 26px;
+      max-width: 560px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: var(--bg-card);
+      border: 1px solid rgba(26,42,74,0.08);
+      color: var(--navy);
+      font-size: 0.84rem;
+      line-height: 1.6;
+    }
+    .hero-insight strong { color: var(--teal); }
+
+    .hero-right-insight {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-right-insight .hero-insight {
+      margin: 0;
+      max-width: 640px;
+      width: 100%;
+      padding: 22px 24px;
+      border-radius: 22px;
+      font-size: 0.98rem;
+      line-height: 1.8;
+      box-shadow: 0 18px 42px rgba(26,42,74,0.06);
+    }
+    .hero-right-insight .hero-insight strong {
+      font-size: 1.02rem;
+      font-weight: 700;
+    }
+
+    .section-emphasis {
+      margin-top: 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(58,160,160,0.08);
+      border: 1px solid rgba(58,160,160,0.16);
+      color: var(--navy);
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .apps-header-note {
+      margin: 16px auto 0;
+      max-width: 720px;
+      color: var(--navy);
+      font-size: 0.84rem;
+      line-height: 1.65;
+      padding: 14px 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(26,42,74,0.08);
+    }
+    .app-insight-box {
+      background: linear-gradient(180deg, rgba(58,160,160,0.07), rgba(58,160,160,0.03));
+      border: 1px solid rgba(58,160,160,0.14);
+      border-radius: 18px;
+      padding: 16px;
+      display: grid;
+      gap: 10px;
+    }
+    .app-insight-row {
+      display: grid;
+      gap: 4px;
+    }
+    .app-insight-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+    .app-insight-text {
+      font-size: 0.81rem;
+      color: var(--body-text);
+      line-height: 1.58;
+    }
+
+    .roadmap-context {
+      margin-top: 26px;
+      max-width: 520px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(26,42,74,0.08);
+      color: var(--navy);
+      font-size: 0.85rem;
+      line-height: 1.68;
+      box-shadow: 0 8px 24px rgba(26,42,74,0.04);
+    }
+    .roadmap-context strong { color: var(--teal); }
+
+    .footer-principle {
+      width: 100%;
+      padding: 0 0 8px;
+      color: var(--navy);
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+    .footer-principle span { color: var(--teal); }
+
+
+    /* CONTACT */
+    #contact { padding: 100px 8vw; background: var(--bg); }
+    .contact-inner { background: var(--bg-card); border: 1px solid var(--card-border); border-radius: 28px; padding: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+    .contact-detail { display: flex; align-items: center; gap: 12px; margin-top: 24px; }
+    .contact-detail-icon { width: 36px; height: 36px; border-radius: 10px; background: var(--teal-dim); border: 1px solid var(--teal-border); display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; }
+    .contact-detail-label { font-size: 0.7rem; color: var(--very-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 2px; }
+    .contact-detail-value { font-size: 0.88rem; color: var(--navy); }
+    .contact-detail-value a { color: var(--teal); text-decoration: none; }
+    .contact-form { display: flex; flex-direction: column; gap: 14px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .form-group { display: flex; flex-direction: column; gap: 5px; }
+    .form-label { font-size: 0.73rem; font-weight: 500; color: var(--muted); letter-spacing: 0.04em; }
+    .form-input, .form-textarea { background: var(--bg); border: 1px solid rgba(26,42,74,0.14); border-radius: 10px; padding: 11px 14px; color: var(--navy); font-family: 'DM Sans', sans-serif; font-size: 0.87rem; outline: none; transition: border-color 0.2s; width: 100%; }
+    .form-input:focus, .form-textarea:focus { border-color: var(--teal); }
+    .form-textarea { resize: vertical; min-height: 110px; }
+    .form-input::placeholder, .form-textarea::placeholder { color: rgba(90,112,128,0.45); }
+    .form-submit { background: var(--btn-bg); color: var(--btn-text); font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 0.9rem; border: none; padding: 12px 28px; border-radius: 30px; cursor: pointer; transition: background 0.2s, transform 0.15s; align-self: flex-start; }
+    .form-submit:hover { background: var(--teal); transform: translateY(-2px); }
+
+    /* FOOTER */
+    footer { padding: 32px 8vw; border-top: 1px solid rgba(26,42,74,0.08); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; background: var(--bg); }
+    .footer-left { display: flex; align-items: center; gap: 10px; }
+    .footer-left img { width: 28px; height: 28px; object-fit: contain; }
+    .footer-logo-text { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: 0.95rem; color: var(--navy-dark); }
+    .footer-location { font-size: 0.78rem; color: var(--very-muted); display: flex; align-items: center; gap: 4px; }
+    .footer-copy { font-size: 0.76rem; color: var(--very-muted); }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.75); } }
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      #hero, #about, #vision { grid-template-columns: 1fr; gap: 44px; padding: 96px 6vw 60px; }
+      #hero { min-height: auto; padding-top: 100px; }
+      .hero-right { order: -1; }
+      .apps-grid { grid-template-columns: 1fr; }
+      .contact-inner { grid-template-columns: 1fr; padding: 32px 24px; gap: 32px; }
+      .form-row { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+    }
+    @media (max-width: 600px) {
+      .hero-apps { grid-template-columns: 1fr 1fr; }
+      .hero-stats { gap: 20px; }
+      .hero-actions { flex-direction: column; align-items: flex-start; }
+      footer { flex-direction: column; align-items: flex-start; }
+
+      #process { padding: 24px 5vw 0; }
+      .process-shell { padding: 18px; border-radius: 22px; }
+      .process-title { font-size: clamp(1.2rem, 6vw, 1.6rem); }
+      .process-intro { max-width: 100%; font-size: 0.88rem; line-height: 1.65; }
+      .process-grid { grid-template-columns: 1fr; gap: 12px; }
+      .process-card { width: 100%; min-width: 0; padding: 16px; border-radius: 18px; }
+      .process-name { font-size: 0.95rem; }
+      .process-text { font-size: 0.82rem; line-height: 1.6; }
+      .process-note {
+        display: flex;
+        width: 100%;
+        gap: 8px;
+        border-radius: 16px;
+        padding: 12px 14px;
+      }
+    }
+
+    .footer-legal-links {
+      display: flex;
+      gap: 18px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+    .footer-legal-links a {
+      color: inherit;
+      text-decoration: none;
+      opacity: 0.9;
+      transition: opacity .2s ease, transform .2s ease;
+    }
+    .footer-legal-links a:hover {
+      opacity: 1;
+      transform: translateY(-1px);
+    }
+    .footer-social-links {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      width: 100%;
+      margin-top: 10px;
+    }
+    .footer-social-links a {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--body-text);
+      background: var(--bg-card);
+      border: 1px solid rgba(26,42,74,0.10);
+      text-decoration: none;
+      transition: transform .2s ease, border-color .2s ease, color .2s ease, background .2s ease;
+    }
+    .footer-social-links a:hover {
+      transform: translateY(-1px);
+      color: var(--teal);
+      border-color: rgba(58,160,160,0.35);
+      background: rgba(58,160,160,0.08);
+    }
+    .footer-social-links svg {
+      width: 16px;
+      height: 16px;
+      display: block;
+      fill: currentColor;
+    }
+
+    /* PARTNERSHIP CTA */
+    #partnership-cta { padding: 0 8vw 72px; background: var(--bg); }
+    .partnership-cta-card {
+      background: linear-gradient(180deg, rgba(58,160,160,0.07), rgba(58,160,160,0.03));
+      border: 1px solid rgba(58,160,160,0.16);
+      border-radius: 28px;
+      padding: 34px 36px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) auto;
+      gap: 24px;
+      align-items: center;
+      box-shadow: 0 12px 30px rgba(26,42,74,0.04);
+    }
+    .partnership-cta-copy .section-body { max-width: 720px; }
+    .partnership-cta-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: flex-end; }
+    .btn-secondary-solid {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 8px; padding: 12px 22px; border-radius: 999px; text-decoration: none;
+      background: rgba(255,255,255,0.78); color: var(--navy);
+      border: 1px solid rgba(26,42,74,0.12); font-size: 0.88rem; font-weight: 600;
+      transition: transform 0.15s ease, border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+    }
+    .btn-secondary-solid:hover {
+      transform: translateY(-1px); border-color: rgba(58,160,160,0.35); background: rgba(58,160,160,0.08); color: var(--teal);
+    }
+
+    @media (max-width: 900px) {
+      #partnership-cta { padding: 0 6vw 64px; }
+      .partnership-cta-card { grid-template-columns: 1fr; padding: 28px 30px; }
+      .partnership-cta-actions { justify-content: flex-start; }
+    }
+
+    @media (max-width: 600px) {
+      #partnership-cta { padding: 0 5vw 56px; }
+      .partnership-cta-card { padding: 22px; border-radius: 22px; gap: 18px; }
+      .partnership-cta-actions { width: 100%; }
+      .partnership-cta-actions .btn-primary,
+      .partnership-cta-actions .btn-secondary-solid { width: 100%; }
+    }
+
+    /* EXPERT SUPPORT */
+    #expert-support { padding: 0 8vw 100px; background: var(--bg); }
+    .expert-support-card {
+      background: var(--bg-card);
+      border: 1px solid var(--card-border);
+      border-radius: 28px;
+      padding: 38px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+      gap: 28px;
+      align-items: stretch;
+      box-shadow: 0 12px 32px rgba(26,42,74,0.05);
+    }
+    .expert-support-copy .section-body { max-width: 100%; }
+    .expert-support-note {
+      margin-top: 18px;
+      max-width: 720px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(26,42,74,0.08);
+      color: var(--navy);
+      font-size: 0.84rem;
+      line-height: 1.7;
+    }
+    .expert-support-panel {
+      background: var(--bg);
+      border: 1px solid rgba(26,42,74,0.08);
+      border-radius: 24px;
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+      box-shadow: 0 10px 28px rgba(26,42,74,0.04);
+    }
+    .expert-support-topline {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 8px;
+    }
+    .expert-support-name {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 1.28rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .expert-support-role {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .expert-support-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .expert-support-point {
+      padding: 6px 11px;
+      border-radius: 999px;
+      background: rgba(58,160,160,0.08);
+      border: 1px solid rgba(58,160,160,0.18);
+      font-size: 0.74rem;
+      color: var(--teal);
+      font-weight: 500;
+    }
+    .expert-support-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: fit-content;
+      background: var(--btn-bg);
+      color: var(--btn-text);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 12px 20px;
+      border-radius: 999px;
+      transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    }
+    .expert-support-link:hover {
+      background: var(--teal);
+      color: #fff;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(58,160,160,0.18);
+    }
+
+@media (max-width: 900px) {
+      #expert-support { padding: 0 6vw 84px; }
+      .expert-support-card {
+        grid-template-columns: 1fr;
+        padding: 30px;
+        gap: 22px;
+      }
+      .expert-support-panel { padding: 24px; }
+    }
+
+    @media (max-width: 600px) {
+      #expert-support {
+        padding: 0 5vw 72px;
+      }
+      #expert-support .expert-support-card {
+        display: flex !important;
+        flex-direction: column !important;
+        grid-template-columns: 1fr !important;
+        padding: 22px;
+        gap: 18px;
+        border-radius: 22px;
+      }
+      #expert-support .expert-support-copy,
+      #expert-support .expert-support-panel {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+      }
+      #expert-support .expert-support-copy {
+        order: 1;
+      }
+      #expert-support .expert-support-panel {
+        order: 2;
+        position: static;
+        align-self: stretch;
+        margin: 0;
+        padding: 20px;
+        border-radius: 20px;
+      }
+      #expert-support .expert-support-copy .section-title {
+        font-size: clamp(1.55rem, 8vw, 2rem);
+        line-height: 1.14;
+        margin-bottom: 14px;
+      }
+      #expert-support .expert-support-copy .section-body {
+        font-size: 0.92rem;
+        line-height: 1.72;
+        max-width: 100%;
+      }
+      #expert-support .expert-support-note {
+        padding: 12px 14px;
+        font-size: 0.82rem;
+        line-height: 1.65;
+      }
+      #expert-support .expert-support-topline {
+        font-size: 0.64rem;
+        line-height: 1.4;
+        margin-bottom: 6px;
+      }
+      #expert-support .expert-support-name {
+        font-size: 1.08rem;
+        line-height: 1.2;
+      }
+      #expert-support .expert-support-role {
+        font-size: 0.8rem;
+        line-height: 1.6;
+      }
+      #expert-support .expert-support-points {
+        gap: 6px;
+      }
+      #expert-support .expert-support-point {
+        font-size: 0.72rem;
+        white-space: normal;
+      }
+      #expert-support .expert-support-link {
+        width: 100%;
+      }
+    }
+
+</style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="#" class="nav-logo">
+      <img src="assets/logo.jpg" width="32" height="32" decoding="async" alt="Tidemobile logo" />
+      <span class="nav-logo-text">Tide Mobile</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">Hakkımızda</a></li>
+      <li><a href="#vision">Vizyon</a></li>
+      <li><a href="#team">Ekip</a></li>
+      <li><a href="#roadmap">Roadmap</a></li>
+      <li><a href="#apps">Uygulamalar</a></li>
+      <li><a href="teknik-ortaklik.html">Teknik Ortaklık</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="#contact">İletişim</a></li>
+      <li><a href="#" class="nav-lang">EN</a></li>
+      <li><a href="#contact" class="nav-cta">Bize Ulaşın</a></li>
+    </ul>
+    <div class="nav-hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-left">
+      <div class="hero-badge">
+        <div class="hero-badge-dot"></div>
+        <span>Adana'dan Dünyaya</span>
+      </div>
+      <h1 class="hero-title">
+        İnsan odaklı<br>
+        <em>mobil ürünler</em><br>
+        geliştiriyoruz.
+      </h1>
+      <p class="hero-desc">
+        Tidemobile; sektörel içgörüleri analiz ederek fırsatları tespit eden ve bunları finans, seyahat ve zihin sağlığı alanlarında mobil ürünlere dönüştüren bir ürün stüdyosudur. Her ürünümüzde psikoloji, veri ve tasarımı bir araya getiriyoruz.
+      </p>
+      <div class="hero-actions">
+        <a href="#apps" class="btn-primary"><svg class="android-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.6 9.48l1.84-3.18a.5.5 0 10-.87-.5l-1.88 3.24A10.12 10.12 0 0012 7.9c-1.7 0-3.32.42-4.75 1.14L5.38 5.8a.5.5 0 10-.87.5l1.84 3.18C3.7 10.93 2 13.2 2 15.8h20c0-2.6-1.7-4.87-4.4-6.32zM8 13.3a.9.9 0 110-1.8.9.9 0 010 1.8zm8 0a.9.9 0 110-1.8.9.9 0 010 1.8zM4.5 16.8v3.1A1.6 1.6 0 006.1 21.5H7v1.4a1.1 1.1 0 102.2 0v-1.4h5.6v1.4a1.1 1.1 0 102.2 0v-1.4h.9a1.6 1.6 0 001.6-1.6v-3.1h-15z"/></svg> Uygulamaları Keşfet</a>
+        <a href="#contact" class="btn-ghost">Bize Ulaşın</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number">4+</div>
+          <div class="stat-label">Aktif Uygulama</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">3+</div>
+          <div class="stat-label">Kategori</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">2026</div>
+          <div class="stat-label">Kuruluş</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right hero-right-insight">
+      <div class="hero-insight">
+        <strong>Yaklaşımımız net:</strong> Rastgele uygulamalar üretmeyiz. Önce davranışı, ihtiyacı ve fırsatı analiz eder; ardından bu içgörüyü güçlü bir ürün deneyimine dönüştürürüz.
+      </div>
+    </div>
+</section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="process-shell fade-in">
+      <div class="process-topline">Nasıl Çalışıyoruz?</div>
+      <h2 class="process-title">İçgörüden ürüne giden net bir süreçle ilerliyoruz.</h2>
+      <p class="process-intro">
+        Tidemobile’da her ürün; bir gözlem, bir veri noktası veya gerçek bir kullanıcı davranışıyla başlar. Farklı kategorilerde çalışsak da her projede aynı ilkeyi izleriz: önce içgörüyü bulur, sonra fırsatı doğrular, en sonunda ürünü inşa ederiz.
+      </p>
+      <div class="process-grid">
+        <div class="process-card">
+          <div class="process-step">01</div>
+          <div class="process-name">İçgörü</div>
+          <p class="process-text">Sektörleri, kullanıcı davranışlarını ve gündelik hayattaki kırılma noktalarını analiz eder; görünmeyen ihtiyaçları görünür hale getiririz.</p>
+        </div>
+        <div class="process-card">
+          <div class="process-step">02</div>
+          <div class="process-name">Fırsat</div>
+          <p class="process-text">Elde ettiğimiz içgörüyü gerçek kullanıcı problemiyle eşleştirir, boşluğun kalıcı ve anlamlı bir fırsata dönüşüp dönüşmediğini doğrularız.</p>
+        </div>
+        <div class="process-card">
+          <div class="process-step">03</div>
+          <div class="process-name">Ürün</div>
+          <p class="process-text">Doğrulanan fırsatı hızlı, sade ve ölçeklenebilir bir mobil ürüne dönüştürür; geri bildirimle sürekli iyileştiririz.</p>
+        </div>
+      </div>
+      <div class="process-note">Tek prensibimiz: <span>İçgörü → Fırsat → Ürün</span></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="fade-in">
+      <div class="section-label">Biz Kimiz</div>
+      <h2 class="section-title">Psikoloji, veri ve tasarımın kesişiminde.</h2>
+      <p class="section-body">
+        Tidemobile, Adana merkezli bağımsız bir mobil ürün stüdyosudur. Finans yönetiminden zihin sağlığına, seyahat planlamasından bilişsel terapiye uzanan geniş bir yelpazede, insanların gündelik hayatını gerçekten kolaylaştıran uygulamalar geliştiriyoruz.
+        <br><br>
+        Bizi diğer yazılım stüdyolarından ayıran şey, her ürünün temelinde yatan disiplinler arası bakış açısıdır. Davranış psikolojisi, kullanıcı araştırması, veri analizi ve estetik tasarımı tek bir çatı altında birleştirerek yalnızca işlevsel değil; kullanıcının hayatına gerçek anlamda değer katan deneyimler yaratıyoruz.
+        <br><br>
+        Her pikselin arkasında bir insan davranışı, her özelliğin arkasında bir neden var. Ürünlerimizi tasarlarken "Bu ne yapar?" sorusundan önce "Bu insanı nasıl etkiler?" sorusunu soruyoruz.
+      </p>
+      <div class="section-emphasis">Rastgele üretmeyiz; analiz edilmiş fırsatları ürüne dönüştürürüz.</div>
+    </div>
+    <div class="about-pillars fade-in">
+      <div class="pillar">
+        <div class="pillar-icon">🧠</div>
+        <div>
+          <div class="pillar-name">Psikoloji Temelli Yaklaşım</div>
+          <div class="pillar-desc">Geliştirdiğimiz her ürün, davranış psikolojisi araştırmaları ve kapsamlı kullanıcı analizleri üzerine inşa edilir. Kullanıcının zihnini anlamadan arayüz tasarlamayız.</div>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">✦</div>
+        <div>
+          <div class="pillar-name">Uzlaşmasız Tasarım Kalitesi</div>
+          <div class="pillar-desc">Kullanışlılık ve estetik bizim için eşit ağırlık taşır. Her ekran geçişi, her tipografi seçimi, her renk kararı; kullanıcı deneyimini merkeze alan bilinçli bir tercihten doğar.</div>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">🔬</div>
+        <div>
+          <div class="pillar-name">Veri Odaklı Geliştirme</div>
+          <div class="pillar-desc">Sezgilerimize değil, verilere güveniyoruz. Kullanıcı davranışlarını sürekli analiz ediyor; ürünlerimizi gerçek ihtiyaçlara göre evrimleştiriyoruz.</div>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">🌱</div>
+        <div>
+          <div class="pillar-name">Uzun Vadeli Etki Vizyonu</div>
+          <div class="pillar-desc">Download sayısı ya da anlık metrikler değil, kullanıcıların hayatında yarattığımız kalıcı değişim bizim için asıl başarı ölçütüdür. Adana'dan başlayan bu yolculuğu küresel bir etki alanına taşımayı hedefliyoruz.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISION -->
+  <section id="vision">
+    <div class="fade-in">
+      <div class="section-label">Vizyon & Misyon</div>
+      <h2 class="section-title">Nereye gidiyoruz,<br>neden buradayız.</h2>
+      <blockquote class="vision-quote">Dijital dünyada insan odaklı bir iz bırakmak.</blockquote>
+    </div>
+    <div class="vision-cards fade-in">
+      <div class="vision-card">
+        <div class="vision-card-label">Vizyonumuz</div>
+        <div class="vision-card-text">Teknolojinin insanlara hizmet ettiği, insanların teknolojiye hizmet etmediği bir dünya hayal ediyoruz. Geliştirdiğimiz her uygulama bu inançla şekilleniyor: Kullanıcıyı anlayan, ona destek olan, büyümesine zemin hazırlayan dijital deneyimler.</div>
+      </div>
+      <div class="vision-card">
+        <div class="vision-card-label">Misyonumuz</div>
+        <div class="vision-card-text">Finans, seyahat ve zihin sağlığı alanlarında davranış psikolojisi temelli mobil ürünler geliştirerek insanların gündelik hayatını daha bilinçli, daha sağlıklı ve daha özgür kılmayı misyon edindik. Her ürünümüzde veri, empati ve estetik bir arada yürür.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPS -->
+  <section id="apps">
+    <div class="apps-header fade-in">
+      <div class="section-label">Ürünlerimiz</div>
+      <h2 class="section-title">Dört uygulama, bir vizyon.</h2>
+      <p class="section-body">Test grubuna katılarak uygulamalarımıza erken erişim elde edin.</p>
+      <div class="apps-header-note">Her ürünümüz, kendi kategorisinde gözlemlediğimiz bir ihtiyaçtan doğar. Blog tarafındaki sektörel analizlerimiz, ürün tarafındaki çözüm yaklaşımımızı besler; ürünlerimiz de bu içgörülerin somut çıktısına dönüşür.</div>
+    </div>
+    <div class="apps-grid">
+      <div class="app-card fade-in">
+        <div class="app-card-header">
+          <div class="app-icon"><img src="assets/lunapara.png" width="56" height="56" loading="lazy" decoding="async" alt="LunaPara" /></div>
+          <div><div class="app-category">Finans</div><div class="app-name">LunaPara</div></div>
+        </div>
+        <p class="app-desc">Harcamalarını ve gelirlerini kategorilere göre takip et, duygusal harcama örüntülerini keşfet. YZ destekli analizler, çoklu döviz desteği ve aile/partner modu ile finansal farkındalığını bir üst seviyeye taşı.</p>
+        <div class="app-tags">
+          <span class="app-tag">YZ Destekli</span><span class="app-tag">Çoklu Döviz</span><span class="app-tag">Aile Modu</span><span class="app-tag">Duygusal Takip</span>
+        </div>
+        <div class="app-insight-box">
+          <div class="app-insight-row">
+            <div class="app-insight-label">İçgörü</div>
+            <div class="app-insight-text">Kişisel finans araçları çoğu zaman yalnızca rakamları gösteriyor; harcama davranışının arkasındaki duygusal örüntüyü görünür kılmıyor.</div>
+          </div>
+          <div class="app-insight-row">
+            <div class="app-insight-label">Bu yüzden</div>
+            <div class="app-insight-text">LunaPara’yı yalnızca takip eden değil, davranışı yorumlayan bir finans deneyimi olarak kurguladık.</div>
+          </div>
+        </div>
+        <div class="app-footer">
+          <p class="app-footer-tagline">Finansal farkındalığı günlük hayatın doğal bir parçası haline getir.</p>
+          <p class="app-footer-desc">Uygulamayı indirebilmek için önce test grubuna katılıp test kullanıcısı olmanız gerekmektedir.</p>
+          <a href="blog.html" class="app-blog-link">Bu ürünün arkasındaki içgörüyü blogda keşfet →</a>
+          <div class="app-footer-buttons">
+            <a href="https://groups.google.com/u/1/g/lunapara-testers" target="_blank" class="app-btn app-btn-secondary">Test Grubuna Katıl</a>
+            <a href="https://play.google.com/apps/testing/com.lunapara.app" target="_blank" class="app-btn app-btn-primary">Test Kullanıcısı Ol</a>
+            <a href="https://play.google.com/store/apps/details?id=com.lunapara.app" target="_blank" class="app-btn app-btn-store"><svg class="android-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.6 9.48l1.84-3.18a.5.5 0 10-.87-.5l-1.88 3.24A10.12 10.12 0 0012 7.9c-1.7 0-3.32.42-4.75 1.14L5.38 5.8a.5.5 0 10-.87.5l1.84 3.18C3.7 10.93 2 13.2 2 15.8h20c0-2.6-1.7-4.87-4.4-6.32zM8 13.3a.9.9 0 110-1.8.9.9 0 010 1.8zm8 0a.9.9 0 110-1.8.9.9 0 010 1.8zM4.5 16.8v3.1A1.6 1.6 0 006.1 21.5H7v1.4a1.1 1.1 0 102.2 0v-1.4h5.6v1.4a1.1 1.1 0 102.2 0v-1.4h.9a1.6 1.6 0 001.6-1.6v-3.1h-15z"/></svg> Play Store'dan İndir</a>
+          </div>
+        </div>
+      </div>
+      <div class="app-card fade-in">
+        <div class="app-card-header">
+          <div class="app-icon"><img src="assets/terravisa.png" width="56" height="56" loading="lazy" decoding="async" alt="TerraVisa" /></div>
+          <div><div class="app-category">Seyahat</div><div class="app-name">TerraVisa</div></div>
+        </div>
+        <p class="app-desc">Dünyanın her köşesine vize gereksinimlerini ve siyasi risk seviyelerini interaktif 3D bir glob üzerinde görselleştir. Seyahat planlamalarını güvenli ve bilinçli yap; sigorta ve vize hizmetlerine anında eriş.</p>
+        <div class="app-tags">
+          <span class="app-tag">3D Glob</span><span class="app-tag">Siyasi Risk</span><span class="app-tag">Vize Bilgisi</span><span class="app-tag">Sigorta</span>
+        </div>
+        <div class="app-insight-box">
+          <div class="app-insight-row">
+            <div class="app-insight-label">İçgörü</div>
+            <div class="app-insight-text">Seyahat planlamasında bilgi dağınık, güncellik kırılgan ve risk değerlendirmesi çoğu kullanıcı için zahmetli.</div>
+          </div>
+          <div class="app-insight-row">
+            <div class="app-insight-label">Bu yüzden</div>
+            <div class="app-insight-text">TerraVisa’yı vize, risk ve seyahat hazırlığını tek bakışta anlaşılır hale getiren bir karar destek deneyimi olarak tasarladık.</div>
+          </div>
+        </div>
+        <div class="app-footer">
+          <p class="app-footer-tagline">Seyahat kararlarını daha güvenli, daha bilinçli ve daha hızlı ver.</p>
+          <p class="app-footer-desc">Uygulamayı indirebilmek için önce test grubuna katılıp test kullanıcısı olmanız gerekmektedir.</p>
+          <a href="blog.html" class="app-blog-link">Bu ürünün arkasındaki içgörüyü blogda keşfet →</a>
+          <div class="app-footer-buttons">
+            <a href="https://play.google.com/store/apps/details?id=com.tidemobile.terravisa" target="_blank" class="app-btn app-btn-secondary">Test Grubuna Katıl</a>
+            <a href="https://play.google.com/store/apps/details?id=com.tidemobile.terravisa" target="_blank" class="app-btn app-btn-primary">Test Kullanıcısı Ol</a>
+            <a href="https://play.google.com/store/apps/details?id=com.tidemobile.terravisa" target="_blank" class="app-btn app-btn-store"><svg class="android-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.6 9.48l1.84-3.18a.5.5 0 10-.87-.5l-1.88 3.24A10.12 10.12 0 0012 7.9c-1.7 0-3.32.42-4.75 1.14L5.38 5.8a.5.5 0 10-.87.5l1.84 3.18C3.7 10.93 2 13.2 2 15.8h20c0-2.6-1.7-4.87-4.4-6.32zM8 13.3a.9.9 0 110-1.8.9.9 0 010 1.8zm8 0a.9.9 0 110-1.8.9.9 0 010 1.8zM4.5 16.8v3.1A1.6 1.6 0 006.1 21.5H7v1.4a1.1 1.1 0 102.2 0v-1.4h5.6v1.4a1.1 1.1 0 102.2 0v-1.4h.9a1.6 1.6 0 001.6-1.6v-3.1h-15z"/></svg> Play Store'dan İndir</a>
+          </div>
+        </div>
+      </div>
+      <div class="app-card fade-in">
+        <div class="app-card-header">
+          <div class="app-icon"><img src="assets/modi.png" width="56" height="56" loading="lazy" decoding="async" alt="Modi" /></div>
+          <div><div class="app-category">Sağlık</div><div class="app-name">Modi</div></div>
+        </div>
+        <p class="app-desc">Psikolojik değerlendirmeler, günlük alışkanlık takibi ve oyunlaştırma mekanikleriyle ruh sağlığına bakışını dönüştür. Sarman’ın eşliğinde her günü küçük bir maceraya çevir; kendine iyi bakmayı eğlenceli kıl.</p>
+        <div class="app-tags">
+          <span class="app-tag">Oyunlaştırma</span><span class="app-tag">Psikolojik Test</span><span class="app-tag">Sarman</span><span class="app-tag">Alışkanlık</span>
+        </div>
+        <div class="app-insight-box">
+          <div class="app-insight-row">
+            <div class="app-insight-label">İçgörü</div>
+            <div class="app-insight-text">İyi oluş uygulamalarında en büyük kırılma noktası, kullanıcıların kısa sürede motivasyon kaybetmesi ve rutini sürdürememesi.</div>
+          </div>
+          <div class="app-insight-row">
+            <div class="app-insight-label">Bu yüzden</div>
+            <div class="app-insight-text">Modi’yi zihinsel iyi oluşu daha sıcak, daha motive edici ve sürdürülebilir hale getiren oyunlaştırılmış bir deneyim olarak geliştirdik.</div>
+          </div>
+        </div>
+        <div class="app-footer">
+          <p class="app-footer-tagline">Kendine iyi bakmayı daha sürdürülebilir ve motive edici hale getir.</p>
+          <p class="app-footer-desc">Uygulamayı indirebilmek için önce test grubuna katılıp test kullanıcısı olmanız gerekmektedir.</p>
+          <a href="blog.html" class="app-blog-link">Bu ürünün arkasındaki içgörüyü blogda keşfet →</a>
+          <div class="app-footer-buttons">
+            <a href="https://groups.google.com/u/9/g/modi-testers" target="_blank" class="app-btn app-btn-secondary">Test Grubuna Katıl</a>
+            <a href="https://play.google.com/apps/testing/com.tidemobile.modi" target="_blank" class="app-btn app-btn-primary">Test Kullanıcısı Ol</a>
+            <a href="https://play.google.com/store/apps/details?id=com.tidemobile.modi" target="_blank" class="app-btn app-btn-store"><svg class="android-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.6 9.48l1.84-3.18a.5.5 0 10-.87-.5l-1.88 3.24A10.12 10.12 0 0012 7.9c-1.7 0-3.32.42-4.75 1.14L5.38 5.8a.5.5 0 10-.87.5l1.84 3.18C3.7 10.93 2 13.2 2 15.8h20c0-2.6-1.7-4.87-4.4-6.32zM8 13.3a.9.9 0 110-1.8.9.9 0 010 1.8zm8 0a.9.9 0 110-1.8.9.9 0 010 1.8zM4.5 16.8v3.1A1.6 1.6 0 006.1 21.5H7v1.4a1.1 1.1 0 102.2 0v-1.4h5.6v1.4a1.1 1.1 0 102.2 0v-1.4h.9a1.6 1.6 0 001.6-1.6v-3.1h-15z"/></svg> Play Store'dan İndir</a>
+          </div>
+        </div>
+      </div>
+      <div class="app-card fade-in">
+        <div class="app-card-header">
+          <div class="app-icon"><img src="assets/reframe.png" width="56" height="56" loading="lazy" decoding="async" alt="Reframe" /></div>
+          <div><div class="app-category">Terapi</div><div class="app-name">Reframe</div></div>
+        </div>
+        <p class="app-desc">Bilişsel Davranışçı Terapi ilkelerini günlük hayatına entegre et. YZ destekli Sokratik sorgulama, duygu takibi ve düşünce kayıtlarıyla olumsuz düşünce kalıplarını fark et ve dönüştür.</p>
+        <div class="app-tags">
+          <span class="app-tag">BDT Temelli</span><span class="app-tag">YZ Sorgulama</span><span class="app-tag">Duygu Takibi</span><span class="app-tag">Düşünce Kaydı</span>
+        </div>
+        <div class="app-insight-box">
+          <div class="app-insight-row">
+            <div class="app-insight-label">İçgörü</div>
+            <div class="app-insight-text">Terapi prensipleri güçlü olsa da günlük hayat içinde erişilebilir, sade ve düzenli kullanılabilir araçlara dönüşmediğinde etkisi azalıyor.</div>
+          </div>
+          <div class="app-insight-row">
+            <div class="app-insight-label">Bu yüzden</div>
+            <div class="app-insight-text">Reframe’i, BDT yaklaşımını gündelik düşünce akışına daha uygulanabilir biçimde taşıyan bir dijital eşlikçi olarak kurguladık.</div>
+          </div>
+        </div>
+        <div class="app-footer">
+          <p class="app-footer-tagline">Düşünce kalıplarını daha net fark et, daha bilinçli dönüştür.</p>
+          <p class="app-footer-desc">Uygulamayı indirebilmek için önce test grubuna katılıp test kullanıcısı olmanız gerekmektedir.</p>
+          <a href="blog.html" class="app-blog-link">Bu ürünün arkasındaki içgörüyü blogda keşfet →</a>
+          <div class="app-footer-buttons">
+            <div class="app-status"><div class="app-status-dot" style="background:#f59e0b;animation:pulse 2s infinite;"></div>Yakında</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section id="team" class="split-section team-wrap">
+    <div class="fade-in">
+      <div class="section-label">Ekip / Team</div>
+      <h2 class="section-title">Tidemobile’ın arkasındaki yaratıcı ekip.</h2>
+      <p class="section-body">
+        Tidemobile, ürün stratejisini, psikolojik içgörüyü, iletişim bütünlüğünü ve yaratıcı üretimi bir araya getiren küçük ama odaklı bir ekip yapısıyla ilerler.
+        Her projede amaç; sadece çalışan bir ürün üretmek değil, kullanıcı üzerinde kalıcı ve anlamlı bir etki bırakmaktır. Blog tarafındaki analizlerimiz ile ürün tarafındaki kararlarımız, aynı stratejik bakış açısının tamamlayıcı parçaları olarak birbirini besler.
+      </p>
+      <a href="blog.html" class="blog-teaser">Blog yazılarımızı keşfet →</a>
+    </div>
+    <div class="team-grid">
+      <div class="team-card fade-in">
+        <div class="team-avatar">T</div>
+        <div class="team-name">C. Tanıl Tabakoğlu</div>
+        <div class="team-role">Co-Founder · Product & Growth</div>
+        <div class="team-bio">
+          Ürün yönü, marka duruşu ve kullanıcı odaklı strateji tarafında Tidemobile’ın büyüme perspektifini şekillendirir.
+          Fikirleri işlevsel ürünlere dönüştürürken sadelik, netlik ve uzun vadeli değer üretimini merkeze alır.
+        </div>
+        <div class="team-points">
+          <span class="team-point">Ürün Stratejisi</span>
+          <span class="team-point">Growth</span>
+          <span class="team-point">Brand Thinking</span>
+        </div>
+      </div>
+      <div class="team-card fade-in">
+        <div class="team-avatar">İ</div>
+        <div class="team-name">İlknur Yılmazgil</div>
+        <div class="team-role">Co-Founder · Psychology & Content</div>
+        <div class="team-bio">
+          Siber psikoloji, zihinsel esenlik ve insan davranışı ekseninde Tidemobile’ın içerik ve deneyim katmanını besler.
+          Yazı dili, etik tasarım yaklaşımı ve kullanıcıyla kurulan duygusal bağ üzerinde çalışır.
+        </div>
+        <div class="team-points">
+          <span class="team-point">Siber Psikoloji</span>
+          <span class="team-point">İçerik</span>
+          <span class="team-point">Etik Deneyim</span>
+        </div>
+      </div>
+      <div class="team-card fade-in">
+        <div class="team-avatar">A</div>
+        <div class="team-name">Aslı Ecem Kılıç</div>
+        <div class="team-role">Brand &amp; Communications Lead</div>
+        <div class="team-bio">
+          Marka dili, kurumsal anlatı ve iletişim bütünlüğü tarafında Tidemobile’ın dış dünyaya yansıyan yüzünü güçlendirir.
+          Sunum akışlarını yapılandırır, ekip içi anlatımı toparlar ve girişimlerin daha net, tutarlı ve profesyonel bir şekilde konumlanmasına katkı sağlar.
+        </div>
+        <div class="team-points">
+          <span class="team-point">Brand Communication</span>
+          <span class="team-point">Sunum Stratejisi</span>
+          <span class="team-point">Kurumsal İletişim</span>
+        </div>
+      </div>
+      <div class="team-card fade-in">
+        <div class="team-avatar">R</div>
+        <div class="team-name">Rabia Serçe</div>
+        <div class="team-role">Visual &amp; Web Designer</div>
+        <div class="team-bio">
+          2D ve 3D görsel üretim ile web arayüz tasarımı tarafında Tidemobile’ın yaratıcı yüzünü güçlendirir.
+          Dijital deneyimlerin daha estetik, tutarlı ve marka kimliğiyle uyumlu bir yapıda şekillenmesine katkı sunar; fikirlerin görsel dile profesyonel ve işlevsel biçimde aktarılmasını destekler.
+        </div>
+        <div class="team-points">
+          <span class="team-point">3D Modelling</span>
+          <span class="team-point">2D Design</span>
+          <span class="team-point">Web Design</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROADMAP -->
+  <section id="roadmap" class="split-section roadmap-wrap">
+    <div class="fade-in">
+      <div class="section-label">Roadmap</div>
+      <h2 class="section-title">2026 boyunca odağımızda ne var?</h2>
+      <p class="section-body">
+        2026 planımız; ürün kalitesini derinleştirmek, daha güçlü bir içerik ekosistemi kurmak ve psikoloji temelli dijital deneyimleri daha görünür hale getirmek üzerine kurulu.
+      </p>
+      <div class="roadmap-context"><strong>Stratejik çerçeve:</strong> Bu yol haritasındaki her başlık, tek tek uygulamalardan bağımsız değil; Tidemobile'ın genel çalışma prensibine bağlıdır. İçerik, araştırma ve ürün geliştirme aynı stratejik çerçeve içinde birlikte ilerler.</div>
+    </div>
+    <div class="roadmap-list">
+      <div class="roadmap-item fade-in">
+        <div class="roadmap-badge">Q1</div>
+        <div>
+          <div class="roadmap-title">Marka altyapısını güçlendirme</div>
+          <div class="roadmap-text">Web deneyimini sadeleştirmek, ürün anlatımını keskinleştirmek ve Tidemobile’ın düşünce dünyasını blog tarafında daha görünür hale getirmek.</div>
+        </div>
+      </div>
+      <div class="roadmap-item fade-in">
+        <div class="roadmap-badge">Q2</div>
+        <div>
+          <div class="roadmap-title">Wellness ve psikoloji odaklı ürün iterasyonları</div>
+          <div class="roadmap-text">Mental ve fiziksel iyi oluşu destekleyen deneyimlerde kullanıcı alışkanlıklarını daha sağlıklı ve sürdürülebilir hale getiren yeni akışlar tasarlamak.</div>
+        </div>
+      </div>
+      <div class="roadmap-item fade-in">
+        <div class="roadmap-badge">Q3</div>
+        <div>
+          <div class="roadmap-title">İçerik ve topluluk katmanını büyütme</div>
+          <div class="roadmap-text">Blog, marka anlatısı ve ürün içi içeriklerle kullanıcıya yalnızca araç değil; perspektif ve rehberlik de sunan bir yapı kurmak.</div>
+        </div>
+      </div>
+      <div class="roadmap-item fade-in">
+        <div class="roadmap-badge">Q4</div>
+        <div>
+          <div class="roadmap-title">Yeni deneyimlerin yayına hazırlanması</div>
+          <div class="roadmap-text">Tidemobile çatısı altındaki seçili projeleri olgunlaştırmak, geri bildirimleri toparlamak ve 2027’ye daha net bir ürün portföyü ile girmek.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- EXPERT SUPPORT -->
+  <section id="expert-support">
+    <div class="expert-support-card fade-in">
+      <div class="expert-support-copy">
+        <div class="section-label">Uzman Desteği</div>
+        <h2 class="section-title">Psikoloji tarafında uzman desteğiyle ilerliyoruz.</h2>
+        <p class="section-body">
+          Tidemobile bünyesinde geliştirdiğimiz psikoloji ve iyi oluş odaklı ürünlerde, içerik doğruluğu ve akademik çerçeve bizim için temel önceliklerden biridir. Özellikle Modi uygulamasında, psikolog desteği ile ilerleyerek ürün yaklaşımımızı yalnızca deneyim odaklı değil; aynı zamanda daha sağlam, sorumlu ve güven veren bir zemine taşıyoruz.
+        </p>
+        <div class="expert-support-note">
+          Modi tarafında yürüttüğümüz psikoloji odaklı yapı; içerik yaklaşımı, genel çerçeve ve ürün kurgusu bakımından <strong>Uzman Psikolog İlknur Yılmazgil</strong> desteğiyle şekillenmektedir.
+        </div>
+      </div>
+      <div class="expert-support-panel">
+        <div>
+          <div class="expert-support-topline">Akademik Katkı</div>
+          <div class="expert-support-name">Uzm. Psk. İlknur Yılmazgil</div>
+          <div class="expert-support-role">Psikolog desteği, akademik çerçeve ve profesyonel yaklaşım tarafında katkı sağlayan uzman desteği.</div>
+        </div>
+        <div class="expert-support-points">
+          <span class="expert-support-point">Psikolog Desteği</span>
+          <span class="expert-support-point">Modi Akademik Katkı</span>
+          <span class="expert-support-point">Uzman Perspektifi</span>
+        </div>
+        <a class="expert-support-link" href="https://pskilknuryilmazgil.com/index.html" target="_blank" rel="noopener noreferrer">Web Sitesini İncele</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERSHIP CTA -->
+  <section id="partnership-cta">
+    <div class="partnership-cta-card fade-in">
+      <div class="partnership-cta-copy">
+        <div class="section-label">Teknik Ortaklık</div>
+        <h2 class="section-title">Ajanslar ve markalar için teknik ortaklık.</h2>
+        <p class="section-body">AI-native mobil uygulamalar, premium UI/UX geliştirme ve interaktif deneyim üretimi için Tidemobile ile çalışın.</p>
+      </div>
+      <div class="partnership-cta-actions">
+        <a href="teknik-ortaklik.html" class="btn-primary">Teknik Ortaklık Sayfasını İncele</a>
+        <a href="#contact" class="btn-secondary-solid">İletişime Geç</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+    <div class="contact-inner fade-in">
+      <div>
+        <div class="section-label">İletişim</div>
+        <h2 class="section-title" style="margin-bottom:12px">Birlikte bir şeyler inşa edelim.</h2>
+        <p class="section-body">Sorularınız, iş birliği teklifleriniz veya uygulamalarımız hakkında her türlü konuda bize ulaşabilirsiniz.</p>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">✉️</div>
+          <div>
+            <div class="contact-detail-label">E-posta</div>
+            <div class="contact-detail-value"><a href="mailto:tidemobile.contact@gmail.com">tidemobile.contact@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📍</div>
+          <div>
+            <div class="contact-detail-label">Konum</div>
+            <div class="contact-detail-value">Adana, Türkiye</div>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" action="https://formspree.io/f/xeerbwpr" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Adınız</label>
+            <input type="text" name="name" class="form-input" placeholder="Ad Soyad" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">E-posta</label>
+            <input type="email" name="email" class="form-input" placeholder="ornek@email.com" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Konu</label>
+          <input type="text" name="subject" class="form-input" placeholder="Mesajınızın konusu" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Mesajınız</label>
+          <textarea name="message" class="form-textarea" placeholder="Merhaba, ..." required></textarea>
+        </div>
+        <button type="submit" class="form-submit">Gönder →</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-principle">Çalışma prensibimiz: <span>İçgörü → Fırsat → Ürün</span></div>
+    <div class="footer-left">
+      <img src="assets/logo.jpg" width="28" height="28" decoding="async" alt="Tidemobile" />
+      <span class="footer-logo-text">Tidemobile</span>
+      <span class="footer-location">📍 Adana, Türkiye</span>
+    </div>
+    <div class="footer-copy">© 2026 Tidemobile. Tüm hakları saklıdır.</div>
+  
+      <div class="footer-legal-links">
+        <a href="kvkk.html">KVKK Aydınlatma Metni</a>
+        <a href="gizlilik.html">Gizlilik Politikası</a>
+      </div>
+
+      <div class="footer-social-links" aria-label="Sosyal medya bağlantıları">
+        <a href="https://www.instagram.com/tidemobile?igsh=MnllOWJtZHB5aGRm" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5A3.95 3.95 0 0 0 7.75 20.2h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5A3.95 3.95 0 0 0 16.25 3.8h-8.5Zm8.95 1.35a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3ZM12 6.85A5.15 5.15 0 1 1 6.85 12 5.16 5.16 0 0 1 12 6.85Zm0 1.8A3.35 3.35 0 1 0 15.35 12 3.35 3.35 0 0 0 12 8.65Z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/tide-mobile/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5A1.98 1.98 0 1 1 3 5.48 1.98 1.98 0 0 1 4.98 3.5ZM3.25 8h3.46v12H3.25Zm5.65 0h3.32v1.64h.05A3.64 3.64 0 0 1 15.55 7.7c3.5 0 4.15 2.3 4.15 5.29V20h-3.46v-6.19c0-1.48-.03-3.38-2.06-3.38-2.06 0-2.38 1.61-2.38 3.27V20H8.9Z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@tidemobile?_r=1&_t=ZS-94xD46Pqk2n" target="_blank" rel="noopener noreferrer" aria-label="TikTok" title="TikTok">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.2 3h2.38a4.9 4.9 0 0 0 4.17 4.15v2.43a7.27 7.27 0 0 1-4.15-1.3v6.32a5.6 5.6 0 1 1-5.6-5.6c.3 0 .6.03.88.08v2.47a3.14 3.14 0 0 0-.88-.13 3.18 3.18 0 1 0 3.2 3.18Z"/></svg>
+        </a>
+      </div>
+
+    </footer>
+
+  <script>
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 80);
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    let menuOpen = false;
+    function toggleMenu() {
+      menuOpen = !menuOpen;
+      const links = document.querySelector('.nav-links');
+      if (menuOpen) {
+        links.style.cssText = 'display:flex !important; flex-direction:column; position:absolute; top:64px; left:0; right:0; background:rgba(255,255,255,0.97); padding:20px 5vw; border-bottom:1px solid rgba(26,42,74,0.1); gap:20px; backdrop-filter:blur(12px); z-index:999;';
+      } else {
+        links.style.cssText = 'display:none !important;';
+      }
+    }
+    // Menü linkine tıklanınca kapat
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.addEventListener('click', () => {
+        menuOpen = false;
+        document.querySelector('.nav-links').style.cssText = 'display:none !important;';
+      });
+    });
+    // Ekran boyutu büyüyünce menüyü sıfırla
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900) {
+        const links = document.querySelector('.nav-links');
+        links.style.cssText = '';
+        menuOpen = false;
+      }
+    });
+
+    document.querySelectorAll('.app-card-mini').forEach(card => {
+      card.addEventListener('pointerdown', () => card.classList.add('is-pressed'));
+      card.addEventListener('pointerup', () => card.classList.remove('is-pressed'));
+      card.addEventListener('pointerleave', () => card.classList.remove('is-pressed'));
+      card.addEventListener('blur', () => card.classList.remove('is-pressed'));
+    });
+
+  </script>
+</body>
+</html>

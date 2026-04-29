@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tidemobile — Teknik Ortaklık</title>
+  <meta name="description" content="Tidemobile teknik ortaklık portföyü: AI-native mobil uygulama geliştirme, premium UI/UX mühendisliği, veri odaklı dashboardlar ve interaktif deneyimler." />
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #ffffff;
+      --bg-warm: #ede9e2;
+      --bg-card: #f8f5f0;
+      --navy: #1a2a4a;
+      --navy-dark: #1c2a3a;
+      --teal: #3aa0a0;
+      --body-text: #5a7080;
+      --muted: #7a90a8;
+      --very-muted: #9aabb8;
+      --btn-bg: #1a2a4a;
+      --btn-text: #ede9e2;
+      --teal-dim: rgba(58,160,160,0.1);
+      --teal-border: rgba(58,160,160,0.25);
+      --card-border: rgba(26,42,74,0.1);
+      --card-shadow: rgba(26,42,74,0.08);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--body-text);
+      line-height: 1.65;
+    }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      height: 64px; display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5vw; background: rgba(255,255,255,0.92); backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(26,42,74,0.08);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 9px; text-decoration: none; }
+    .nav-logo img { width: 32px; height: 32px; border-radius: 10px; object-fit: contain; }
+    .nav-logo-text { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--navy-dark); }
+    .nav-links { display: flex; align-items: center; gap: 18px; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--body-text); font-size: 0.88rem; }
+    .nav-links a:hover, .nav-links a.is-active { color: var(--navy); }
+    .nav-cta {
+      display: inline-flex; align-items: center; justify-content: center; text-decoration: none;
+      padding: 10px 18px; border-radius: 999px; background: var(--btn-bg); color: var(--btn-text);
+      font-size: 0.85rem; font-weight: 600;
+    }
+    .nav-cta:hover { background: var(--teal); color: #fff; }
+    main { overflow: hidden; }
+    .hero {
+      padding: 86px 8vw 52px; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 38px; align-items: center;
+      background: linear-gradient(180deg, rgba(58,160,160,0.05), rgba(58,160,160,0));
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px;
+      background: var(--teal-dim); border: 1px solid var(--teal-border); color: var(--teal);
+      border-radius: 999px; padding: 6px 12px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    }
+    .hero h1, .section-title {
+      font-family: 'Bricolage Grotesque', sans-serif; color: var(--navy);
+      letter-spacing: -0.03em;
+    }
+    .hero h1 { font-size: clamp(2.3rem, 4.4vw, 3.8rem); line-height: 1.04; margin-bottom: 18px; }
+    .hero p { max-width: 720px; font-size: 1rem; }
+    .hero-actions, .cta-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .btn-primary, .btn-secondary {
+      display: inline-flex; align-items: center; justify-content: center; text-decoration: none;
+      padding: 12px 22px; border-radius: 999px; font-size: 0.9rem; font-weight: 600;
+      transition: transform .15s ease, background .2s ease, color .2s ease, border-color .2s ease;
+    }
+    .btn-primary { background: var(--btn-bg); color: var(--btn-text); }
+    .btn-primary:hover { background: var(--teal); color: #fff; transform: translateY(-1px); }
+    .btn-secondary { background: rgba(255,255,255,0.78); color: var(--navy); border: 1px solid rgba(26,42,74,0.12); }
+    .btn-secondary:hover { color: var(--teal); border-color: rgba(58,160,160,0.35); background: rgba(58,160,160,0.08); transform: translateY(-1px); }
+    .hero-panel {
+      background: var(--bg); border: 1px solid var(--card-border); border-radius: 28px; padding: 28px;
+      box-shadow: 0 14px 40px rgba(26,42,74,0.06);
+    }
+    .hero-panel-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; }
+    .hero-panel-list { display: grid; gap: 14px; }
+    .hero-panel-item { padding: 14px 16px; border-radius: 18px; background: var(--bg-card); border: 1px solid rgba(26,42,74,0.08); }
+    .hero-panel-item strong { display: block; color: var(--navy); margin-bottom: 4px; font-size: 0.95rem; }
+    .section { padding: 0 8vw 88px; scroll-margin-top: 92px; }
+    .hero { scroll-margin-top: 92px; }
+    [id] { scroll-margin-top: 92px; }
+    .section-head { max-width: 760px; margin-bottom: 30px; }
+    .section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 12px; }
+    .section-title { font-size: clamp(1.85rem, 3vw, 2.6rem); line-height: 1.1; margin-bottom: 14px; }
+    .section-body { font-size: 0.97rem; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .card {
+      background: var(--bg-card); border: 1px solid var(--card-border); border-radius: 24px; padding: 26px;
+      box-shadow: 0 10px 30px rgba(26,42,74,0.04);
+    }
+    .card-topline { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 10px; }
+    .card h3 { font-family: 'Bricolage Grotesque', sans-serif; color: var(--navy); font-size: 1.15rem; line-height: 1.18; margin-bottom: 10px; }
+    .card p { font-size: 0.9rem; margin-bottom: 10px; }
+    .card p:last-child { margin-bottom: 0; }
+    .card strong { color: var(--navy); }
+    .arsenal {
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px;
+    }
+    .arsenal-item {
+      background: var(--bg); border: 1px solid var(--card-border); border-radius: 20px; padding: 22px;
+      box-shadow: 0 8px 24px rgba(26,42,74,0.04);
+    }
+    .arsenal-item h3 { font-family: 'Bricolage Grotesque', sans-serif; color: var(--navy); font-size: 1rem; margin-bottom: 8px; }
+    .arsenal-item p { font-size: 0.87rem; }
+    .why {
+      background: linear-gradient(180deg, rgba(58,160,160,0.07), rgba(58,160,160,0.03));
+      border: 1px solid rgba(58,160,160,0.16);
+      border-radius: 28px; padding: 34px;
+    }
+    .why p { max-width: 900px; font-size: 0.97rem; }
+    .note {
+      margin-top: 20px; padding: 16px 18px; border-radius: 18px; background: rgba(255,255,255,0.75);
+      border: 1px solid rgba(26,42,74,0.08); color: var(--navy); font-size: 0.88rem;
+    }
+    .cta {
+      padding: 0 8vw 100px;
+    }
+    .cta-box {
+      background: var(--navy); color: rgba(255,255,255,0.88); border-radius: 30px; padding: 40px;
+      display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center;
+    }
+    .cta-box h2 { font-family: 'Bricolage Grotesque', sans-serif; color: #fff; font-size: clamp(1.8rem, 3vw, 2.4rem); line-height: 1.08; margin-bottom: 10px; }
+    .cta-box p { max-width: 720px; }
+    footer {
+      padding: 28px 8vw 38px; border-top: 1px solid rgba(26,42,74,0.08); display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: space-between;
+    }
+    .footer-left { display: flex; align-items: center; gap: 10px; }
+    .footer-left img { width: 28px; height: 28px; border-radius: 8px; }
+    .footer-logo-text { font-family: 'Bricolage Grotesque', sans-serif; color: var(--navy); font-weight: 700; }
+    .footer-copy { font-size: 0.78rem; color: var(--very-muted); }
+    @media (max-width: 980px) {
+      .hero, .grid-2, .arsenal, .cta-box { grid-template-columns: 1fr; }
+      .hero { padding-top: 72px; }
+      .cta-box { padding: 32px; }
+    }
+    @media (max-width: 700px) {
+      nav { padding: 0 5vw; }
+      .nav-links { display: none; }
+      .hero, .section, .cta { padding-left: 5vw; padding-right: 5vw; }
+      .hero-panel, .card, .why, .cta-box { padding: 22px; border-radius: 22px; }
+      .hero-actions .btn-primary, .hero-actions .btn-secondary, .cta-actions .btn-primary, .cta-actions .btn-secondary { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="assets/logo.jpg" decoding="async" alt="Tidemobile logo" />
+      <span class="nav-logo-text">Tide Mobile</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Ana Sayfa</a></li>
+      <li><a href="#hizmetler">Hizmetler</a></li>
+      <li><a href="#teknik-ortaklik">Teknik Ortaklık</a></li>
+      <li><a href="#neden-tidemobile">Neden Tidemobile?</a></li>
+    </ul>
+    <a href="index.html#contact" class="nav-cta">İletişime Geç</a>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div>
+        <div class="badge">Teknik Ortaklık</div>
+        <h1>Tidemobile: Teknik Çözüm Ortaklığı Portföyü</h1>
+        <p>Tidemobile, yazılımı sadece bir kod yığını olarak değil; tasarım, psikoloji ve global dinamiklerin kesişiminde bir ürün olarak görür. Minimalist estetik, akıcı geçişler ve yapay zekanın insani dokunuşuyla projeleri standartların üzerine taşırız.</p>
+        <div class="hero-actions">
+          <a href="#hizmetler" class="btn-primary">Hizmetleri İncele</a>
+          <a href="index.html#contact" class="btn-secondary">Projeyi Konuşalım</a>
+        </div>
+      </div>
+      <aside class="hero-panel">
+        <div class="hero-panel-title">Ajanslar için odak</div>
+        <div class="hero-panel-list">
+          <div class="hero-panel-item">
+            <strong>AI-native mobil deneyimler</strong>
+            <span>LLM entegrasyonu, karakter kurgusu, sesli akışlar ve akıllı asistan mekanikleri.</span>
+          </div>
+          <div class="hero-panel-item">
+            <strong>Premium UI/UX execution</strong>
+            <span>Tasarımın teknik kısıtlara kurban edilmediği, akıcı ve performanslı ürün teslimi.</span>
+          </div>
+          <div class="hero-panel-item">
+            <strong>Disiplinli yayın süreci</strong>
+            <span>Huawei, Google ve Apple mağaza süreçlerini bilen ürün odaklı teknik ortaklık.</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-label">Vizyonumuz</div>
+        <h2 class="section-title">Teknik geliştirme ile ürün bakışını aynı yerde buluşturuyoruz.</h2>
+        <p class="section-body">Ajansların veya marka ekiplerinin ihtiyaç duyduğu şey çoğu zaman yalnızca geliştirme kapasitesi değil; tasarım dilini bozmadan, kullanıcı deneyimini zayıflatmadan ve teknik kaliteyi düşürmeden işi sonuca götürecek bir partnerdir. Tidemobile bu boşluğu doldurur.</p>
+      </div>
+    </section>
+
+    <section class="section" id="hizmetler">
+      <div class="section-head">
+        <div class="section-label">Sunulan Hizmet Kalemleri</div>
+        <h2 class="section-title">Ürün kalitesini merkeze alan dört çalışma alanı.</h2>
+      </div>
+      <div class="grid-2">
+        <article class="card">
+          <div class="card-topline">01</div>
+          <h3>AI-Native Mobil Uygulama Geliştirme</h3>
+          <p><strong>Kapsam:</strong> OpenAI, Anthropic veya açık kaynaklı LLM'lerin mobil uygulamalara pürüzsüz entegrasyonu.</p>
+          <p><strong>Farkımız:</strong> Sadece API bağlamak değil; Modi projesinde olduğu gibi karakter tasarımı, sesli yanıt ve akıllı asistan mekaniklerini kurmak.</p>
+        </article>
+        <article class="card">
+          <div class="card-topline">02</div>
+          <h3>Premium UI/UX Mühendisliği</h3>
+          <p><strong>Kapsam:</strong> Figma veya Adobe XD tasarımlarının, en küçük animasyon detayına kadar React Native ya da Flutter ortamına aktarılması.</p>
+          <p><strong>Odak:</strong> Dark mode optimizasyonu, soft geçişler ve yüksek performanslı listeleme yapılarıyla tasarım kalitesini koruyan uygulama geliştirme süreci.</p>
+        </article>
+        <article class="card">
+          <div class="card-topline">03</div>
+          <h3>Fintech ve Veri Odaklı Dashboardlar</h3>
+          <p><strong>Kapsam:</strong> Lunapara disipliniyle, karmaşık finansal verilerin veya kaynak yönetimi süreçlerinin anlaşılır biçimde görselleştirilmesi.</p>
+          <p><strong>Güvenlik:</strong> Güvenli veri saklama, ölçeklenebilir mimari ve kontrollü API haberleşme protokolleri.</p>
+        </article>
+        <article class="card">
+          <div class="card-topline">04</div>
+          <h3>Unity Tabanlı İnteraktif Deneyimler</h3>
+          <p><strong>Kapsam:</strong> Markalar için oyunlaştırılmış pazarlama araçları, advergame projeleri veya hikâye anlatımı odaklı mini deneyimler.</p>
+          <p><strong>Yöntem:</strong> AI-assisted asset üretimiyle maliyet ve zaman optimizasyonu sağlayan hibrit üretim yaklaşımı.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="teknik-ortaklik">
+      <div class="section-head">
+        <div class="section-label">Teknik Ortaklık Altyapısı</div>
+        <h2 class="section-title">Teknik ortaklık süreçlerinde kullandığımız modern ürün altyapısı.</h2>
+      </div>
+      <div class="arsenal">
+        <div class="arsenal-item">
+          <h3>Frameworks</h3>
+          <p>React Native (Expo/Bare), Flutter ve Unity ile ölçeklenebilir mobil ve interaktif deneyimler geliştiriyoruz.</p>
+        </div>
+        <div class="arsenal-item">
+          <h3>AI Yetkinliği</h3>
+          <p>Prompt engineering, LLM integration ve vector database katmanlarıyla yapay zekayı ürünün doğal parçası haline getiriyoruz.</p>
+        </div>
+        <div class="arsenal-item">
+          <h3>Süreç Disiplini</h3>
+          <p>Agile geliştirme, code auditing ve Huawei/Google/Apple store yayın süreçleriyle işi sadece üretip bırakmıyoruz; yayına kadar taşıyoruz.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="neden-tidemobile">
+      <div class="why">
+        <div class="section-label">Neden Tidemobile?</div>
+        <h2 class="section-title">AI basitliği tuzağına düşmeyen teknik ortaklık.</h2>
+        <p>Yazılım dünyasındaki yüzeysel hız yerine, her projeye analitik derinlik ve teknik disiplinle yaklaşıyoruz. Amacımız yalnızca işi teslim etmek değil; ajansınızın veya markanızın teknik imzasını güçlendirecek bir ürün standardı kurmak.</p>
+        <div class="note"></div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="cta-box">
+        <div>
+          <h2>Projeniz için teknik partner arıyorsanız, konuşalım.</h2>
+          <p>Ajans iş birlikleri, özel uygulama geliştirme süreçleri ve premium execution gerektiren projelerde Tidemobile ile çalışabilirsiniz.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="index.html#contact" class="btn-primary">İletişime Geç</a>
+          <a href="index.html" class="btn-secondary">Ana Sayfaya Dön</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-left">
+      <img src="assets/logo.jpg" decoding="async" alt="Tidemobile" />
+      <span class="footer-logo-text">Tidemobile</span>
+    </div>
+    <div class="footer-copy">© 2026 Tidemobile. Tüm hakları saklıdır.</div>
+  </footer>
+</body>
+</html>
