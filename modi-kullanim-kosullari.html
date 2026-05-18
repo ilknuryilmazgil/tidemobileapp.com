@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kullanım Koşulları – Modi | Tide Mobile</title>
+  <meta name="description" content="Modi uygulamasının kullanım koşulları. Abonelik, ödeme, cayma hakkı, yapay zeka sohbeti, topluluk kuralları ve daha fazlası hakkında bilgi edinin." />
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" /></noscript>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:          #ffffff;
+      --bg-warm:     #ede9e2;
+      --bg-card:     #f8f5f0;
+      --navy:        #1a2a4a;
+      --navy-dark:   #1c2a3a;
+      --teal:        #3aa0a0;
+      --body-text:   #5a7080;
+      --muted:       #7a90a8;
+      --very-muted:  #9aabb8;
+      --teal-dim:    rgba(58,160,160,0.1);
+      --teal-border: rgba(58,160,160,0.25);
+      --card-border: rgba(26,42,74,0.1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: linear-gradient(180deg, #ffffff 0%, #f8f5f0 100%);
+      color: var(--body-text);
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 0 5vw;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(26,42,74,0.08);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 9px; text-decoration: none; }
+    .nav-logo img { width: 32px; height: 32px; object-fit: contain; border-radius: 10px; display: block; }
+    .nav-logo-text {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-weight: 700; font-size: 1.1rem;
+      color: var(--navy-dark); letter-spacing: -0.01em;
+    }
+    .nav-links { display: flex; align-items: center; gap: 26px; list-style: none; }
+    .nav-links a {
+      text-decoration: none; color: var(--body-text);
+      font-size: 0.875rem; font-weight: 500; transition: color 0.2s ease;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--teal); }
+
+    /* ── MAIN ── */
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 118px 24px 64px;
+    }
+
+    /* ── HERO CARD ── */
+    .hero-card {
+      background: rgba(255,255,255,0.82);
+      border: 1px solid var(--card-border);
+      box-shadow: 0 18px 50px rgba(26,42,74,0.06);
+      border-radius: 28px;
+      padding: 34px 34px 26px;
+      margin-bottom: 22px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.74rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .eyebrow svg { width: 14px; height: 14px; flex-shrink: 0; }
+    h1 {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      color: var(--navy);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      font-size: clamp(2rem, 5vw, 3.35rem);
+      margin-bottom: 14px;
+    }
+    .lead {
+      max-width: 760px;
+      color: var(--body-text);
+      font-size: 1rem;
+      line-height: 1.85;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      background: var(--teal-dim);
+      border: 1px solid var(--teal-border);
+      border-radius: 999px;
+      font-size: 0.8rem;
+      color: var(--teal);
+      font-weight: 600;
+    }
+
+    /* ── TOC ── */
+    .toc-card {
+      background: var(--bg-card);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 22px 26px;
+      margin-bottom: 22px;
+    }
+    .toc-title {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    .toc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 4px 16px;
+    }
+    .toc-grid a {
+      text-decoration: none;
+      font-size: 0.84rem;
+      color: var(--body-text);
+      font-weight: 500;
+      transition: color 0.2s;
+      display: flex;
+      align-items: baseline;
+      gap: 7px;
+      padding: 4px 0;
+    }
+    .toc-grid a:hover { color: var(--teal); }
+    .toc-num {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--teal);
+      min-width: 18px;
+      flex-shrink: 0;
+    }
+
+    /* ── CONTENT CARD ── */
+    .content-card {
+      background: #fff;
+      border: 1px solid var(--card-border);
+      box-shadow: 0 10px 30px rgba(26,42,74,0.05);
+      border-radius: 24px;
+      padding: 30px 32px 28px;
+    }
+    .section {
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(26,42,74,0.06);
+    }
+    .section:last-child { border-bottom: none; padding-bottom: 0; }
+    .section:first-child { padding-top: 0; }
+
+    .section-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    .section-num {
+      flex-shrink: 0;
+      width: 32px; height: 32px;
+      border-radius: 10px;
+      background: var(--teal-dim);
+      border: 1px solid var(--teal-border);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--teal);
+      margin-top: 2px;
+    }
+    h2 {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      color: var(--navy-dark);
+      font-size: 1.22rem;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+    h3 {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      color: var(--navy);
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 18px 0 8px;
+    }
+    p {
+      color: var(--body-text);
+      font-size: 0.97rem;
+      line-height: 1.85;
+      margin-bottom: 10px;
+    }
+    p:last-child { margin-bottom: 0; }
+    ul {
+      margin: 8px 0 10px 0;
+      padding-left: 0;
+      list-style: none;
+    }
+    ul li {
+      color: var(--body-text);
+      font-size: 0.97rem;
+      line-height: 1.8;
+      padding: 4px 0 4px 22px;
+      position: relative;
+      margin-bottom: 4px;
+    }
+    ul li::before {
+      content: '';
+      position: absolute;
+      left: 4px;
+      top: 13px;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--teal);
+      opacity: 0.55;
+    }
+
+    .sub-section {
+      margin-top: 18px;
+      padding: 16px 18px;
+      background: var(--bg-card);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+    }
+    .sub-section h3 { margin-top: 0; margin-bottom: 10px; }
+    .sub-section ul { margin-bottom: 0; }
+    .sub-section p:last-child { margin-bottom: 0; }
+
+    .highlight-box {
+      margin-top: 14px;
+      padding: 14px 18px;
+      background: var(--teal-dim);
+      border: 1px solid var(--teal-border);
+      border-radius: 14px;
+      font-size: 0.9rem;
+      color: var(--teal);
+      font-weight: 500;
+      line-height: 1.7;
+    }
+    .highlight-box a { color: var(--teal); font-weight: 700; }
+
+    .warning-box {
+      margin-top: 14px;
+      padding: 14px 18px;
+      background: rgba(255,180,50,0.08);
+      border: 1px solid rgba(255,180,50,0.28);
+      border-radius: 14px;
+      font-size: 0.9rem;
+      color: #8a6010;
+      font-weight: 500;
+      line-height: 1.7;
+    }
+
+    .right-box {
+      margin-top: 14px;
+      padding: 14px 18px;
+      background: rgba(40,160,100,0.07);
+      border: 1px solid rgba(40,160,100,0.22);
+      border-radius: 14px;
+      font-size: 0.9rem;
+      color: #1a6640;
+      font-weight: 500;
+      line-height: 1.7;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--body-text);
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .contact-item:hover { border-color: var(--teal-border); color: var(--teal); }
+    .contact-icon {
+      width: 34px; height: 34px;
+      border-radius: 10px;
+      background: var(--teal-dim);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-icon svg { width: 16px; height: 16px; color: var(--teal); }
+
+    code {
+      font-family: 'DM Sans', monospace;
+      font-size: 0.82rem;
+      background: var(--bg-card);
+      border: 1px solid var(--card-border);
+      border-radius: 6px;
+      padding: 1px 7px;
+      color: var(--navy);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      max-width: 980px;
+      margin: 40px auto 30px;
+      padding: 0 24px 24px;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(26,42,74,0.07);
+      flex-wrap: wrap;
+    }
+    .footer-left { display: flex; align-items: center; gap: 10px; }
+    .footer-left img { width: 28px; height: 28px; object-fit: contain; border-radius: 8px; }
+    .footer-logo-text { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: 0.95rem; color: var(--navy-dark); }
+    .footer-copy { font-size: 0.76rem; color: var(--very-muted); }
+    .legal-links { display: flex; flex-wrap: wrap; gap: 14px; }
+    .legal-links a {
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--body-text);
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+    .legal-links a:hover, .legal-links a.active { color: var(--teal); transform: translateY(-1px); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 840px) {
+      .nav-links { gap: 16px; }
+      main { padding-top: 106px; }
+      .hero-card, .content-card { padding: 24px 20px; border-radius: 22px; }
+      .toc-card { padding: 18px 20px; }
+    }
+    @media (max-width: 640px) {
+      nav { height: auto; padding: 12px 5vw; align-items: flex-start; gap: 12px; }
+      .nav-links { flex-wrap: wrap; gap: 12px 16px; justify-content: flex-end; }
+      main { padding-top: 128px; }
+      .footer-inner { align-items: flex-start; }
+      .toc-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 420px) {
+      .toc-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <img src="assets/logo.jpg" alt="Tide Mobile" />
+      <span class="nav-logo-text">Tide Mobile</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Ana Sayfa</a>
+      <a href="blog.html">Blog</a>
+      <a href="kvkk.html">KVKK</a>
+      <a href="gizlilik.html">Gizlilik</a>
+      <a href="modi-kullanim-kosullari.html" class="active">Modi Koşulları</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <div class="hero-card">
+      <div class="eyebrow">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="3" width="12" height="11" rx="2"/><path d="M5 1v4M11 1v4M2 7h12"/>
+        </svg>
+        Modi · Yasal Belgeler
+      </div>
+      <h1>Kullanım Koşulları</h1>
+      <p class="lead">
+        Bu Kullanım Koşulları, <strong>Tide Mobile</strong> tarafından sunulan <strong>Modi</strong>
+        uygulamasını kullanımınızı düzenler. Uygulamayı indirerek veya kullanarak bu koşulları
+        kabul etmiş sayılırsınız.
+      </p>
+      <div class="meta">
+        <span>
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="2" y="3" width="12" height="11" rx="2"/><path d="M5 1v4M11 1v4M2 7h12"/></svg>
+          Son güncelleme: 18 Mayıs 2026
+        </span>
+        <span>
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M8 1C4.7 1 2 3.7 2 7c0 4 6 8 6 8s6-4 6-8c0-3.3-2.7-6-6-6z"/><circle cx="8" cy="7" r="2"/></svg>
+          Türkiye Cumhuriyeti Hukuku
+        </span>
+        <span>
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg>
+          6502 · KVKK · TBK
+        </span>
+      </div>
+    </div>
+
+    <!-- TABLE OF CONTENTS -->
+    <div class="toc-card">
+      <p class="toc-title">İçindekiler</p>
+      <div class="toc-grid">
+        <a href="#s1"><span class="toc-num">1.</span> Hizmetin Niteliği</a>
+        <a href="#s2"><span class="toc-num">2.</span> Kullanıcı Hesabı</a>
+        <a href="#s3"><span class="toc-num">3.</span> Abonelikler ve Ödeme</a>
+        <a href="#s4"><span class="toc-num">4.</span> Cayma Hakkı</a>
+        <a href="#s5"><span class="toc-num">5.</span> Fesih Hakkı</a>
+        <a href="#s6"><span class="toc-num">6.</span> Ücretsiz Deneme</a>
+        <a href="#s7"><span class="toc-num">7.</span> Yapay Zeka Sohbeti</a>
+        <a href="#s8"><span class="toc-num">8.</span> Topluluk Özellikleri</a>
+        <a href="#s9"><span class="toc-num">9.</span> Sanal Para Birimi</a>
+        <a href="#s10"><span class="toc-num">10.</span> Fikri Mülkiyet</a>
+        <a href="#s11"><span class="toc-num">11.</span> Gizlilik</a>
+        <a href="#s12"><span class="toc-num">12.</span> Sorumluluk Sınırlandırması</a>
+        <a href="#s13"><span class="toc-num">13.</span> Hesap Kapatma</a>
+        <a href="#s14"><span class="toc-num">14.</span> Değişiklikler</a>
+        <a href="#s15"><span class="toc-num">15.</span> Uyuşmazlık Çözümü</a>
+        <a href="#s16"><span class="toc-num">16.</span> İletişim</a>
+      </div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content-card">
+
+      <!-- 1 -->
+      <div class="section" id="s1">
+        <div class="section-header">
+          <div class="section-num">1</div>
+          <h2>Hizmetin Niteliği</h2>
+        </div>
+        <p>
+          Modi, kullanıcıların duygusal farkındalık ve kişisel gelişimlerini desteklemek amacıyla
+          tasarlanmış bir refah uygulamasıdır. Uygulama; yapay zeka destekli sohbet, meditasyon,
+          kişilik testleri, yolculuk programları ve topluluk özellikleri sunar.
+        </p>
+        <div class="warning-box">
+          <strong>Önemli Uyarı:</strong> Modi bir terapi, psikolojik danışmanlık veya tıbbi hizmet
+          değildir. Uygulama içindeki hiçbir içerik profesyonel psikolojik veya tıbbi tavsiye
+          yerine geçmez. Ruh sağlığınızla ilgili ciddi bir durumda lütfen uzman bir sağlık
+          profesyoneline başvurun. Kriz durumunda <strong>ALO 182</strong>
+          (Türkiye Psikiyatri Derneği) hattını arayabilirsiniz.
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="section" id="s2">
+        <div class="section-header">
+          <div class="section-num">2</div>
+          <h2>Kullanıcı Hesabı</h2>
+        </div>
+        <ul>
+          <li>Uygulamayı kullanmak için hesap oluşturmanız gerekir.</li>
+          <li>Hesap bilgilerinizin gizliliğini korumak sizin sorumluluğunuzdadır.</li>
+          <li>Hesabınızla gerçekleştirilen tüm işlemlerden siz sorumlusunuz.</li>
+          <li>Hesabınızı başkasına devredemez veya paylaşamazsınız.</li>
+          <li>
+            Uygulamayı kullanmak için en az <strong>13 yaşında</strong> olmanız gerekir.
+            18 yaşından küçük kullanıcılar ancak <strong>ebeveyn veya yasal vasi onayı</strong>
+            ile kayıt olabilir; bu onayın alınmasından ebeveyn veya yasal vasi sorumludur.
+            13 yaşın altındaki kişilerin kaydı kabul edilmez; bu durumun tespiti halinde hesap
+            derhal kapatılır.
+          </li>
+        </ul>
+      </div>
+
+      <!-- 3 -->
+      <div class="section" id="s3">
+        <div class="section-header">
+          <div class="section-num">3</div>
+          <h2>Abonelikler ve Ödeme</h2>
+        </div>
+
+        <div class="sub-section">
+          <h3>3.1 Modi Premium</h3>
+          <p>Uygulama, aylık ve yıllık seçenekler sunan "Modi Premium" aboneliği içerir.</p>
+          <ul>
+            <li>Modi Premium Aylık — <code>com.tidemobile.modi.premium_aylik</code></li>
+            <li>Modi Premium Yıllık — <code>com.tidemobile.modi.premium_yillik</code></li>
+          </ul>
+        </div>
+
+        <div class="sub-section">
+          <h3>3.2 Ödeme ve Yenileme</h3>
+          <ul>
+            <li>
+              Abonelik ücretleri, satın alma işlemini gerçekleştirdiğiniz platform olan
+              <strong>Apple App Store</strong> veya <strong>Google Play</strong> üzerinden tahsil
+              edilir. Bu platformlar, ödeme işlemlerinde yetkili satıcı (merchant of record)
+              konumundadır.
+            </li>
+            <li>
+              Abonelikler, mevcut dönemin bitiminden en az 24 saat önce iptal edilmediği sürece
+              otomatik olarak yenilenir.
+            </li>
+            <li>
+              Yenileme ücreti, mevcut dönemin bitiminden 24 saat önce hesabınızdan tahsil edilir.
+            </li>
+          </ul>
+        </div>
+
+        <div class="sub-section">
+          <h3>3.3 İptal</h3>
+          <ul>
+            <li><strong>iOS:</strong> Ayarlar → Apple ID → Abonelikler → Modi → İptal Et</li>
+            <li><strong>Android:</strong> Google Play → Abonelikler → Modi → İptal Et</li>
+            <li>
+              İptal ettiğinizde mevcut dönemin sonuna kadar Premium özelliklerine erişiminiz devam
+              eder.
+            </li>
+          </ul>
+        </div>
+
+        <div class="sub-section">
+          <h3>3.4 İade</h3>
+          <p>
+            Abonelik ödemeleri, Apple App Store veya Google Play tarafından işlendiğinden iade
+            talepleri ilgili platformun iade politikası kapsamında değerlendirilir:
+          </p>
+          <ul>
+            <li>
+              <strong>Apple:</strong> <em>reportaproblem.apple.com</em> adresi veya
+              Ayarlar → Apple ID → Satın Almalar bölümünden başvurabilirsiniz.
+            </li>
+            <li>
+              <strong>Google:</strong> Google Play uygulaması → Abonelikler ve Satın Almalar
+              bölümünden başvurabilirsiniz.
+            </li>
+          </ul>
+          <p>
+            Hizmet kalitesine ilişkin şikayetleriniz için doğrudan bizimle de iletişime
+            geçebilirsiniz (Bölüm 16).
+          </p>
+        </div>
+      </div>
+
+      <!-- 4 — YENİ: CAYMA HAKKI -->
+      <div class="section" id="s4">
+        <div class="section-header">
+          <div class="section-num">4</div>
+          <h2>Cayma Hakkı</h2>
+        </div>
+        <p>
+          6502 sayılı Tüketicinin Korunması Hakkında Kanun ve Mesafeli Sözleşmeler Yönetmeliği
+          uyarınca, mesafeli yollarla kurulan sözleşmelerde tüketicinin <strong>14 günlük cayma
+          hakkı</strong> bulunmaktadır.
+        </p>
+
+        <div class="sub-section">
+          <h3>4.1 Dijital Hizmetlerde Cayma Hakkının İstisnası</h3>
+          <p>
+            Abonelik satın alımı tamamlandığında dijital içerik ve hizmetlere erişim
+            <strong>derhal başlar.</strong> Satın alma işlemi sırasında onay vermeniz halinde
+            ve cayma hakkının bu onay ile sona ereceğini açıkça kabul etmeniz koşuluyla,
+            Mesafeli Sözleşmeler Yönetmeliği m.15/1(ğ) kapsamında cayma hakkı kullanılamaz.
+          </p>
+          <p>
+            Apple App Store ve Google Play, satın alma akışlarında bu onayı sizden almaktadır.
+            Cayma hakkınızı kullanmak veya erken dönemde iade talep etmek için ilgili platformun
+            iade prosedürünü işletiniz (Bölüm 3.4).
+          </p>
+        </div>
+
+        <div class="right-box">
+          <strong>Tüketici Hakkı:</strong> Cayma hakkını kullanmak için herhangi bir gerekçe
+          göstermenize gerek yoktur. Cayma bildiriminizi <strong>14 gün içinde</strong>
+          ilgili platforma veya <a href="mailto:tidemobile.contact@gmail.com" style="color:inherit;font-weight:700;">tidemobile.contact@gmail.com</a>
+          adresine iletebilirsiniz.
+        </div>
+      </div>
+
+      <!-- 5 — YENİ: FESİH HAKKI -->
+      <div class="section" id="s5">
+        <div class="section-header">
+          <div class="section-num">5</div>
+          <h2>Fesih Hakkı</h2>
+        </div>
+        <p>
+          6502 sayılı Kanun'un 52. maddesi ve Abonelik Sözleşmeleri Yönetmeliği uyarınca
+          tüketici, aboneliğini <strong>her zaman, herhangi bir gerekçe göstermeksizin ve
+          cezai şart ödemeksizin</strong> feshedebilir.
+        </p>
+        <ul>
+          <li>
+            Fesih talebinizi Bölüm 3.3'teki adımları izleyerek veya
+            <strong>tidemobile.contact@gmail.com</strong> adresine e-posta göndererek
+            iletebilirsiniz.
+          </li>
+          <li>
+            Fesih talebinin tarafımıza ulaşmasından itibaren <strong>en geç 7 gün içinde</strong>
+            işleminiz yerine getirilir.
+          </li>
+          <li>
+            Fesih tarihine kadar ödenen ücretler, hizmetin o döneme ait kısmına karşılık gelir;
+            kalan dönem için Apple veya Google'ın iade politikası uygulanır.
+          </li>
+        </ul>
+        <div class="right-box">
+          <strong>Yasal Güvence:</strong> Bu hak sözleşmeyle kısıtlanamaz veya ortadan
+          kaldırılamaz. Herhangi bir iptal bedeli ya da cezai şart uygulanmaz.
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="section" id="s6">
+        <div class="section-header">
+          <div class="section-num">6</div>
+          <h2>Ücretsiz Deneme</h2>
+        </div>
+        <p>
+          Zaman zaman ücretsiz deneme süresi sunulabilir. Deneme süresi sona ermeden önce
+          iptal edilmediği takdirde, seçilen abonelik planı otomatik olarak ücretli hale
+          gelir ve ilgili platform hesabınızdan tahsilat yapılır.
+        </p>
+        <p>
+          Deneme süresini cezasız sonlandırmak için süre dolmadan önce Bölüm 3.3'teki adımları
+          izleyerek iptal işlemini gerçekleştirebilirsiniz.
+        </p>
+      </div>
+
+      <!-- 7 -->
+      <div class="section" id="s7">
+        <div class="section-header">
+          <div class="section-num">7</div>
+          <h2>Yapay Zeka Sohbeti ve Veri Aktarımı</h2>
+        </div>
+        <ul>
+          <li>
+            Modi'nin yapay zeka destekli sohbet özelliği, <strong>Google Gemini API</strong>
+            üzerinden çalışmaktadır.
+          </li>
+          <li>
+            Yapay zeka yanıtları otomatik olarak oluşturulur; profesyonel psikolojik,
+            tıbbi veya hukuki görüş niteliği taşımaz.
+          </li>
+          <li>
+            Acil ruh sağlığı durumlarında yapay zeka yerine mutlaka bir uzman veya kriz
+            hattı (<strong>ALO 182</strong>) ile iletişime geçin.
+          </li>
+        </ul>
+
+        <div class="sub-section">
+          <h3>7.1 Yurt Dışına Veri Aktarımı</h3>
+          <p>
+            Gemini API'nin kullanımı nedeniyle sohbet verileriniz <strong>Google'ın sunucularına
+            aktarılmakta</strong>; bu sunucular Türkiye dışında konumlanabilmektedir. Bu aktarım,
+            6698 sayılı KVKK'nın 9. maddesi kapsamında <strong>yurt dışına kişisel veri
+            aktarımı</strong> niteliği taşımaktadır.
+          </p>
+          <p>
+            Uygulamayı kullanmaya başlayarak ve/veya kayıt sırasında sunulan açık rıza metnini
+            onaylayarak bu aktarıma açıkça rıza vermiş sayılırsınız. Rızanızı geri alabilirsiniz;
+            bu durumda YZ sohbet özelliğini kullanamayabilirsiniz.
+          </p>
+        </div>
+
+        <div class="sub-section">
+          <h3>7.2 Veri Kullanımı</h3>
+          <p>
+            Yapay zeka ile paylaştığınız içerikler, hizmetin iyileştirilmesi amacıyla anonim
+            ve toplu biçimde analiz edilebilir. Hassas kişisel bilgileri (TC kimlik, sağlık
+            verisi, finansal bilgi) sohbette paylaşmamanızı tavsiye ederiz.
+          </p>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="section" id="s8">
+        <div class="section-header">
+          <div class="section-num">8</div>
+          <h2>Topluluk Özellikleri</h2>
+        </div>
+        <p>Topluluk alanında paylaşım yaparken saygılı ve yapıcı bir dil kullanmanız beklenir.</p>
+        <p>Aşağıdaki içerikler kesinlikle yasaktır:</p>
+        <ul>
+          <li>Nefret söylemi, taciz veya şiddet tehdidi</li>
+          <li>Cinsel içerik</li>
+          <li>Başkalarının kişisel bilgilerini izinsiz paylaşmak</li>
+          <li>Yanıltıcı veya asılsız bilgi yaymak</li>
+        </ul>
+        <p>
+          Kurallara aykırı içerikler kaldırılabilir; hesabınız uyarılabilir veya askıya
+          alınabilir. Hesap kapatma kararlarına karşı Bölüm 16'daki iletişim kanallarından
+          itiraz hakkınız saklıdır.
+        </p>
+      </div>
+
+      <!-- 9 -->
+      <div class="section" id="s9">
+        <div class="section-header">
+          <div class="section-num">9</div>
+          <h2>Sanal Para Birimi (Balık)</h2>
+        </div>
+        <ul>
+          <li>Uygulama içinde "balık" adı verilen sanal para birimi kullanılmaktadır.</li>
+          <li>Balıklar gerçek para karşılığı satın alınamaz ve gerçek paraya çevrilemez.</li>
+          <li>Balıklar yalnızca uygulama içi işlemlerde geçerlidir.</li>
+          <li>
+            Hesabınızın kapatılması durumunda birikmiş balıklar iade edilmez; zira gerçek
+            parasal değer taşımamaktadırlar.
+          </li>
+        </ul>
+      </div>
+
+      <!-- 10 -->
+      <div class="section" id="s10">
+        <div class="section-header">
+          <div class="section-num">10</div>
+          <h2>Fikri Mülkiyet</h2>
+        </div>
+        <ul>
+          <li>
+            Uygulama ve içeriği (tasarım, metin, görsel, yazılım dahil tüm unsurlar)
+            Tide Mobile'a aittir ve telif hakkı mevzuatı ile koruma altındadır.
+          </li>
+          <li>
+            Uygulamayı kopyalamak, tersine mühendislik yapmak, dağıtmak veya türev eser
+            oluşturmak yasaktır.
+          </li>
+          <li>
+            Toplulukta paylaştığınız içerikler için üçüncü taraf fikri mülkiyet haklarını
+            ihlal etmediğinizi beyan ve taahhüt edersiniz. Aksi halde doğacak hukuki
+            sorumluluk size aittir.
+          </li>
+        </ul>
+      </div>
+
+      <!-- 11 -->
+      <div class="section" id="s11">
+        <div class="section-header">
+          <div class="section-num">11</div>
+          <h2>Gizlilik</h2>
+        </div>
+        <p>
+          Kişisel verilerinizin nasıl toplandığı, işlendiği, saklandığı ve üçüncü taraflarla
+          paylaşıldığı hakkında ayrıntılı bilgi için Gizlilik Politikamızı inceleyin.
+        </p>
+        <div class="highlight-box">
+          Gizlilik Politikası:
+          <a href="gizlilik.html">tidemobileapp.com/gizlilik</a>
+        </div>
+      </div>
+
+      <!-- 12 -->
+      <div class="section" id="s12">
+        <div class="section-header">
+          <div class="section-num">12</div>
+          <h2>Sorumluluk Sınırlandırması</h2>
+        </div>
+        <ul>
+          <li>
+            Modi, "olduğu gibi" sunulmaktadır. Kesintisiz veya hatasız hizmet garantisi
+            verilmez.
+          </li>
+          <li>
+            Uygulamanın kullanımından kaynaklanabilecek dolaylı, tesadüfi veya özel
+            zararlardan sorumlu değiliz.
+          </li>
+          <li>
+            Sorumluluğumuz, zararın doğduğu tarihten önceki <strong>son 12 ay</strong> içinde
+            tarafınızdan ödenen abonelik tutarını aşamaz.
+          </li>
+        </ul>
+        <div class="warning-box">
+          <strong>Yasal Not (TBK m.115):</strong> Kasıt veya ağır ihmalden kaynaklanan
+          zararlarda yukarıdaki sorumluluk sınırlaması uygulanmaz; bu tür durumlarda
+          yasal sorumluluk tam olarak geçerlidir.
+        </div>
+      </div>
+
+      <!-- 13 -->
+      <div class="section" id="s13">
+        <div class="section-header">
+          <div class="section-num">13</div>
+          <h2>Hesap Kapatma</h2>
+        </div>
+        <ul>
+          <li>
+            İstediğiniz zaman hesabınızı silebilirsiniz
+            (<strong>Uygulama → Profil → Hesabımı Sil</strong>).
+          </li>
+          <li>
+            Hesap silindiğinde kişisel verileriniz, KVKK ve Gizlilik Politikamızda belirtilen
+            süreler saklı kalmak kaydıyla, <strong>kalıcı olarak kaldırılır.</strong>
+          </li>
+          <li>
+            Bu Koşulların ciddi biçimde ihlal edildiğinin tespit edilmesi halinde hesabınızı
+            önceden bildirmeksizin kapatma hakkımızı saklı tutarız. Bu karara karşı Bölüm 16
+            üzerinden itiraz edebilirsiniz.
+          </li>
+        </ul>
+      </div>
+
+      <!-- 14 -->
+      <div class="section" id="s14">
+        <div class="section-header">
+          <div class="section-num">14</div>
+          <h2>Değişiklikler</h2>
+        </div>
+        <p>
+          Bu Koşulları zaman zaman güncelleyebiliriz.
+        </p>
+        <ul>
+          <li>
+            <strong>Tali değişiklikler</strong> (yazım düzeltmesi, açıklayıcı ekleme gibi):
+            Güncelleme tarihi değiştirilerek yayımlanır; uygulamayı kullanmaya devam etmeniz
+            kabulünüz anlamına gelir.
+          </li>
+          <li>
+            <strong>Esaslı değişiklikler</strong> (ücretlendirme, kullanıcı hakları, veri
+            işleme kapsamı gibi): Yürürlük tarihinden en az <strong>30 gün önce</strong>
+            uygulama içi bildirim ve/veya e-posta ile size duyurulur.
+          </li>
+          <li>
+            Esaslı değişiklikleri kabul etmiyorsanız, bildirim süresince aboneliğinizi
+            <strong>cezasız olarak feshedebilirsiniz</strong> (Bölüm 5).
+          </li>
+        </ul>
+      </div>
+
+      <!-- 15 — YENİ: UYUŞMAZLIK ÇÖZÜMÜ -->
+      <div class="section" id="s15">
+        <div class="section-header">
+          <div class="section-num">15</div>
+          <h2>Uyuşmazlık Çözümü ve Uygulanacak Hukuk</h2>
+        </div>
+        <p>
+          Bu Koşullar <strong>Türkiye Cumhuriyeti hukuku</strong> kapsamında yorumlanır ve
+          uygulanır.
+        </p>
+
+        <div class="sub-section">
+          <h3>15.1 Tüketici Hakem Heyeti</h3>
+          <p>
+            6502 sayılı Kanun uyarınca, <strong>2026 yılı için 186.000 TL</strong> ve altındaki
+            tüketici uyuşmazlıkları için dava açılmadan önce <strong>Tüketici Hakem
+            Heyeti'ne</strong> başvurulması zorunludur. Bu başvuru ücretsizdir ve avukat
+            tutmanızı gerektirmez.
+          </p>
+          <p>
+            Başvuru için yerleşim yerinizin bağlı olduğu İl veya İlçe Tüketici Hakem Heyeti'ne
+            ya da <strong>e-Devlet (turkiye.gov.tr)</strong> üzerinden başvurabilirsiniz.
+          </p>
+        </div>
+
+        <div class="sub-section">
+          <h3>15.2 Tüketici Mahkemesi</h3>
+          <p>
+            Hakem heyeti eşiğini aşan uyuşmazlıklarda veya hakem heyeti kararına itiraz
+            halinde <strong>İstanbul Tüketici Mahkemeleri</strong> yetkilidir.
+          </p>
+        </div>
+
+        <div class="right-box">
+          <strong>Tüketici Hakkı:</strong> Bu maddedeki çözüm yolları, 6502 sayılı Kanun
+          kapsamındaki tüketici haklarınızı hiçbir şekilde kısıtlamaz.
+        </div>
+      </div>
+
+      <!-- 16 -->
+      <div class="section" id="s16">
+        <div class="section-header">
+          <div class="section-num">16</div>
+          <h2>İletişim</h2>
+        </div>
+        <p>
+          Bu Koşullara ilişkin soru, şikayet veya bildirimleriniz için aşağıdaki kanalları
+          kullanabilirsiniz:
+        </p>
+        <div class="contact-grid">
+          <a class="contact-item" href="mailto:tidemobile.contact@gmail.com">
+            <div class="contact-icon">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="3" width="14" height="10" rx="2"/>
+                <path d="M1 5l7 5 7-5"/>
+              </svg>
+            </div>
+            tidemobile.contact@gmail.com
+          </a>
+          <a class="contact-item" href="https://tidemobileapp.com" target="_blank" rel="noopener">
+            <div class="contact-icon">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="8" cy="8" r="6"/>
+                <path d="M8 2c-2 2-3 3.6-3 6s1 4 3 6c2-2 3-3.6 3-6s-1-4-3-6z"/>
+                <path d="M2 8h12"/>
+              </svg>
+            </div>
+            tidemobileapp.com
+          </a>
+        </div>
+
+        <!--
+          TODO (Yasal Zorunluluk — 6502 + 6563):
+          Şirket tescili tamamlandığında aşağıdaki bilgileri bu bölüme ekle
+          ve bu yorum satırını sil:
+
+          <p>
+            <strong>Ticaret Unvanı:</strong> [ŞİRKET UNVANI]<br />
+            <strong>Adres:</strong> [KAYITLI İŞYERİ ADRESİ]<br />
+            <strong>Telefon:</strong> [TELEFON NUMARASI]<br />
+            <strong>MERSİS No:</strong> [MERSİS NUMARASI]
+          </p>
+        -->
+      </div>
+
+    </div><!-- /content-card -->
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-left">
+        <img src="assets/logo.jpg" alt="Tide Mobile" />
+        <div>
+          <div class="footer-logo-text">Tide Mobile</div>
+          <div class="footer-copy">İnsan odaklı, etik ve anlamlı dijital deneyimler.</div>
+        </div>
+      </div>
+      <div class="legal-links">
+        <a href="kvkk.html">KVKK Aydınlatma Metni</a>
+        <a href="gizlilik.html">Gizlilik Politikası</a>
+        <a href="modi-kullanim-kosullari.html" class="active">Modi Kullanım Koşulları</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
