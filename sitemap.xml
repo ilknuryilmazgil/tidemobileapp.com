@@ -98,6 +98,38 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Blog: Altın Vize -->
+  <url>
+    <loc>https://tidemobileapp.com/blog-altin-vize.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://tidemobileapp.com/blog-altin-vize.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidemobileapp.com/blog-altin-vize-en.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tidemobileapp.com/blog-altin-vize-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://tidemobileapp.com/blog-altin-vize.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidemobileapp.com/blog-altin-vize-en.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog: Dijital Göçebe Vizesi -->
+  <url>
+    <loc>https://tidemobileapp.com/blog-dijital-gocebe.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://tidemobileapp.com/blog-dijital-gocebe.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidemobileapp.com/blog-dijital-gocebe-en.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tidemobileapp.com/blog-dijital-gocebe-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://tidemobileapp.com/blog-dijital-gocebe.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidemobileapp.com/blog-dijital-gocebe-en.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Yasal Sayfalar -->
   <url>
     <loc>https://tidemobileapp.com/gizlilik.html</loc>
