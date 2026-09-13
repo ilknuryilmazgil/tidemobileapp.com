@@ -4,15 +4,15 @@
 
   <!-- Ana Sayfa -->
   <url>
-    <loc>https://tidemobileapp.com/index.html</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://tidemobileapp.com/index.html"/>
+    <loc>https://tidemobileapp.com/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://tidemobileapp.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://tidemobileapp.com/index-en.html"/>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://tidemobileapp.com/index-en.html</loc>
-    <xhtml:link rel="alternate" hreflang="tr" href="https://tidemobileapp.com/index.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://tidemobileapp.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://tidemobileapp.com/index-en.html"/>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
