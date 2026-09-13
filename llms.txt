@@ -16,7 +16,7 @@ Tidemobile'ın öne çıkan ürünü **TerraVisa**, seyahat ve vize planlaması 
 ## Diğer Ürünler
 
 - LunaPara: Finansal farkındalık ve harcama davranışı takibi uygulaması (kapalı test aşamasında).
-- Modi: Öz bakım ve motivasyon uygulaması (kapalı test aşamasında).
+- Modi: Öz bakım ve motivasyon uygulaması. Google Play (https://play.google.com/store/apps/details?id=com.tidemobile.modi) ve App Store'da (https://apps.apple.com/app/id6762211248) herkese açık ve ücretsiz olarak yayında.
 
 ## Diğer Sayfalar
 
