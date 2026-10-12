@@ -320,7 +320,7 @@ h1,h2,h3,h4{font-family:var(--font-h);color:var(--brown);line-height:1.12;letter
 .contact-line{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;font-size:.84rem}
 .contact-line .ic{width:22px;height:22px;color:var(--brown)}
 .contact-line b{display:block;color:var(--brown)}
-.contact-line span{color:var(--brown-2);word-break:break-all}
+.contact-line span{color:var(--brown-2);overflow-wrap:anywhere}
 .side-card .btn{width:100%}
 .side-cat h3{font-size:1.1rem;line-height:1.3;margin-bottom:8px}
 .side-cat img{width:100%;margin-top:10px}
@@ -384,7 +384,7 @@ h1,h2,h3,h4{font-family:var(--font-h);color:var(--brown);line-height:1.12;letter
 .ccard .round svg{fill:#fff}
 .ccard h3{font-size:1.05rem;margin-bottom:4px}
 .ccard p{font-size:.82rem;color:var(--brown-2)}
-.ccard .val{border:1px solid var(--line);border-radius:10px;padding:11px;text-align:center;font-weight:700;color:var(--brown);font-size:.88rem;word-break:break-all;margin-top:auto}
+.ccard .val{border:1px solid var(--line);border-radius:10px;padding:11px;text-align:center;font-weight:700;color:var(--brown);font-size:.88rem;overflow-wrap:normal;margin-top:auto}
 .ccard .val.o{border-color:var(--orange-line);color:var(--orange)}
 .form-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:18px;margin-top:22px}
 .panel{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:26px}
@@ -532,3 +532,4 @@ h1,h2,h3,h4{font-family:var(--font-h);color:var(--brown);line-height:1.12;letter
 @media (max-width:900px){#journeys,#artgrid{grid-template-columns:repeat(2,1fr)}.head-art{justify-content:center;padding-right:150px}}
 @media (max-width:560px){.head-art{padding-right:130px}.head-art>img{width:min(190px,58%)}.hero-art .note{display:none}}
 .ccard .round svg[stroke]{fill:none}
+.ccard .val.mail{font-size:.78rem;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-inline:6px}
