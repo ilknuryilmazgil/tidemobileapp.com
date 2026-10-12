@@ -97,6 +97,25 @@
     msg.style.color = 'var(--green)'; msg.textContent = 'Mesajın e-posta uygulamanda hazırlandı. Göndermeyi unutma!';
   });
 
+
+  // "Uygulamada başla": cihaza göre mağaza, bilgisayarda seçim penceresi
+  var modal = $('#appModal');
+  var ua = navigator.userAgent || '';
+  var isIOS = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  var isAndroid = /Android/i.test(ua);
+  function storeUrl(kind) { var a = $('.store[data-store="' + kind + '"]'); return a ? a.href : null; }
+  function setModal(open) { if (!modal) return; modal.hidden = !open; document.body.style.overflow = open ? 'hidden' : ''; }
+  $$('[data-app]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var url = isIOS ? storeUrl('ios') : isAndroid ? storeUrl('android') : null;
+      e.preventDefault();
+      if (url) window.open(url, '_blank', 'noopener'); else setModal(true);
+    });
+  });
+  $$('[data-close-app]').forEach(function (b) { b.addEventListener('click', function () { setModal(false); }); });
+  if (modal) modal.addEventListener('click', function (e) { if (e.target === modal) setModal(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setModal(false); });
+
   // görünürken yumuşak giriş
   var fades = $$('.fade');
   if ('IntersectionObserver' in window) {

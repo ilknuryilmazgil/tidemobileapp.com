@@ -563,3 +563,16 @@ h1,h2,h3,h4{font-family:var(--font-h);color:var(--brown);line-height:1.12;letter
 /* SSS: açılan kutu yanındakini uzatmasın */
 .faq{align-items:start}
 .faq details{align-self:start}
+/* uygulamada başla bağlantısı + mağaza penceresi */
+.go-app{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:.84rem;color:var(--orange)}
+.go-app:hover .plus{transform:translateX(2px)}
+.go-app .plus{transition:transform .15s}
+.app-modal{position:fixed;inset:0;z-index:80;background:rgba(58,34,18,.4);display:grid;place-items:center;padding:16px}
+.app-modal[hidden]{display:none!important}
+.app-box{position:relative;background:var(--bg);border-radius:var(--r-lg);padding:28px 26px 26px;max-width:400px;width:100%;text-align:center;box-shadow:var(--shadow)}
+.app-box img{margin:0 auto 10px;mix-blend-mode:multiply}
+.app-box h2{font-size:1.3rem;margin-bottom:8px}
+.app-box p{font-size:.9rem;color:var(--brown-2);margin-bottom:18px}
+.app-box .store-row{justify-content:center}
+.app-x{position:absolute;right:10px;top:10px}
+.go-app .plus,.go-app .plus .ic{color:#fff;stroke:#fff}
