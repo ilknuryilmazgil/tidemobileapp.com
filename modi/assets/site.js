@@ -125,6 +125,23 @@
   if (modal) modal.addEventListener('click', function (e) { if (e.target === modal) setModal(false); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setModal(false); });
 
+
+  // "Modi nasıl çalışır?": video adımı ile kartlar senkron; görünürken oynar, kart tıklanınca o adıma atlar
+  var hv = $('#howVideo');
+  if (hv) {
+    var STEP_SEC = 4, cards = $$('.step-card'), reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches, loaded = false;
+    var mark = function (i) { cards.forEach(function (c, k) { c.classList.toggle('on', k === i); c.setAttribute('aria-selected', k === i ? 'true' : 'false'); }); };
+    var load = function () { if (loaded) return; loaded = true; $$('source', hv).forEach(function (s) { s.src = s.dataset.src; }); hv.load(); };
+    hv.addEventListener('timeupdate', function () { if (pending !== null) return; mark(Math.floor(hv.currentTime / STEP_SEC) % cards.length); });
+    var pending = null;
+    var apply = function () { if (pending === null || hv.readyState < 1) return; var t = pending; pending = null; try { hv.currentTime = t; } catch (e) {} };
+    ['loadedmetadata', 'loadeddata', 'canplay', 'playing'].forEach(function (ev) { hv.addEventListener(ev, apply); });
+    cards.forEach(function (c, k) { c.addEventListener('click', function () { mark(k); if (reduce) return; load(); pending = k * STEP_SEC + 0.05; apply(); var p = hv.play(); if (p && p.then) p.then(apply).catch(function () {}); }); });
+    if (!reduce && 'IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { load(); var p = hv.play(); if (p && p.catch) p.catch(function () {}); } else hv.pause(); }); }, { threshold: 0.35 }).observe(hv);
+    }
+  }
+
   // görünürken yumuşak giriş
   var fades = $$('.fade');
   if ('IntersectionObserver' in window) {
