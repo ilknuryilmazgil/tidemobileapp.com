@@ -533,3 +533,25 @@ h1,h2,h3,h4{font-family:var(--font-h);color:var(--brown);line-height:1.12;letter
 @media (max-width:560px){.head-art{padding-right:130px}.head-art>img{width:min(190px,58%)}.hero-art .note{display:none}}
 .ccard .round svg[stroke]{fill:none}
 .ccard .val.mail{font-size:.78rem;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-inline:6px}
+/* mobil düzeltmeler */
+@media (max-width:900px){
+  .legal{display:flex;flex-direction:column}
+  .legal>.content,.legal>article{order:1}
+  .legal>.side{order:2}
+  .side-cat{display:none}
+  .remind{padding-right:20px}
+  .meet>img{max-width:220px;margin:0 auto}
+}
+@media (max-width:560px){
+  .tcard .media{aspect-ratio:auto;padding:22px 0}
+  .tcard .media .big{width:64px;height:64px;border-radius:20px}
+  .jcard .body>p{display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+  .join{grid-template-columns:1fr;padding:22px}
+  .polaroids{grid-template-columns:repeat(3,1fr);gap:8px}
+  .polaroid{padding:6px 6px 10px;font-size:.68rem}
+  .meet .note{font-size:1.15rem;padding:22px 20px 30px}
+  .theme b{font-size:.9rem}
+  .head-art{min-height:190px}
+  .page-head{padding-top:14px}
+  .fcard .meta span{font-size:.8rem}
+}
