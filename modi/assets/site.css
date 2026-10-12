@@ -555,3 +555,11 @@ h1,h2,h3,h4{font-family:var(--font-h);color:var(--brown);line-height:1.12;letter
   .page-head{padding-top:14px}
   .fcard .meta span{font-size:.8rem}
 }
+/* yolculuklar başlık görseli: kenarları saydam, sıkışmadan */
+.coll-hero .wrap{min-height:340px}
+.coll-hero .art{align-self:stretch;display:flex;align-items:flex-end;justify-content:flex-end}
+.coll-hero .art img{width:100%;max-width:720px;margin-left:auto;mix-blend-mode:multiply;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 20%,#000 90%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 18%,#000 82%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent 0,#000 20%,#000 90%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 18%,#000 82%,transparent 100%);mask-composite:intersect}
+
+/* SSS: açılan kutu yanındakini uzatmasın */
+.faq{align-items:start}
+.faq details{align-self:start}
