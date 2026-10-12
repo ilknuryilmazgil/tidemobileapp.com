@@ -603,3 +603,9 @@ h1,h2,h3,h4{font-family:var(--font-h);color:var(--brown);line-height:1.12;letter
 .phone-frame video{width:100%;height:100%;border-radius:30px;display:block;object-fit:cover;background:#FFF8EE}
 @media (max-width:900px){.how{grid-template-columns:1fr;gap:26px}.how-phone{order:-1}.phone-frame{width:220px}}
 @media (max-width:560px){.how-steps{grid-template-columns:1fr}.phone-frame{width:200px}}
+/* mağaza rozetleri: iki rozet de birebir aynı ölçüde siyah kutu */
+.store-badge{--bw:168px;--bh:50px;width:var(--bw);height:var(--bh);background:#000;border:1px solid #a6a6a6;border-radius:9px;display:inline-flex!important;align-items:center;justify-content:center;overflow:hidden;line-height:0;flex:none}
+.store-badge img{height:auto!important;width:auto!important;max-width:100%!important;max-height:100%!important}
+.fdl .store-badge{--bw:160px;--bh:48px;display:flex!important;margin-bottom:10px}
+.app-box .store-badge,.drawer .store-badge{--bw:160px;--bh:48px}
+@media (max-width:560px){.store-badge{--bw:156px;--bh:47px}}
