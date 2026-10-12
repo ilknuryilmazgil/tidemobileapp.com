@@ -577,3 +577,4 @@ h1,h2,h3,h4{font-family:var(--font-h);color:var(--brown);line-height:1.12;letter
 .app-x{position:absolute;right:10px;top:10px}
 .go-app .plus,.go-app .plus .ic{color:#fff;stroke:#fff}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.cta-band>img{align-self:center;max-width:220px;margin:14px auto}
