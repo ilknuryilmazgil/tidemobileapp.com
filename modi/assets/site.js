@@ -112,7 +112,7 @@
   var ua = navigator.userAgent || '';
   var isIOS = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
   var isAndroid = /Android/i.test(ua);
-  function storeUrl(kind) { var a = $('.store[data-store="' + kind + '"]'); return a ? a.href : null; }
+  function storeUrl(kind) { var a = $('[data-store="' + kind + '"]'); return a ? a.href : null; }
   function setModal(open) { if (!modal) return; modal.hidden = !open; document.body.style.overflow = open ? 'hidden' : ''; }
   $$('[data-app]').forEach(function (a) {
     a.addEventListener('click', function (e) {

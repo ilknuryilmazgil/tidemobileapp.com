@@ -578,3 +578,11 @@ h1,h2,h3,h4{font-family:var(--font-h);color:var(--brown);line-height:1.12;letter
 .go-app .plus,.go-app .plus .ic{color:#fff;stroke:#fff}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .cta-band>img{align-self:center;max-width:220px;margin:14px auto}
+/* resmi mağaza rozetleri */
+.store-row{align-items:center}
+.store-badge{display:inline-block;line-height:0;transition:transform .15s,opacity .15s}
+.store-badge:hover{transform:translateY(-1px);opacity:.92}
+.store-badge img{height:48px;width:auto;max-width:none;mix-blend-mode:normal}
+.fdl .store-badge{display:block;margin-bottom:10px}
+.fdl .store-badge img{height:44px}
+.fcol a.store-badge{margin-bottom:10px}
