@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Kalam:wght@400&family=Outfit:wght@500;600;700&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=14">
+<link rel="stylesheet" href="assets/site.css?v=15">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"ContactPage","@id":"https://tidemobileapp.com/modi/iletisim.html#page","url":"https://tidemobileapp.com/modi/iletisim.html","name":"İletişim | Modi Uygulaması","description":"Modi ekibine e-posta, Instagram veya TikTok üzerinden ulaş. Soruların, önerilerin ve geri bildirimlerin için buradayız.","isPartOf":{"@id":"https://tidemobileapp.com/modi/#site"},"inLanguage":"tr","mainEntity":{"@id":"https://tidemobileapp.com/#org"}},{"@type":"Organization","@id":"https://tidemobileapp.com/#org","name":"Tidemobile","alternateName":"TideMobile","url":"https://tidemobileapp.com/","logo":"https://tidemobileapp.com/assets/logo.jpg","email":"tidemobile.contact@gmail.com","sameAs":["https://www.instagram.com/tidemobile","https://www.tiktok.com/@tidemobile","https://www.linkedin.com/company/tide-mobile/"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Ana Sayfa","item":"https://tidemobileapp.com/modi/index.html"},{"@type":"ListItem","position":2,"name":"İletişim","item":"https://tidemobileapp.com/modi/iletisim.html"}]}]}</script>
 </head>
 <body><div class="announce" id="announce"><a href="index.html#indir"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></svg> Modi artık App Store ve Google Play'de. Ücretsiz indir <svg class="heart-i" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></a><button class="announce-x" aria-label="Duyuruyu kapat" data-close-announce><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
@@ -58,8 +58,8 @@
     <div class="ccard fade"><div class="top"><span class="round"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><path d="m4.93 4.93 4.24 4.24M14.83 9.17l4.24-4.24M14.83 14.83l4.24 4.24M9.17 14.83l-4.24 4.24"/></svg></span><div><h3>Acil destek</h3><p>Kendini güvende hissetmiyorsan hemen ara.</p></div></div><a class="val o" href="tel:112">112 Acil Çağrı</a></div>
   </div>
   <div class="form-grid">
-    <section class="panel fade"><h2><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg> Bizimle iletişime geç</h2><p class="small">Formu doldur; mesajın e-posta uygulamanda hazır olarak açılsın.</p>
-      <form id="contactForm" novalidate><div class="fields">
+    <section class="panel fade"><h2><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg> Bizimle iletişime geç</h2><p class="small">Formu doldur, mesajın doğrudan Modi ekibine ulaşsın.</p>
+      <form id="contactForm" novalidate><div class="hp" aria-hidden="true"><label>Web siteniz<input name="website" tabindex="-1" autocomplete="off"></label></div><div class="fields">
         <div class="field"><label for="f-ad">Adın <i>*</i></label><input id="f-ad" name="ad" placeholder="Adını yaz" required></div>
         <div class="field"><label for="f-mail">E-posta adresin <i>*</i></label><input id="f-mail" name="mail" type="email" placeholder="ornek@email.com" required></div>
         <div class="field"><label for="f-konu">Konu <i>*</i></label><select id="f-konu" name="konu" required><option value="">Konu seç</option><option>Uygulama hakkında soru</option><option>Hesap ve giriş</option><option>Premium ve ödeme</option><option>Öneri ve geri bildirim</option><option>İş birliği</option><option>Diğer</option></select></div>
@@ -67,8 +67,8 @@
         <div class="field full"><label for="f-msg">Mesajın <i>*</i></label><textarea id="f-msg" name="mesaj" placeholder="Sana nasıl yardımcı olabiliriz?" required></textarea></div>
       </div>
       <label class="check"><input type="checkbox" id="f-kvkk" required><span><a href="https://tidemobileapp.com/kvkk.html" target="_blank" rel="noopener">KVKK Aydınlatma Metni</a>'ni okudum ve kabul ediyorum.</span></label>
-      <button class="btn btn-primary" style="width:100%" type="submit">Mesajı Hazırla <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></button><p class="form-msg" id="formMsg" role="status"></p></form>
-      <div class="form-note"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg><span>Bu form hiçbir veriyi sunucuya göndermez; mesajın yalnızca kendi e-posta uygulamanda açılır. Kişisel verilerin KVKK ve Gizlilik Politikamız kapsamında korunur.</span></div>
+      <button class="btn btn-primary" style="width:100%" type="submit">Mesajı Gönder <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></button><p class="form-msg" id="formMsg" role="status"></p></form>
+      <div class="form-note"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg><span>Mesajın yalnızca sana yanıt verebilmek için güvenli sunucularımızda saklanır ve Modi ekibine iletilir. Kişisel verilerin KVKK ve Gizlilik Politikamız kapsamında korunur.</span></div>
     </section>
     <div>
       <section class="panel fade"><h2>Diğer iletişim kanalları</h2><p class="small">Sana en uygun kanaldan bize ulaşabilirsin.</p>
@@ -98,6 +98,6 @@
     <div class="footer-bottom"><span>© 2026 Modi by TideMobile. Tüm hakları saklıdır.</span><span>Seni gülümsetmek için yapıldı. <svg class="heart-i" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></span><span class="stores-txt">App Store · Google Play</span></div>
   </div>
 </footer>
-<script src="assets/site.js?v=3" defer></script>
+<script src="assets/site.js?v=4" defer></script>
 </body>
 </html>

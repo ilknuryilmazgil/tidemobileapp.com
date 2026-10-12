@@ -85,18 +85,27 @@
     sideLinks.forEach(function (l) { var t = document.getElementById(l.getAttribute('href').slice(1)); if (t) io.observe(t); });
   }
 
-  // iletişim formu: e-posta uygulamasında hazır mesaj açar
+  // iletişim formu: mesajı doğrudan Modi ekibine iletir
   var form = $('#contactForm');
   if (form) form.addEventListener('submit', function (e) {
     e.preventDefault();
-    var msg = $('#formMsg'), f = form.elements;
-    if (!f.ad.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.mail.value) || !f.konu.value || !f.mesaj.value.trim()) { msg.style.color = 'var(--orange)'; msg.textContent = 'Lütfen yıldızlı alanların hepsini doldur.'; return; }
-    if (!$('#f-kvkk').checked) { msg.style.color = 'var(--orange)'; msg.textContent = 'Devam etmek için KVKK Aydınlatma Metni onayını işaretle.'; return; }
-    var body = 'Ad: ' + f.ad.value + '\nE-posta: ' + f.mail.value + '\nCihaz: ' + f.cihaz.value + '\n\n' + f.mesaj.value;
-    window.location.href = 'mailto:tidemobile.contact@gmail.com?subject=' + encodeURIComponent('[Modi] ' + f.konu.value) + '&body=' + encodeURIComponent(body);
-    msg.style.color = 'var(--green)'; msg.textContent = 'Mesajın e-posta uygulamanda hazırlandı. Göndermeyi unutma!';
+    var msg = $('#formMsg'), f = form.elements, btn = form.querySelector('button[type="submit"]');
+    function say(t, ok) { msg.style.color = ok ? 'var(--green)' : 'var(--orange)'; msg.textContent = t; }
+    if (!f.ad.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(f.mail.value.trim()) || !f.konu.value || f.mesaj.value.trim().length < 2) { say('Lütfen yıldızlı alanların hepsini doldur.'); return; }
+    if (!$('#f-kvkk').checked) { say('Devam etmek için KVKK Aydınlatma Metni onayını işaretle.'); return; }
+    btn.disabled = true; var label = btn.innerHTML; btn.textContent = 'Gönderiliyor...';
+    fetch('https://europe-west1-modi-76f7c.cloudfunctions.net/iletisimFormu', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ad: f.ad.value, mail: f.mail.value, konu: f.konu.value, cihaz: f.cihaz.value, mesaj: f.mesaj.value, website: f.website ? f.website.value : '', kvkk: true })
+    }).then(function (r) { return r.json().then(function (j) { return { s: r.status, j: j }; }); })
+      .then(function (r) {
+        if (r.j && r.j.ok) { form.reset(); say('Mesajın bize ulaştı, teşekkürler! En kısa sürede e-posta ile dönüş yapacağız. 🐱', true); }
+        else if (r.s === 429) say('Kısa sürede çok fazla mesaj gönderildi. Biraz sonra tekrar dener misin?');
+        else say('Mesaj gönderilemedi. Bilgileri kontrol edip tekrar dene ya da tidemobile.contact@gmail.com adresine yaz.');
+      })
+      .catch(function () { say('Bağlantı sorunu oluştu. Tekrar dene ya da tidemobile.contact@gmail.com adresine yaz.'); })
+      .then(function () { btn.disabled = false; btn.innerHTML = label; });
   });
-
 
   // "Uygulamada başla": cihaza göre mağaza, bilgisayarda seçim penceresi
   var modal = $('#appModal');
