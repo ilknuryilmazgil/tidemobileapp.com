@@ -103,7 +103,9 @@
 .doc .contact-item{display:flex;gap:12px;align-items:flex-start;padding:16px;border-radius:14px;background:rgba(255,255,255,.55);box-shadow:inset 0 0 0 1px var(--line);font-size:.92rem}
 .doc .contact-icon{display:grid;place-items:center;width:34px;height:34px;flex:none;border-radius:50%;color:var(--teal-d);background:rgba(101,187,182,.18)}
 .doc .contact-icon svg{width:16px;height:16px}
-.doc code{font-size:.88em;padding:1px 6px;border-radius:6px;background:rgba(28,71,95,.07)}
+.doc code{font-size:.88em;padding:1px 6px;border-radius:6px;background:rgba(28,71,95,.07);overflow-wrap:anywhere;word-break:break-word}
+.article-wrap>*,.legal-wrap>*,.posts>*,.svc>*,.stack>*,.proc>*{min-width:0}
+.prose,.doc{overflow-wrap:break-word}
 .doc-updated{margin-top:2.4em;padding-top:18px;border-top:1px solid var(--line);font-size:.86rem;color:var(--mute)}
 
 /* teknik ortaklık */

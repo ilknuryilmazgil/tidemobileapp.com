@@ -65,7 +65,7 @@ SOCIAL = '''<a href="https://www.linkedin.com/company/tide-mobile/" rel="noopene
             <a href="https://www.instagram.com/tidemobile" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5A3.95 3.95 0 0 0 7.75 20.2h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5A3.95 3.95 0 0 0 16.25 3.8h-8.5Zm8.95 1.35a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3ZM12 6.85A5.15 5.15 0 1 1 6.85 12 5.16 5.16 0 0 1 12 6.85Zm0 1.8A3.35 3.35 0 1 0 15.35 12 3.35 3.35 0 0 0 12 8.65Z"/></svg></a>
             <a href="https://www.tiktok.com/@tidemobile" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.2 3h2.38a4.9 4.9 0 0 0 4.17 4.15v2.43a7.27 7.27 0 0 1-4.15-1.3v6.32a5.6 5.6 0 1 1-5.6-5.6c.3 0 .6.03.88.08v2.47a3.14 3.14 0 0 0-.88-.13 3.18 3.18 0 1 0 3.2 3.18Z"/></svg></a>'''
 
-V = "7"  # önbellek sürümü
+V = "9"  # önbellek sürümü
 
 
 def esc(s):
