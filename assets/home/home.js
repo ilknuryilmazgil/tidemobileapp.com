@@ -32,12 +32,43 @@
     var addGlobe = function () {
       if (addGlobe.done) return; addGlobe.done = 1;
       var s = document.createElement('script');
-      s.src = 'assets/home/globe.js?v=2'; s.async = true;
+      s.src = 'assets/home/globe.js?v=3'; s.async = true;
       document.body.appendChild(s);
     };
     var idle = window.requestIdleCallback || function (f) { return setTimeout(f, 600); };
     if (document.readyState === 'complete') idle(addGlobe);
     else window.addEventListener('load', function () { idle(addGlobe); });
+  }
+
+  var faqToggle = document.getElementById('faqToggle');
+  var faqMore = document.getElementById('faqMore');
+  if (faqToggle && faqMore) {
+    var en0 = document.documentElement.lang === 'en';
+    faqToggle.addEventListener('click', function () {
+      var open = faqMore.hidden;
+      faqMore.hidden = !open;
+      faqToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      faqToggle.firstChild.textContent = open
+        ? (en0 ? 'Show fewer questions ' : 'Daha az soru göster ')
+        : (en0 ? 'Show all questions ' : 'Tüm soruları göster ');
+    });
+  }
+
+  var pv = document.getElementById('pressVideo');
+  var pp = document.getElementById('pressPlay');
+  if (pv && pp) {
+    pv.controls = false; // kendi oynat düğmemiz; JS yoksa tarayıcı kontrolleri kalır
+    pp.addEventListener('click', function () {
+      pv.controls = true;
+      pv.parentNode.classList.add('is-playing');
+      var p = pv.play();
+      if (p && p.catch) p.catch(function () {});
+      pv.focus();
+    });
+    pv.addEventListener('play', function () {
+      pv.parentNode.classList.add('is-playing');
+      if (window.gtag) gtag('event', 'video_play', { video_title: 'ITS 2026 roportaj' });
+    });
   }
 
   var form = document.getElementById('contactForm');
