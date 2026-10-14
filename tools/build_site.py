@@ -30,7 +30,7 @@ T = {
   "home": "index.html", "skip": "İçeriğe geç", "menu": "Menüyü aç", "home_label": "Tide Mobile ana sayfa",
   "nav": [("#hakkimizda", "Hakkımızda"), ("#vizyon", "Vizyon"), ("#ekip", "Ekip"), ("#yol-haritasi", "Yol Haritası"), ("#uygulamalar", "Uygulamalar"), ("teknik-ortaklik.html", "Teknik Ortaklık"), ("blog.html", "Blog"), ("#iletisim", "İletişim")],
   "lang_btn": "EN", "lang_label": "English version", "crumb_home": "Ana Sayfa",
-  "legal": [("kvkk.html", "KVKK Aydınlatma Metni"), ("gizlilik.html", "Gizlilik Politikası"), ("modi-kullanim-kosullari.html", "Modi Kullanım Koşulları")],
+  "legal": [("kvkk.html", "KVKK Aydınlatma Metni"), ("gizlilik.html", "Gizlilik Politikası"), ("modi-kullanim-kosullari.html", "Modi Kullanım Koşulları"), ("gizlilik.html#3-cerezler-ve-benzeri-teknolojiler", "Çerez Tercihleri")],
   "rights": "© 2026 Tide Mobile. Tüm hakları saklıdır.", "city": "Adana, Türkiye",
   "months": ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"],
   "read": "{} dk okuma", "toc": "Bu yazıda", "author": "Yazar", "related_label": "Okumaya devam et", "related_h": "Benzer <em>yazılar.</em>",
@@ -42,7 +42,7 @@ T = {
   "home": "index-en.html", "skip": "Skip to content", "menu": "Open menu", "home_label": "Tide Mobile home",
   "nav": [("#about", "About"), ("#vision", "Vision"), ("#team", "Team"), ("#roadmap", "Roadmap"), ("#apps", "Apps"), ("teknik-ortaklik-en.html", "Technical Partnership"), ("blog-en.html", "Blog"), ("#contact", "Contact")],
   "lang_btn": "TR", "lang_label": "Türkçe sürüm", "crumb_home": "Home",
-  "legal": [("kvkk.html", "KVKK Privacy Notice (TR)"), ("gizlilik.html", "Privacy Policy (TR)"), ("modi-kullanim-kosullari.html", "Modi Terms of Use (TR)")],
+  "legal": [("kvkk.html", "KVKK Privacy Notice (TR)"), ("gizlilik.html", "Privacy Policy (TR)"), ("modi-kullanim-kosullari.html", "Modi Terms of Use (TR)"), ("gizlilik.html#3-cerezler-ve-benzeri-teknolojiler", "Cookie Settings")],
   "rights": "© 2026 Tide Mobile. All rights reserved.", "city": "Adana, Türkiye",
   "months": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
   "read": "{} min read", "toc": "In this article", "author": "Author", "related_label": "Keep reading", "related_h": "Related <em>articles.</em>",
@@ -136,8 +136,8 @@ def head(lang, title, desc, path, alt=None, og=None, og_type="website", ld=None,
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/switzer-400.woff2" crossorigin />
   <link rel="stylesheet" href="assets/home/home.css?v={V}" />
   <link rel="stylesheet" href="assets/home/page.css?v={V}" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KWZ9E0MQ41"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','G-KWZ9E0MQ41');</script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('consent','default',{{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied'}});</script>
+  <script src="assets/consent.js?v=1" defer></script>
 </head>
 <body>
   <a class="skip" href="#icerik">{t['skip']}</a>
@@ -174,7 +174,7 @@ def nav(lang, alt, active=None):
 def footer(lang):
     t = T[lang]
     links = "\n".join(f'            <li><a href="{(t["home"] + h) if h.startswith("#") else h}">{l}</a></li>' for h, l in t["nav"])
-    legal = "\n".join(f'            <li><a href="{h}">{l}</a></li>' for h, l in t["legal"])
+    legal = "\n".join(f'            <li><a href="{h}"{" data-cerez-tercih" if "cerez" in h else ""}>{l}</a></li>' for h, l in t["legal"])
     return f'''  <footer class="footer">
     <svg class="foot-waves" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
       <path d="M0 60C180 20 360 10 560 40s360 70 560 50 260-60 320-70V120H0z" fill="#329aa1"/>

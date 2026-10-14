@@ -187,6 +187,7 @@ PAIRS = [
  ('<li><a href="kvkk.html">KVKK Aydınlatma Metni</a></li>', '<li><a href="kvkk.html">KVKK Privacy Notice (TR)</a></li>'),
  ('<li><a href="gizlilik.html">Gizlilik Politikası</a></li>', '<li><a href="gizlilik.html">Privacy Policy (TR)</a></li>'),
  ('<li><a href="modi-kullanim-kosullari.html">Modi Kullanım Koşulları</a></li>', '<li><a href="modi-kullanim-kosullari.html">Modi Terms of Use (TR)</a></li>'),
+ ('data-cerez-tercih>Çerez Tercihleri</a></li>', 'data-cerez-tercih>Cookie Settings</a></li>'),
 ]
 
 # Türkçe kalmasına izin verilen özel adlar
