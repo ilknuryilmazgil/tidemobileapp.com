@@ -99,9 +99,10 @@ PAIRS = [
  (">Haberdar ol <", ">Get notified <"),
  ("<i class=\"dot\"></i>Geliştirme<br>aşamasında", "<i class=\"dot\"></i>In<br>development"),
  # basında
- ('aria-label="Haberler.com röportajı: Tide Mobile Kurucu Ortağı C. Tanıl Tabakoğlu, ITS 2026"', 'aria-label="Haberler.com interview: Tide Mobile Co-Founder C. Tanıl Tabakoğlu, ITS 2026 (in Turkish)"'),
+ ('aria-label="Haberler.com röportajı: Tide Mobile Kurucu Ortağı C. Tanıl Tabakoğlu, ITS 2026"></video>',
+  'aria-label="Haberler.com interview: Tide Mobile Co-Founder C. Tanıl Tabakoğlu, ITS 2026 (in Turkish with English subtitles)"><track kind="subtitles" srclang="en" label="English" src="assets/home/its-roportaj-en.vtt" default /></video>'),
  ('aria-label="Röportajı oynat"', 'aria-label="Play the interview"'),
- ("<figcaption>Görüntü: Haberler.com · ITS 2026, İstanbul</figcaption>", "<figcaption>Footage: Haberler.com · ITS 2026, Istanbul · In Turkish</figcaption>"),
+ ("<figcaption>Görüntü: Haberler.com · ITS 2026, İstanbul</figcaption>", "<figcaption>Footage: Haberler.com · ITS 2026, Istanbul · In Turkish with English subtitles</figcaption>"),
  ('<span>Basında <span lang="en">Tide Mobile</span></span>', "<span>Tide Mobile in the press</span>"),
  ("ITS 2026'da <em>Modi'yi anlattık.</em>", "We introduced Modi <em>at ITS 2026.</em>"),
  ("3. Uluslararası İhracat ve Yatırım Zirvesi'nde (ITS 2026) Kurucu Ortağımız C. Tanıl Tabakoğlu, Haberler.com'a Tide Mobile'ın çıkış hikâyesini ve Modi'yi anlattı.",

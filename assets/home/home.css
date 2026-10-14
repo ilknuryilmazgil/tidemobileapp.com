@@ -250,6 +250,7 @@ h1 em,.h2 em,.h3 em{font-family:var(--f-serif);font-style:italic;font-weight:400
 .pv-play:hover .pv-ring{transform:scale(1.07)}
 .pv-time{position:absolute;right:18px;bottom:16px;padding:4px 10px;border-radius:999px;font-family:var(--f-head);font-size:.78rem;font-weight:500;background:rgba(16,48,63,.65);backdrop-filter:blur(6px)}
 .pv-frame.is-playing .pv-play{display:none}
+.pv-frame video::cue{font-family:var(--f-body);font-size:1.02rem;line-height:1.35;color:#fff;background:rgba(16,48,63,.82)}
 .press-video figcaption{margin-top:16px;font-size:.8rem;color:var(--mute);padding-left:4px}
 .press-copy .h2{margin-bottom:18px}
 .press-lead{color:var(--ink-2);margin-bottom:28px;max-width:480px}
