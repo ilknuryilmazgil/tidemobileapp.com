@@ -1,305 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KWZ9E0MQ41"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-KWZ9E0MQ41');
-  </script>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tidemobile: Technical Partnership</title>
-  <meta name="description" content="Tidemobile technical partnership portfolio: AI-native mobile app development, premium UI/UX engineering, data-driven dashboards, and interactive experiences." />
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="alternate" hreflang="tr" href="teknik-ortaklik.html" />
-  <link rel="alternate" hreflang="en" href="teknik-ortaklik-en.html" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg: #ffffff;
-      --bg-warm: #ede9e2;
-      --bg-card: #f8f5f0;
-      --navy: #1a2a4a;
-      --navy-dark: #1c2a3a;
-      --teal: #3aa0a0;
-      --body-text: #5a7080;
-      --muted: #7a90a8;
-      --very-muted: #9aabb8;
-      --btn-bg: #1a2a4a;
-      --btn-text: #ede9e2;
-      --teal-dim: rgba(58,160,160,0.1);
-      --teal-border: rgba(58,160,160,0.25);
-      --card-border: rgba(26,42,74,0.1);
-      --card-shadow: rgba(26,42,74,0.08);
-    }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
-      color: var(--body-text);
-      line-height: 1.65;
-    }
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      height: 64px; display: flex; align-items: center; justify-content: space-between;
-      padding: 0 5vw; background: rgba(255,255,255,0.92); backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(26,42,74,0.08);
-    }
-    .nav-logo { display: flex; align-items: center; gap: 9px; text-decoration: none; }
-    .nav-logo img { width: 32px; height: 32px; border-radius: 10px; object-fit: contain; }
-    .nav-logo-text { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--navy-dark); }
-    .nav-links { display: flex; align-items: center; gap: 18px; list-style: none; }
-    .nav-links a { text-decoration: none; color: var(--body-text); font-size: 0.88rem; }
-    .nav-links a:hover, .nav-links a.is-active { color: var(--navy); }
-    .nav-cta {
-      display: inline-flex; align-items: center; justify-content: center; text-decoration: none;
-      padding: 10px 18px; border-radius: 999px; background: var(--btn-bg); color: var(--btn-text);
-      font-size: 0.85rem; font-weight: 600;
-    }
-    .nav-cta:hover { background: var(--teal); color: #fff; }
-    main { overflow: hidden; }
-    .hero {
-      padding: 86px 8vw 52px; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 38px; align-items: center;
-      background: linear-gradient(180deg, rgba(58,160,160,0.05), rgba(58,160,160,0));
-    }
-    .badge {
-      display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px;
-      background: var(--teal-dim); border: 1px solid var(--teal-border); color: var(--teal);
-      border-radius: 999px; padding: 6px 12px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-    }
-    .hero h1, .section-title {
-      font-family: 'Bricolage Grotesque', sans-serif; color: var(--navy);
-      letter-spacing: -0.03em;
-    }
-    .hero h1 { font-size: clamp(2.3rem, 4.4vw, 3.8rem); line-height: 1.04; margin-bottom: 18px; }
-    .hero p { max-width: 720px; font-size: 1rem; }
-    .hero-actions, .cta-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
-    .btn-primary, .btn-secondary {
-      display: inline-flex; align-items: center; justify-content: center; text-decoration: none;
-      padding: 12px 22px; border-radius: 999px; font-size: 0.9rem; font-weight: 600;
-      transition: transform .15s ease, background .2s ease, color .2s ease, border-color .2s ease;
-    }
-    .btn-primary { background: var(--btn-bg); color: var(--btn-text); }
-    .btn-primary:hover { background: var(--teal); color: #fff; transform: translateY(-1px); }
-    .btn-secondary { background: rgba(255,255,255,0.78); color: var(--navy); border: 1px solid rgba(26,42,74,0.12); }
-    .btn-secondary:hover { color: var(--teal); border-color: rgba(58,160,160,0.35); background: rgba(58,160,160,0.08); transform: translateY(-1px); }
-    .hero-panel {
-      background: var(--bg); border: 1px solid var(--card-border); border-radius: 28px; padding: 28px;
-      box-shadow: 0 14px 40px rgba(26,42,74,0.06);
-    }
-    .hero-panel-title { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; }
-    .hero-panel-list { display: grid; gap: 14px; }
-    .hero-panel-item { padding: 14px 16px; border-radius: 18px; background: var(--bg-card); border: 1px solid rgba(26,42,74,0.08); }
-    .hero-panel-item strong { display: block; color: var(--navy); margin-bottom: 4px; font-size: 0.95rem; }
-    .section { padding: 0 8vw 88px; scroll-margin-top: 92px; }
-    .hero { scroll-margin-top: 92px; }
-    [id] { scroll-margin-top: 92px; }
-    .section-head { max-width: 760px; margin-bottom: 30px; }
-    .section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 12px; }
-    .section-title { font-size: clamp(1.85rem, 3vw, 2.6rem); line-height: 1.1; margin-bottom: 14px; }
-    .section-body { font-size: 0.97rem; }
-    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .card {
-      background: var(--bg-card); border: 1px solid var(--card-border); border-radius: 24px; padding: 26px;
-      box-shadow: 0 10px 30px rgba(26,42,74,0.04);
-    }
-    .card-topline { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 10px; }
-    .card h3 { font-family: 'Bricolage Grotesque', sans-serif; color: var(--navy); font-size: 1.15rem; line-height: 1.18; margin-bottom: 10px; }
-    .card p { font-size: 0.9rem; margin-bottom: 10px; }
-    .card p:last-child { margin-bottom: 0; }
-    .card strong { color: var(--navy); }
-    .arsenal {
-      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px;
-    }
-    .arsenal-item {
-      background: var(--bg); border: 1px solid var(--card-border); border-radius: 20px; padding: 22px;
-      box-shadow: 0 8px 24px rgba(26,42,74,0.04);
-    }
-    .arsenal-item h3 { font-family: 'Bricolage Grotesque', sans-serif; color: var(--navy); font-size: 1rem; margin-bottom: 8px; }
-    .arsenal-item p { font-size: 0.87rem; }
-    .why {
-      background: linear-gradient(180deg, rgba(58,160,160,0.07), rgba(58,160,160,0.03));
-      border: 1px solid rgba(58,160,160,0.16);
-      border-radius: 28px; padding: 34px;
-    }
-    .why p { max-width: 900px; font-size: 0.97rem; }
-    .note {
-      margin-top: 20px; padding: 16px 18px; border-radius: 18px; background: rgba(255,255,255,0.75);
-      border: 1px solid rgba(26,42,74,0.08); color: var(--navy); font-size: 0.88rem;
-    }
-    .cta {
-      padding: 0 8vw 100px;
-    }
-    .cta-box {
-      background: var(--navy); color: rgba(255,255,255,0.88); border-radius: 30px; padding: 40px;
-      display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center;
-    }
-    .cta-box h2 { font-family: 'Bricolage Grotesque', sans-serif; color: #fff; font-size: clamp(1.8rem, 3vw, 2.4rem); line-height: 1.08; margin-bottom: 10px; }
-    .cta-box p { max-width: 720px; }
-    footer {
-      padding: 28px 8vw 38px; border-top: 1px solid rgba(26,42,74,0.08); display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: space-between;
-    }
-    .footer-left { display: flex; align-items: center; gap: 10px; }
-    .footer-left img { width: 28px; height: 28px; border-radius: 8px; }
-    .footer-logo-text { font-family: 'Bricolage Grotesque', sans-serif; color: var(--navy); font-weight: 700; }
-    .footer-copy { font-size: 0.78rem; color: var(--very-muted); }
-    @media (max-width: 980px) {
-      .hero, .grid-2, .arsenal, .cta-box { grid-template-columns: 1fr; }
-      .hero { padding-top: 72px; }
-      .cta-box { padding: 32px; }
-    }
-    @media (max-width: 700px) {
-      nav { padding: 0 5vw; }
-      .nav-links { display: none; }
-      .hero, .section, .cta { padding-left: 5vw; padding-right: 5vw; }
-      .hero-panel, .card, .why, .cta-box { padding: 22px; border-radius: 22px; }
-      .hero-actions .btn-primary, .hero-actions .btn-secondary, .cta-actions .btn-primary, .cta-actions .btn-secondary { width: 100%; }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Technical Partnership: Mobile App Development and UI/UX | Tide Mobile</title>
+  <meta name="description" content="AI-powered mobile apps, React Native and Flutter UI/UX, data dashboards and Unity experiences for agencies and brands. Tide Mobile, Adana, Türkiye." />
+  <link rel="canonical" href="https://tidemobileapp.com/teknik-ortaklik-en.html" />
+  <link rel="alternate" hreflang="tr" href="https://tidemobileapp.com/teknik-ortaklik.html" />
+  <link rel="alternate" hreflang="en" href="https://tidemobileapp.com/teknik-ortaklik-en.html" />
+  <link rel="alternate" hreflang="x-default" href="https://tidemobileapp.com/teknik-ortaklik-en.html" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <meta name="theme-color" content="#f5ecdb" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="assets/home/apple-touch-icon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Tide Mobile" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://tidemobileapp.com/teknik-ortaklik-en.html" />
+  <meta property="og:title" content="Technical Partnership: Mobile App Development and UI/UX | Tide Mobile" />
+  <meta property="og:description" content="AI-powered mobile apps, React Native and Flutter UI/UX, data dashboards and Unity experiences for agencies and brands. Tide Mobile, Adana, Türkiye." />
+  <meta property="og:image" content="https://tidemobileapp.com/assets/home/og-tidemobile-en.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Technical Partnership: Mobile App Development and UI/UX | Tide Mobile" />
+  <meta name="twitter:description" content="AI-powered mobile apps, React Native and Flutter UI/UX, data dashboards and Unity experiences for agencies and brands. Tide Mobile, Adana, Türkiye." />
+  <meta name="twitter:image" content="https://tidemobileapp.com/assets/home/og-tidemobile-en.jpg" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Service","@id":"https://tidemobileapp.com/teknik-ortaklik-en.html#service","name":"Technical Partnership: Mobile App Development and UI/UX","serviceType":"Mobile app development","description":"AI-powered mobile apps, React Native and Flutter UI/UX, data dashboards and Unity experiences for agencies and brands. Tide Mobile, Adana, Türkiye.","provider":{"@id":"https://tidemobileapp.com/#org"},"areaServed":["TR","Worldwide"],"inLanguage":"en","hasOfferCatalog":{"@type":"OfferCatalog","name":"Four areas of work.","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"AI-powered mobile apps","description":"We connect OpenAI, Anthropic or open-source language models to mobile apps. Not just an API call: character, conversation flow and safety rules included."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"UI/UX implementation","description":"We bring Figma or Adobe XD designs into React Native or Flutter, down to the animation details."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Data and finance dashboards","description":"We turn complex financial or operational data into clear charts and screens. LunaPara is our own product in this area."}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Interactive experiences with Unity","description":"We build gamified marketing tools, advergames and short story-driven experiences for brands."}}]}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://tidemobileapp.com/index-en.html"},{"@type":"ListItem","position":2,"name":"Technical partnership"}]}]}</script>
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/general-sans-500.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/switzer-400.woff2" crossorigin />
+  <link rel="stylesheet" href="assets/home/home.css?v=7" />
+  <link rel="stylesheet" href="assets/home/page.css?v=7" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KWZ9E0MQ41"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-KWZ9E0MQ41');</script>
 </head>
 <body>
-  <nav>
-    <a href="index-en.html" class="nav-logo">
-      <img src="assets/logo.jpg" decoding="async" alt="Tidemobile logo" />
-      <span class="nav-logo-text">Tide Mobile</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="index-en.html">Home</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#technical-partnership">Technical Partnership</a></li>
-      <li><a href="#why-tidemobile">Why Tidemobile?</a></li>
-    </ul>
-    <a href="teknik-ortaklik.html" class="nav-lang" style="font-size:0.8rem;font-weight:500;letter-spacing:0.06em;color:#7a90a8;text-decoration:none;">TR</a>
-    <a href="index-en.html#contact" class="nav-cta">Get in Touch</a>
-  </nav>
-
-  <main>
-    <section class="hero">
-      <div>
-        <div class="badge">Technical Partnership</div>
-        <h1>Tidemobile: Technical Partnership Portfolio</h1>
-        <p>Tidemobile sees software not merely as a pile of code, but as a product at the intersection of design, psychology, and global dynamics. With minimalist aesthetics, fluid transitions, and the human touch of artificial intelligence, we take projects beyond the standard.</p>
-        <div class="hero-actions">
-          <a href="#services" class="btn-primary">Explore Services</a>
-          <a href="index-en.html#contact" class="btn-secondary">Let's Talk About Your Project</a>
+  <a class="skip" href="#icerik">Skip to content</a>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4.5 12h15M13.5 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.8 3.8 5.8 3.8 9s-1.2 6.2-3.8 9c-2.6-2.8-3.8-5.8-3.8-9S9.4 5.8 12 3z"/></g></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8.5" r="3.8"/><path d="M4.5 20c.8-3.6 3.8-5.8 7.5-5.8s6.7 2.2 7.5 5.8" stroke-linecap="round"/></g></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></g></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></g></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</defs></svg>
+  <header class="nav is-solid" id="nav">
+    <div class="wrap nav-in">
+      <a href="index-en.html" class="wm" aria-label="Tide Mobile home"><img class="wm-logo" src="assets/home/tide-logo-96.webp" srcset="assets/home/tide-logo-96.webp 1x, assets/home/tide-logo-192.webp 2x" width="48" height="48" alt="" /><img class="wm-type" src="assets/home/tide-yazi.svg" width="271" height="174" alt="Tide Mobile" /></a>
+      <nav aria-label="Main menu">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index-en.html#about">About</a></li>
+          <li><a href="index-en.html#vision">Vision</a></li>
+          <li><a href="index-en.html#team">Team</a></li>
+          <li><a href="index-en.html#roadmap">Roadmap</a></li>
+          <li><a href="index-en.html#apps">Apps</a></li>
+          <li><a href="teknik-ortaklik-en.html" aria-current="page">Technical Partnership</a></li>
+          <li><a href="blog-en.html">Blog</a></li>
+          <li><a href="index-en.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-right">
+        <a href="teknik-ortaklik.html" class="nav-lang" hreflang="tr" lang="tr" aria-label="Türkçe sürüm">TR <svg aria-hidden="true"><use href="#i-globe"/></svg></a>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <main id="icerik">
+    <header class="page-hero">
+      <img class="ph-wave ph-cubes" src="assets/home/kupler.webp" width="1000" height="464" alt="" aria-hidden="true" />
+      <div class="wrap">
+        <nav aria-label="Breadcrumb"><ol class="crumbs"><li><a href="index-en.html">Home</a></li><li aria-current="page">Technical partnership</li></ol></nav>
+        <p class="label">Technical partnership</p>
+        <h1>A mobile product partner for <em>agencies and brands.</em></h1>
+        <p class="page-lead">We turn your designs into apps without losing detail, build AI features into the product and take the app all the way to store release. You work with the same team and process we use to build Modi and TerraVisa.</p>
+        <div class="hero-cta" style="margin-top:32px">
+          <a href="index-en.html#contact" class="btn btn-fill">Let's talk about your project <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a href="#hizmetler" class="btn btn-line">See services <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
+        <div class="chips"><span class="chip"><svg aria-hidden="true"><use href="#i-check"/></svg>React Native and Flutter</span><span class="chip"><svg aria-hidden="true"><use href="#i-check"/></svg>LLM integration</span><span class="chip"><svg aria-hidden="true"><use href="#i-check"/></svg>App Store, Google Play, Huawei</span></div>
       </div>
-      <aside class="hero-panel">
-        <div class="hero-panel-title">Focus for Agencies</div>
-        <div class="hero-panel-list">
-          <div class="hero-panel-item">
-            <strong>AI-native mobile experiences</strong>
-            <span>LLM integration, character design, voice flows, and intelligent assistant mechanics.</span>
-          </div>
-          <div class="hero-panel-item">
-            <strong>Premium UI/UX execution</strong>
-            <span>Fluid and performant product delivery where design is never sacrificed to technical constraints.</span>
-          </div>
-          <div class="hero-panel-item">
-            <strong>Disciplined release process</strong>
-            <span>Product-focused technical partnership with deep knowledge of Huawei, Google, and Apple store submission processes.</span>
-          </div>
-        </div>
-      </aside>
-    </section>
+    </header>
 
-    <section class="section">
-      <div class="section-head">
-        <div class="section-label">Our Vision</div>
-        <h2 class="section-title">We bring technical development and product vision together in one place.</h2>
-        <p class="section-body">What agencies or brand teams need is often not simply development capacity; it is a partner who can see the work through to a result without compromising the design language, weakening the user experience, or lowering technical quality. Tidemobile fills that gap.</p>
-      </div>
-    </section>
-
-    <section class="section" id="services">
-      <div class="section-head">
-        <div class="section-label">Services Offered</div>
-        <h2 class="section-title">Four areas of work that place product quality at the center.</h2>
-      </div>
-      <div class="grid-2">
-        <article class="card">
-          <div class="card-topline">01</div>
-          <h3>AI-Native Mobile Application Development</h3>
-          <p><strong>Scope:</strong> Integrating OpenAI, Anthropic, or open-source LLMs into mobile applications.</p>
-          <p><strong>What sets us apart:</strong> Not merely connecting an API, but building character design, voice response, and intelligent assistant mechanics from the ground up, as in the Modi project.</p>
+    <section class="section" id="hizmetler" style="padding-top:40px" aria-labelledby="svc-h">
+      <div class="wrap">
+        <div class="reveal" style="margin-bottom:34px"><p class="label">Services</p><h2 class="h2" id="svc-h">Four areas <em>of work.</em></h2></div>
+        <div class="svc">
+        <article class="svc-card reveal">
+          <span class="svc-no">01</span>
+          <h3>AI-powered mobile apps</h3>
+          <p>We connect OpenAI, Anthropic or open-source language models to mobile apps. Not just an API call: character, conversation flow and safety rules included.</p>
+          <ul><li>Modi&#x27;s chat companion is a live example</li><li>Prompt design and vector database layer</li><li>Escalation rules for risky content</li></ul>
         </article>
-        <article class="card">
-          <div class="card-topline">02</div>
-          <h3>Premium UI/UX Engineering</h3>
-          <p><strong>Scope:</strong> Translating Figma or Adobe XD designs into React Native or Flutter environments, down to the smallest animation detail.</p>
-          <p><strong>Focus:</strong> An application development process that preserves design quality through dark mode optimization, soft transitions, and high-performance list rendering structures.</p>
+        <article class="svc-card reveal">
+          <span class="svc-no">02</span>
+          <h3>UI/UX implementation</h3>
+          <p>We bring Figma or Adobe XD designs into React Native or Flutter, down to the animation details.</p>
+          <ul><li>Dark mode and smooth transitions</li><li>Fluid performance in long lists</li><li>Working in the designer&#x27;s language</li></ul>
         </article>
-        <article class="card">
-          <div class="card-topline">03</div>
-          <h3>Fintech and Data-Driven Dashboards</h3>
-          <p><strong>Scope:</strong> Drawing on the LunaPara discipline: the clear visualization of complex financial data or resource management processes.</p>
-          <p><strong>Security:</strong> Secure data storage, scalable architecture, and controlled API communication protocols.</p>
+        <article class="svc-card reveal">
+          <span class="svc-no">03</span>
+          <h3>Data and finance dashboards</h3>
+          <p>We turn complex financial or operational data into clear charts and screens. LunaPara is our own product in this area.</p>
+          <ul><li>Secure data storage</li><li>Scalable architecture</li><li>Controlled API communication</li></ul>
         </article>
-        <article class="card">
-          <div class="card-topline">04</div>
-          <h3>Unity-Based Interactive Experiences</h3>
-          <p><strong>Scope:</strong> Gamified marketing tools for brands, advergame projects, or story-driven mini experiences.</p>
-          <p><strong>Method:</strong> A hybrid production approach that achieves cost and time optimization through AI-assisted asset generation.</p>
+        <article class="svc-card reveal">
+          <span class="svc-no">04</span>
+          <h3>Interactive experiences with Unity</h3>
+          <p>We build gamified marketing tools, advergames and short story-driven experiences for brands.</p>
+          <ul><li>Faster delivery with AI-assisted asset production</li><li>One source for mobile and web</li><li>Delivery that fits the campaign calendar</li></ul>
         </article>
-      </div>
-    </section>
-
-    <section class="section" id="technical-partnership">
-      <div class="section-head">
-        <div class="section-label">Technical Partnership Infrastructure</div>
-        <h2 class="section-title">The modern product infrastructure we use in our technical partnership processes.</h2>
-      </div>
-      <div class="arsenal">
-        <div class="arsenal-item">
-          <h3>Frameworks</h3>
-          <p>We build scalable mobile and interactive experiences with React Native (Expo/Bare), Flutter, and Unity.</p>
-        </div>
-        <div class="arsenal-item">
-          <h3>AI Expertise</h3>
-          <p>Through prompt engineering, LLM integration, and vector database layers, we make artificial intelligence a natural part of the product.</p>
-        </div>
-        <div class="arsenal-item">
-          <h3>Process Discipline</h3>
-          <p>With agile development, code auditing, and Huawei/Google/Apple store release processes, we don't just build and walk away; we carry the work all the way to launch.</p>
         </div>
       </div>
     </section>
 
-    <section class="section" id="why-tidemobile">
-      <div class="why">
-        <div class="section-label">Why Tidemobile?</div>
-        <h2 class="section-title">Technical partnership that doesn't fall into the AI simplicity trap.</h2>
-        <p>Rather than the superficial speed that has come to characterize the software world, we approach every project with analytical depth and technical discipline. Our aim is not merely to deliver the work; it is to establish a product standard that will strengthen your agency's or brand's technical signature.</p>
-        <div class="note"></div>
+    <section class="wrap" aria-labelledby="stack-h">
+      <div class="reveal" style="margin-bottom:28px"><p class="label">Stack</p><h2 class="h2" id="stack-h">The tools <em>we use.</em></h2></div>
+      <div class="stack reveal"><div><h3>Frameworks</h3><p>React Native (Expo and bare), Flutter and Unity.</p></div><div><h3>AI</h3><p>Prompt engineering, LLM integration and vector databases.</p></div><div><h3>Process</h3><p>Agile development, code audits and release processes for the App Store, Google Play and Huawei AppGallery.</p></div></div>
+    </section>
+
+    <section class="section" aria-labelledby="proc-h">
+      <div class="wrap">
+        <div class="reveal" style="margin-bottom:40px"><p class="label">How we work</p><h2 class="h2" id="proc-h">From idea to store <em>in four steps.</em></h2></div>
+        <ol class="proc reveal"><li><h3>Introduction</h3><p>We clarify the goal, the user and the timeline together.</p></li><li><h3>Scope and prototype</h3><p>We write down the screens and technical structure and validate them with a clickable prototype.</p></li><li><h3>Build and test</h3><p>We deliver in short cycles and test every build on real devices.</p></li><li><h3>Release and support</h3><p>We handle store submissions and take care of post-launch fixes.</p></li></ol>
       </div>
     </section>
 
-    <section class="cta">
-      <div class="cta-box">
-        <div>
-          <h2>If you're looking for a technical partner for your project, let's talk.</h2>
-          <p>You can work with Tidemobile on agency collaborations, custom application development processes, and projects requiring premium execution.</p>
-        </div>
-        <div class="cta-actions">
-          <a href="index-en.html#contact" class="btn-primary">Get in Touch</a>
-          <a href="index-en.html" class="btn-secondary">Back to Home</a>
-        </div>
+    <section class="wrap" style="padding-bottom:110px">
+      <div class="cta-band reveal">
+        <div><h2 class="h2">Looking for a technical partner? <em>Let's talk.</em></h2><p>Write to us about agency collaborations and custom app projects. We usually reply within a few business days.</p></div>
+        <a href="index-en.html#contact" class="btn btn-fill">Write to us <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
     </section>
   </main>
-
-  <footer>
-    <div class="footer-left">
-      <img src="assets/logo.jpg" decoding="async" alt="Tidemobile" />
-      <span class="footer-logo-text">Tidemobile</span>
+  <footer class="footer">
+    <svg class="foot-waves" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 60C180 20 360 10 560 40s360 70 560 50 260-60 320-70V120H0z" fill="#329aa1"/>
+      <path d="M0 92C220 52 420 50 640 74s380 40 560 20 200-34 240-44V120H0z" fill="#1c475f"/>
+    </svg>
+    <div class="foot-body">
+      <div class="wrap">
+        <div class="foot-top">
+          <a href="index-en.html" class="wm" aria-label="Tide Mobile home"><img class="wm-logo" src="assets/home/tide-logo-96.webp" srcset="assets/home/tide-logo-96.webp 1x, assets/home/tide-logo-192.webp 2x" width="48" height="48" alt="" /><img class="wm-type" src="assets/home/tide-yazi-krem.svg" width="271" height="174" alt="Tide Mobile" /></a>
+          <ul class="foot-links">
+            <li><a href="index-en.html#about">About</a></li>
+            <li><a href="index-en.html#vision">Vision</a></li>
+            <li><a href="index-en.html#team">Team</a></li>
+            <li><a href="index-en.html#roadmap">Roadmap</a></li>
+            <li><a href="index-en.html#apps">Apps</a></li>
+            <li><a href="teknik-ortaklik-en.html">Technical Partnership</a></li>
+            <li><a href="blog-en.html">Blog</a></li>
+            <li><a href="index-en.html#contact">Contact</a></li>
+          </ul>
+          <div class="social">
+            <a href="https://www.linkedin.com/company/tide-mobile/" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5A1.98 1.98 0 1 1 3 5.48 1.98 1.98 0 0 1 4.98 3.5ZM3.25 8h3.46v12H3.25Zm5.65 0h3.32v1.64h.05A3.64 3.64 0 0 1 15.55 7.7c3.5 0 4.15 2.3 4.15 5.29V20h-3.46v-6.19c0-1.48-.03-3.38-2.06-3.38-2.06 0-2.38 1.61-2.38 3.27V20H8.9Z"/></svg></a>
+            <a href="https://www.instagram.com/tidemobile" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5A3.95 3.95 0 0 0 7.75 20.2h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5A3.95 3.95 0 0 0 16.25 3.8h-8.5Zm8.95 1.35a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3ZM12 6.85A5.15 5.15 0 1 1 6.85 12 5.16 5.16 0 0 1 12 6.85Zm0 1.8A3.35 3.35 0 1 0 15.35 12 3.35 3.35 0 0 0 12 8.65Z"/></svg></a>
+            <a href="https://www.tiktok.com/@tidemobile" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.2 3h2.38a4.9 4.9 0 0 0 4.17 4.15v2.43a7.27 7.27 0 0 1-4.15-1.3v6.32a5.6 5.6 0 1 1-5.6-5.6c.3 0 .6.03.88.08v2.47a3.14 3.14 0 0 0-.88-.13 3.18 3.18 0 1 0 3.2 3.18Z"/></svg></a>
+          </div>
+        </div>
+        <div class="foot-bottom">
+          <p>© 2026 Tide Mobile. All rights reserved.</p>
+          <ul class="legal">
+            <li><a href="kvkk.html">KVKK Privacy Notice (TR)</a></li>
+            <li><a href="gizlilik.html">Privacy Policy (TR)</a></li>
+            <li><a href="modi-kullanim-kosullari.html">Modi Terms of Use (TR)</a></li>
+          </ul>
+          <p>Adana, Türkiye</p>
+        </div>
+      </div>
     </div>
-    <div class="footer-copy">© 2026 Tidemobile. All rights reserved.</div>
   </footer>
+
+  <script src="assets/home/home.js?v=7" defer></script>
+  <script src="assets/home/page.js?v=7" defer></script>
 </body>
 </html>

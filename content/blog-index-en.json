@@ -1,0 +1,78 @@
+{
+ "title": "Tidemobile Blog: In-Depth Insights on Psychology, Geopolitics & Global Trade",
+ "description": "Deep-dive articles on digital psychology, international relations, and global trade. Read the world from a different angle with Tidemobile Insights.",
+ "cards": [
+  {
+   "category_key": "psychology",
+   "kicker": "Psychology",
+   "title": "Understanding the Human Mind in the Digital Ecosystem: An Introduction to Cyber Psychology",
+   "meta": [
+    "İlknur Yılmazgil",
+    "4 min read",
+    "Tidemobile Insights #1"
+   ],
+   "summary": "An introductory piece exploring how software, apps, and gaming experiences are no longer merely technical products; they have become living systems directly intertwined with human behavior, cognitive load, and the construction of digital identity.",
+   "href": "blog-siber-psikoloji-en.html"
+  },
+  {
+   "category_key": "psychology",
+   "kicker": "Psychology",
+   "title": "Psychology in the Digital Age: Preserving Mental Resilience and Focus",
+   "meta": [
+    "İlknur Yılmazgil",
+    "4 min read",
+    "Tidemobile Insights #2"
+   ],
+   "summary": "An article examining the effects of the attention economy, FOMO, and intense digital stimuli on the mind, through the lens of ethical design and meaningful user experience.",
+   "href": "blog-dijital-cagda-psikoloji-en.html"
+  },
+  {
+   "category_key": "international-relations",
+   "kicker": "International Relations",
+   "title": "Borders Are Shifting: Visas, Politics, and the New World Order",
+   "meta": [
+    "Cansun Tanıl Tabakoğlu",
+    "4 min read",
+    "Tidemobile Insights #3"
+   ],
+   "summary": "An article exploring how visas are not merely bureaucratic documents, but invisible thresholds that reflect states' security reflexes, diplomatic distances, and the balances of global power.",
+   "href": "blog-terravisa-en.html"
+  },
+  {
+   "category_key": "international-trade-logistics",
+   "kicker": "International Trade & Logistics",
+   "title": "The Invisible Layer of Trade: Logistics, Flow, and Decision Mechanisms",
+   "meta": [
+    "Cansun Tanıl Tabakoğlu",
+    "4 min read",
+    "Tidemobile Insights #4"
+   ],
+   "summary": "An article that looks beyond the visible surface of global trade to examine the logistical decisions that truly determine flow, the fragility of supply networks, and the strategic dimension of timing.",
+   "href": "blog-lunapara-en.html"
+  },
+  {
+   "category_key": "international-relations",
+   "kicker": "International Relations",
+   "title": "What Is a Golden Visa and Which Countries Offer One?",
+   "meta": [
+    "Cansun Tanıl Tabakoğlu",
+    "7 min read",
+    "Tidemobile Insights #5"
+   ],
+   "summary": "Can investment buy residency or citizenship? From Portugal to the Caribbean, the UAE to Turkey, a comprehensive analysis of golden visa programs worldwide, their conditions, and what to watch for before applying.",
+   "href": "blog-altin-vize-en.html"
+  },
+  {
+   "category_key": "international-relations",
+   "kicker": "International Relations",
+   "title": "Digital Nomad Visa: Which Countries Offer One and How to Apply",
+   "meta": [
+    "Cansun Tanıl Tabakoğlu",
+    "7 min read",
+    "Tidemobile Insights #6"
+   ],
+   "summary": "A country-by-country guide to digital nomad visas: income requirements, tax implications, application steps, and the critical considerations most remote workers overlook before making the move.",
+   "href": "blog-dijital-gocebe-en.html"
+  }
+ ]
+}

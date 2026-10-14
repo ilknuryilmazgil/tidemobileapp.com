@@ -1,0 +1,192 @@
+{
+ "tr": {
+  "file": "teknik-ortaklik.html",
+  "alt": "teknik-ortaklik-en.html",
+  "seo_title": "Teknik Ortaklık: Mobil Uygulama Geliştirme ve UI/UX | Tide Mobile",
+  "description": "Ajans ve markalar için yapay zeka destekli mobil uygulama, React Native ve Flutter ile UI/UX, veri panelleri ve Unity deneyimleri. Tide Mobile, Adana.",
+  "label": "Teknik ortaklık",
+  "h1": "Ajanslar ve markalar için <em>mobil ürün ortağı.</em>",
+  "lead": "Tasarımınızı bozmadan uygulamaya dönüştürür, yapay zeka özelliklerini ürünün içine yerleştirir ve uygulamayı mağazada yayına kadar götürürüz. Modi ve TerraVisa'yı geliştirirken kullandığımız ekip ve süreçle çalışırsınız.",
+  "chips": [
+   "React Native ve Flutter",
+   "LLM entegrasyonu",
+   "App Store, Google Play, Huawei"
+  ],
+  "cta1": "Projeyi konuşalım",
+  "cta2": "Hizmetleri incele",
+  "svc_label": "Hizmetler",
+  "svc_h2": "Dört çalışma <em>alanı.</em>",
+  "services": [
+   {
+    "h": "Yapay zeka destekli mobil uygulamalar",
+    "p": "OpenAI, Anthropic veya açık kaynak dil modellerini mobil uygulamaya bağlarız. Yalnızca API çağrısı değil; karakter, sohbet akışı ve güvenlik kuralları dahil.",
+    "li": [
+     "Modi'deki sohbet arkadaşı bu işin canlı örneği",
+     "Prompt tasarımı ve vektör veritabanı katmanı",
+     "Riskli içerik için yönlendirme kuralları"
+    ]
+   },
+   {
+    "h": "UI/UX uygulama",
+    "p": "Figma veya Adobe XD tasarımlarını, animasyon ayrıntılarına kadar React Native ya da Flutter'a aktarırız.",
+    "li": [
+     "Karanlık mod ve yumuşak geçişler",
+     "Uzun listelerde akıcı performans",
+     "Tasarımcıyla aynı dilde çalışma"
+    ]
+   },
+   {
+    "h": "Veri ve finans panelleri",
+    "p": "Karmaşık finansal veya operasyonel veriyi anlaşılır grafiklere ve ekranlara çeviririz. LunaPara bu alandaki kendi ürünümüz.",
+    "li": [
+     "Güvenli veri saklama",
+     "Ölçeklenebilir mimari",
+     "Kontrollü API iletişimi"
+    ]
+   },
+   {
+    "h": "Unity ile interaktif deneyimler",
+    "p": "Markalar için oyunlaştırılmış pazarlama araçları, advergame ve hikâye odaklı kısa deneyimler üretiriz.",
+    "li": [
+     "Yapay zeka destekli görsel üretimiyle daha kısa süre",
+     "Mobil ve web için tek kaynak",
+     "Kampanya takvimine uygun teslim"
+    ]
+   }
+  ],
+  "stack_label": "Altyapı",
+  "stack_h2": "Kullandığımız <em>araçlar.</em>",
+  "stack": [
+   {
+    "h": "Çatılar",
+    "p": "React Native (Expo ve bare), Flutter ve Unity."
+   },
+   {
+    "h": "Yapay zeka",
+    "p": "Prompt mühendisliği, LLM entegrasyonu ve vektör veritabanları."
+   },
+   {
+    "h": "Süreç",
+    "p": "Agile geliştirme, kod denetimi ve App Store, Google Play, Huawei AppGallery yayın süreçleri."
+   }
+  ],
+  "proc_label": "Çalışma şekli",
+  "proc_h2": "Fikirden mağazaya <em>dört adım.</em>",
+  "process": [
+   {
+    "h": "Tanışma",
+    "p": "Hedefi, kullanıcıyı ve takvimi birlikte netleştiririz."
+   },
+   {
+    "h": "Kapsam ve prototip",
+    "p": "Ekranları ve teknik yapıyı yazıya döker, tıklanabilir bir prototiple doğrularız."
+   },
+   {
+    "h": "Geliştirme ve test",
+    "p": "Kısa aralıklarla teslim eder, her sürümü gerçek cihazlarda test ederiz."
+   },
+   {
+    "h": "Yayın ve destek",
+    "p": "Mağaza başvurularını yönetir, yayın sonrası düzeltmeleri üstleniriz."
+   }
+  ],
+  "cta_h2": "Projeniz için teknik ortak arıyorsanız, <em>konuşalım.</em>",
+  "cta_p": "Ajans iş birlikleri ve özel uygulama projeleri için bize yazın. Genellikle birkaç iş günü içinde dönüyoruz.",
+  "cta_btn": "Bize yazın"
+ },
+ "en": {
+  "file": "teknik-ortaklik-en.html",
+  "alt": "teknik-ortaklik.html",
+  "seo_title": "Technical Partnership: Mobile App Development and UI/UX | Tide Mobile",
+  "description": "AI-powered mobile apps, React Native and Flutter UI/UX, data dashboards and Unity experiences for agencies and brands. Tide Mobile, Adana, Türkiye.",
+  "label": "Technical partnership",
+  "h1": "A mobile product partner for <em>agencies and brands.</em>",
+  "lead": "We turn your designs into apps without losing detail, build AI features into the product and take the app all the way to store release. You work with the same team and process we use to build Modi and TerraVisa.",
+  "chips": [
+   "React Native and Flutter",
+   "LLM integration",
+   "App Store, Google Play, Huawei"
+  ],
+  "cta1": "Let's talk about your project",
+  "cta2": "See services",
+  "svc_label": "Services",
+  "svc_h2": "Four areas <em>of work.</em>",
+  "services": [
+   {
+    "h": "AI-powered mobile apps",
+    "p": "We connect OpenAI, Anthropic or open-source language models to mobile apps. Not just an API call: character, conversation flow and safety rules included.",
+    "li": [
+     "Modi's chat companion is a live example",
+     "Prompt design and vector database layer",
+     "Escalation rules for risky content"
+    ]
+   },
+   {
+    "h": "UI/UX implementation",
+    "p": "We bring Figma or Adobe XD designs into React Native or Flutter, down to the animation details.",
+    "li": [
+     "Dark mode and smooth transitions",
+     "Fluid performance in long lists",
+     "Working in the designer's language"
+    ]
+   },
+   {
+    "h": "Data and finance dashboards",
+    "p": "We turn complex financial or operational data into clear charts and screens. LunaPara is our own product in this area.",
+    "li": [
+     "Secure data storage",
+     "Scalable architecture",
+     "Controlled API communication"
+    ]
+   },
+   {
+    "h": "Interactive experiences with Unity",
+    "p": "We build gamified marketing tools, advergames and short story-driven experiences for brands.",
+    "li": [
+     "Faster delivery with AI-assisted asset production",
+     "One source for mobile and web",
+     "Delivery that fits the campaign calendar"
+    ]
+   }
+  ],
+  "stack_label": "Stack",
+  "stack_h2": "The tools <em>we use.</em>",
+  "stack": [
+   {
+    "h": "Frameworks",
+    "p": "React Native (Expo and bare), Flutter and Unity."
+   },
+   {
+    "h": "AI",
+    "p": "Prompt engineering, LLM integration and vector databases."
+   },
+   {
+    "h": "Process",
+    "p": "Agile development, code audits and release processes for the App Store, Google Play and Huawei AppGallery."
+   }
+  ],
+  "proc_label": "How we work",
+  "proc_h2": "From idea to store <em>in four steps.</em>",
+  "process": [
+   {
+    "h": "Introduction",
+    "p": "We clarify the goal, the user and the timeline together."
+   },
+   {
+    "h": "Scope and prototype",
+    "p": "We write down the screens and technical structure and validate them with a clickable prototype."
+   },
+   {
+    "h": "Build and test",
+    "p": "We deliver in short cycles and test every build on real devices."
+   },
+   {
+    "h": "Release and support",
+    "p": "We handle store submissions and take care of post-launch fixes."
+   }
+  ],
+  "cta_h2": "Looking for a technical partner? <em>Let's talk.</em>",
+  "cta_p": "Write to us about agency collaborations and custom app projects. We usually reply within a few business days.",
+  "cta_btn": "Write to us"
+ }
+}

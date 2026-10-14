@@ -1,0 +1,78 @@
+{
+ "title": "Tidemobile Blog: Psikoloji, Jeopolitik ve Küresel Ticaret Analizleri",
+ "description": "Dijital psikoloji, uluslararası ilişkiler ve küresel ticaret üzerine derinlemesine analizler. Tidemobile Insights ile fikirlerin görünmeyen katmanlarını keşfedin.",
+ "cards": [
+  {
+   "category_key": "psikoloji",
+   "kicker": "Psikoloji",
+   "title": "Dijital Ekosistemde İnsan Zihnini Anlamak: Siber Psikolojiye Giriş",
+   "meta": [
+    "İlknur Yılmazgil",
+    "Okuma süresi: 4 dk",
+    "Tidemobile Insights #1"
+   ],
+   "summary": "Yazılım, uygulama ve oyun deneyimlerinin artık yalnızca teknik ürünler olmadığını; insan davranışı, bilişsel yük ve dijital kimlik inşasıyla doğrudan ilişkili yaşayan sistemler haline geldiğini ele alan giriş yazısı.",
+   "href": "blog-siber-psikoloji.html"
+  },
+  {
+   "category_key": "psikoloji",
+   "kicker": "Psikoloji",
+   "title": "Dijital Çağda Psikoloji: Zihinsel Dayanıklılığı ve Odaklanmayı Korumak",
+   "meta": [
+    "İlknur Yılmazgil",
+    "Okuma süresi: 4 dk",
+    "Tidemobile Insights #2"
+   ],
+   "summary": "Dikkat ekonomisinin, FOMO’nun ve yoğun dijital uyaranların zihin üzerindeki etkilerini; etik tasarım ve anlamlı kullanıcı deneyimi ekseninde değerlendiren yazı.",
+   "href": "blog-dijital-cagda-psikoloji.html"
+  },
+  {
+   "category_key": "uluslararasi-iliskiler",
+   "kicker": "Uluslararası İlişkiler",
+   "title": "Sınırlar Değişiyor: Vizeler, Siyaset ve Yeni Dünya Düzeni",
+   "meta": [
+    "Cansun Tanıl Tabakoğlu",
+    "Okuma süresi: 4 dk",
+    "Tidemobile Insights #3"
+   ],
+   "summary": "Vizelerin yalnızca bürokratik belgeler değil; devletlerin güvenlik reflekslerini, diplomatik mesafelerini ve küresel güç dengelerini yansıtan görünmez eşikler olduğunu ele alan yazı.",
+   "href": "blog-terravisa.html"
+  },
+  {
+   "category_key": "uluslararasi-ticaret-ve-lojistik",
+   "kicker": "Uluslararası Ticaret ve Lojistik",
+   "title": "Ticaretin Görünmeyen Katmanı: Lojistik, Akış ve Karar Mekanizmaları",
+   "meta": [
+    "Cansun Tanıl Tabakoğlu",
+    "Okuma süresi: 4 dk",
+    "Tidemobile Insights #4"
+   ],
+   "summary": "Küresel ticaretin görünür kısmının ötesine geçip, akışı gerçekten belirleyen lojistik kararları, kırılgan tedarik ağlarını ve stratejik zamanlama boyutunu ele alan yazı.",
+   "href": "blog-lunapara.html"
+  },
+  {
+   "category_key": "uluslararasi-iliskiler",
+   "kicker": "Uluslararası İlişkiler",
+   "title": "Altın Vize Nedir, Hangi Ülkeler Veriyor?",
+   "meta": [
+    "Cansun Tanıl Tabakoğlu",
+    "Okuma süresi: 7 dk",
+    "Tidemobile Insights #5"
+   ],
+   "summary": "Yatırım yoluyla oturma izni veya vatandaşlık kazanmak mümkün mü? Portekiz'den Karayipler'e, Türkiye'den BAE'ye altın vize sistemini, ülke ülke şartları ve dikkat edilmesi gereken noktaları ele alan kapsamlı analiz.",
+   "href": "blog-altin-vize.html"
+  },
+  {
+   "category_key": "uluslararasi-iliskiler",
+   "kicker": "Uluslararası İlişkiler",
+   "title": "Dijital Göçebe Vizesi: Hangi Ülkeler, Nasıl Başvurulur?",
+   "meta": [
+    "Cansun Tanıl Tabakoğlu",
+    "Okuma süresi: 7 dk",
+    "Tidemobile Insights #6"
+   ],
+   "summary": "Uzaktan çalışanlar için özel olarak tasarlanmış dijital göçebe vizesi sunan ülkeleri, gelir şartlarını, vergi boyutunu ve başvuru süreçlerini karşılaştırmalı olarak inceleyen kapsamlı rehber.",
+   "href": "blog-dijital-gocebe.html"
+  }
+ ]
+}
