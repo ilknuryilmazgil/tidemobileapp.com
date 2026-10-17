@@ -627,3 +627,27 @@ h1,h2,h3,h4{font-family:var(--font-h);color:var(--brown);line-height:1.12;letter
   .jcard .go-app .plus{font-size:1rem}
   .tcard .go-app{font-size:.8rem}
 }
+
+/* meditasyon önizlemesi (yalnızca Anksiyeteyle Başa Çıkma) */
+.mcard.has-prev{border-color:var(--orange-line)}
+.mprev{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:10px}
+.mprev[hidden],.mprev-end[hidden]{display:none}
+.mprev-btn{flex:none;width:44px;height:44px;border-radius:50%;border:0;background:var(--orange);color:#fff;display:grid;place-items:center;cursor:pointer;box-shadow:0 6px 16px rgba(226,98,14,.22);transition:background .2s}
+.mprev-btn:hover{background:#cf560a}
+.mprev-btn:focus-visible,.mprev-again:focus-visible{outline:3px solid var(--orange-line);outline-offset:2px}
+.mprev-btn .ic{width:18px;height:18px}
+.mprev-btn .i-play{margin-left:2px}
+.mprev-btn .i-pause,.mprev.playing .mprev-btn .i-play{display:none}
+.mprev.playing .mprev-btn .i-pause{display:block}
+.mprev-track{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}
+.mprev-bar{height:5px;border-radius:99px;background:var(--bg-deep);overflow:hidden}
+.mprev-bar span{display:block;height:100%;width:0;background:var(--orange);border-radius:inherit}
+.mprev-track small{font-size:.74rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.mprev-end{margin-top:auto;padding-top:12px;border-top:1px dashed var(--line-2);display:flex;flex-direction:column;gap:8px}
+.mprev-end b{font-family:var(--font-h);color:var(--brown);font-size:.95rem;display:flex;align-items:center;gap:6px}
+.mprev-end p{font-size:.8rem}
+.mprev-end .store-row{justify-content:flex-start;gap:8px;margin-top:2px}
+.mprev-end .store-badge img{height:34px;width:auto}
+.mprev-again{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;min-height:40px;background:none;border:0;padding:0;color:var(--orange);font:inherit;font-size:.8rem;font-weight:700;cursor:pointer}
+.mprev-again .ic{width:15px;height:15px}
+@media (max-width:560px){.mcard.has-prev{grid-column:1/-1}}

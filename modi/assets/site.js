@@ -142,6 +142,29 @@
     }
   }
 
+  // meditasyon önizlemesi: kısa kesit çalar, bitince "devamı uygulamada" kartı açılır
+  $$('[data-preview]').forEach(function (box) {
+    var au = $('audio', box), btn = $('.mprev-btn', box), bar = $('.mprev-bar', box), fill = $('.mprev-bar span', box), time = $('[data-time]', box);
+    var end = box.parentNode.querySelector('.mprev-end'), label = time.textContent;
+    var fmt = function (s) { s = Math.max(0, Math.ceil(s)); return Math.floor(s / 60) + ':' + ('0' + s % 60).slice(-2); };
+    var setPlaying = function (on) { box.classList.toggle('playing', on); btn.setAttribute('aria-pressed', on ? 'true' : 'false'); };
+    btn.addEventListener('click', function () {
+      if (au.paused) { var p = au.play(); if (p && p.catch) p.catch(function () { setPlaying(false); }); } else au.pause();
+    });
+    au.addEventListener('play', function () { setPlaying(true); });
+    au.addEventListener('pause', function () { setPlaying(false); });
+    au.addEventListener('timeupdate', function () {
+      if (!au.duration) return;
+      var pct = Math.min(100, au.currentTime / au.duration * 100);
+      fill.style.width = pct + '%'; bar.setAttribute('aria-valuenow', Math.round(pct));
+      time.textContent = fmt(au.duration - au.currentTime);
+    });
+    au.addEventListener('ended', function () { setPlaying(false); box.hidden = true; end.hidden = false; });
+    $('.mprev-again', end).addEventListener('click', function () {
+      end.hidden = true; box.hidden = false; au.currentTime = 0; fill.style.width = '0'; time.textContent = label; btn.focus(); au.play();
+    });
+  });
+
   // görünürken yumuşak giriş
   var fades = $$('.fade');
   if ('IntersectionObserver' in window) {
