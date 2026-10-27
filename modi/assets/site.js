@@ -92,7 +92,7 @@
     var msg = $('#formMsg'), f = form.elements, btn = form.querySelector('button[type="submit"]');
     function say(t, ok) { msg.style.color = ok ? 'var(--green)' : 'var(--orange)'; msg.textContent = t; }
     if (!f.ad.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(f.mail.value.trim()) || !f.konu.value || f.mesaj.value.trim().length < 2) { say('Lütfen yıldızlı alanların hepsini doldur.'); return; }
-    if (!$('#f-kvkk').checked) { say('Devam etmek için KVKK Aydınlatma Metni'ni okuduğunu işaretle.'); return; }
+    if (!$('#f-kvkk').checked) { say('Devam etmek için KVKK Aydınlatma Metni\'ni okuduğunu işaretle.'); return; }
     btn.disabled = true; var label = btn.innerHTML; btn.textContent = 'Gönderiliyor...';
     fetch('https://europe-west1-modi-76f7c.cloudfunctions.net/iletisimFormu', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
