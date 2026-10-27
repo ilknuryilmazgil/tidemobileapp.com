@@ -114,4 +114,12 @@ Blog: https://tidemobileapp.com/blog.html (English: https://tidemobileapp.com/bl
 - Modi web sitesi: https://tidemobileapp.com/modi/
 - KVKK Aydınlatma Metni: https://tidemobileapp.com/kvkk.html
 - Gizlilik Politikası: https://tidemobileapp.com/gizlilik.html
-- Modi Kullanım Koşulları: https://tidemobileapp.com/modi-kullanim-kosullari.html
+- Modi Gizlilik Politikası: https://tidemobileapp.com/modi/gizlilik-politikasi.html
+- Modi KVKK Aydınlatma Metni: https://tidemobileapp.com/modi/kvkk-aydinlatma-metni.html
+- Modi Açık Rıza Metni: https://tidemobileapp.com/modi/acik-riza-metni.html
+- Modi Kullanım Koşulları: https://tidemobileapp.com/modi/kullanim-kosullari.html
+- Modi Çerez Politikası: https://tidemobileapp.com/modi/cerez-politikasi.html
+- Modi Hesap ve Veri Silme: https://tidemobileapp.com/modi/hesap-silme.html
+- Modi Privacy Policy (English): https://tidemobileapp.com/modi/en/privacy-policy.html
+- Modi Terms of Use (English): https://tidemobileapp.com/modi/en/terms-of-use.html
+- Modi Account Deletion (English): https://tidemobileapp.com/modi/en/account-deletion.html

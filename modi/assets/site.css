@@ -651,3 +651,18 @@ h1,h2,h3,h4{font-family:var(--font-h);color:var(--brown);line-height:1.12;letter
 .mprev-again{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;min-height:40px;background:none;border:0;padding:0;color:var(--orange);font:inherit;font-size:.8rem;font-weight:700;cursor:pointer}
 .mprev-again .ic{width:15px;height:15px}
 @media (max-width:560px){.mcard.has-prev{grid-column:1/-1}}
+/* Yasal metinler */
+.c-sec h3{font-size:1rem;font-weight:600;margin:16px 0 4px;color:var(--brown)}
+.c-sec a{color:var(--orange);font-weight:600;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.c-sec .box-i{background:var(--bg);border:1px solid var(--line);border-radius:var(--r-md);padding:14px 16px;margin-top:12px}
+.c-sec .box-i p{font-size:.88rem}
+.c-sec .box-i.warn{background:#FFF7F0;border-color:var(--orange-line)}
+.c-sec .dgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:12px}
+.c-sec .dcard{border:1px solid var(--line);border-radius:var(--r-md);padding:14px 16px;background:#fff}
+.c-sec .dcard b{display:block;font-family:var(--font-h);color:var(--brown);font-size:.95rem;margin-bottom:4px}
+.c-sec .dcard p{font-size:.86rem;line-height:1.65}
+.c-sec .dcard small{display:block;margin-top:8px;font-size:.78rem;color:var(--brown-2)}
+.c-sec .steps-ol{margin-top:10px}
+.doc-links{display:flex;flex-direction:column;gap:2px}
+.doc-links .side-link.cur{background:var(--orange-soft);color:var(--orange)}
+.faq p a{color:var(--orange);font-weight:600;text-decoration:underline;text-underline-offset:3px}
