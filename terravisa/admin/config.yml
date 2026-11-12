@@ -1,0 +1,190 @@
+# TerraVisa Journal içerik yönetimi (Decap CMS).
+# Yerelde: 'npm run cms' (decap-server) ve 'npm run dev' çalışırken http://localhost:4321/terravisa/admin/ açılır.
+# Canlı kullanım için site kaynak kodu bir GitHub deposunda olmalı ve GitHub için bir OAuth yetkilendirme sağlayıcısı kurulmalıdır;
+# o zamana kadar aşağıdaki repo ayarı yalnızca yer tutucudur.
+backend:
+  name: github
+  repo: OWNER/terravisa-web
+  branch: main
+local_backend: true
+publish_mode: simple
+locale: tr
+media_folder: src/assets/journal
+public_folder: ../../../assets/journal
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: "-"
+collections:
+  - name: journal_tr
+    label: "Journal (Türkçe)"
+    label_singular: "Yazı"
+    folder: src/content/journal/tr
+    create: true
+    extension: md
+    format: frontmatter
+    slug: "{{slug}}"
+    media_folder: ../../../assets/journal
+    public_folder: ../../../assets/journal
+    summary: "{{title}} · {{category}} · {{publishDate}}"
+    sortable_fields: [publishDate, title, category]
+    view_filters:
+      - { label: "Taslaklar", field: draft, pattern: true }
+      - { label: "Öne çıkanlar", field: featured, pattern: true }
+    fields:
+      - { name: lang, widget: hidden, default: tr }
+      - { label: "Başlık / Title", name: title, widget: string, hint: "10-110 karakter. Merak uyandıran ama abartısız; bilgi kaynakla doğrulanabilir olmalı.", pattern: ['^.{10,110}$', '10-110 karakter olmalı'] }
+      - { label: "SEO açıklaması / SEO description", name: description, widget: text, hint: "40-220 karakter. Arama sonuçlarında ve kartlarda görünür.", pattern: ['^[\s\S]{40,220}$', '40-220 karakter olmalı'] }
+      - { label: "Çeviri anahtarı / Translation key", name: translationKey, widget: string, hint: "TR ve EN karşılıklarında aynı olmalı (örn. japan-spring-sakura). Dil seçicisi ve hreflang bunu kullanır." }
+      - label: "Kategori / Category"
+        name: category
+        widget: select
+        options:
+          - { label: "Dünya Rotaları", value: "dunya-rotalari" }
+          - { label: "Seyahat Kültürü", value: "seyahat-kulturu" }
+          - { label: "Bilinmeyenler", value: "bilinmeyenler" }
+          - { label: "Seyahat Rehberi", value: "seyahat-rehberi" }
+          - { label: "Gündem", value: "gundem" }
+      - label: "Ülke / Country"
+        name: country
+        widget: select
+        required: false
+        hint: "Seçilirse yazı sayfasında ülke kartı ve ülke rehberi bağlantısı gösterilir."
+        options:
+          - { label: "Türkiye", value: "TR" }
+          - { label: "Amerika Birleşik Devletleri", value: "US" }
+          - { label: "Japonya", value: "JP" }
+          - { label: "Avustralya", value: "AU" }
+          - { label: "Avusturya", value: "AT" }
+          - { label: "Belçika", value: "BE" }
+          - { label: "Bulgaristan", value: "BG" }
+          - { label: "Hırvatistan", value: "HR" }
+          - { label: "Güney Kıbrıs Rum Yönetimi", value: "CY" }
+          - { label: "Çekya", value: "CZ" }
+          - { label: "Danimarka", value: "DK" }
+          - { label: "Estonya", value: "EE" }
+          - { label: "Finlandiya", value: "FI" }
+          - { label: "Fransa", value: "FR" }
+          - { label: "Almanya", value: "DE" }
+          - { label: "Yunanistan", value: "GR" }
+          - { label: "Macaristan", value: "HU" }
+          - { label: "İrlanda", value: "IE" }
+          - { label: "İtalya", value: "IT" }
+          - { label: "Letonya", value: "LV" }
+          - { label: "Litvanya", value: "LT" }
+          - { label: "Lüksemburg", value: "LU" }
+          - { label: "Malta", value: "MT" }
+          - { label: "Hollanda", value: "NL" }
+          - { label: "Polonya", value: "PL" }
+          - { label: "Portekiz", value: "PT" }
+          - { label: "Romanya", value: "RO" }
+          - { label: "Slovakya", value: "SK" }
+          - { label: "Slovenya", value: "SI" }
+          - { label: "İspanya", value: "ES" }
+          - { label: "İsveç", value: "SE" }
+      - { label: "Etiketler / Tags", name: tags, widget: list, required: false, default: [] }
+      - { label: "Yazar / Author", name: author, widget: string, default: "TerraVisa Editorial" }
+      - { label: "Yayın tarihi / Publish date", name: publishDate, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD", hint: "Zamanlama: İleri bir tarih seçilirse yazı o tarihten sonraki ilk site derlemesinde yayına girer." }
+      - { label: "Güncellenme tarihi / Updated date", name: updatedDate, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD", required: false }
+      - { label: "Son kaynak kontrolü / Last checked", name: lastChecked, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD", required: false, hint: "Kaynaklar en son ne zaman kontrol edildi? Yazıda gösterilir." }
+      - { label: "Okuma süresi (dk) / Reading minutes", name: readingMinutes, widget: number, value_type: int, min: 1, max: 60 }
+      - { label: "Kapak görseli / Cover image", name: cover, widget: image, hint: "Serbest lisanslı ve HD olmalı; gösterdiği yer doğru olmalı." }
+      - { label: "Kapak alt metni / Cover alt text", name: coverAlt, widget: string, hint: "Görselde ne olduğunu doğru anlatın (SEO ve erişilebilirlik)." }
+      - { label: "Görsel kaynağı ve lisansı / Image credit", name: coverCredit, widget: string, default: "Wikimedia Commons, CC0" }
+      - { label: "Journal’da öne çıkar / Featured in Journal", name: featured, widget: boolean, default: false, required: false }
+      - { label: "Ana sayfada öne çıkar / Featured on home", name: featuredHome, widget: boolean, default: false, required: false }
+      - { label: "Taslak / Draft", name: draft, widget: boolean, default: true, hint: "Açıkken yazı canlı sitede görünmez. Yayına almak için kapatın." }
+      - label: "Kaynaklar / Sources"
+        name: sources
+        widget: list
+        hint: "Yazıdaki her bilgi bu resmî kaynaklarda doğrulanabilir olmalı."
+        fields:
+          - { label: "Kaynak adı / Title", name: title, widget: string }
+          - { label: "Bağlantı / URL", name: url, widget: string, pattern: ['^https://', 'https:// ile başlamalı'] }
+      - { label: "Metin / Body", name: body, widget: markdown, hint: "## ara başlık, - madde, > kutu (ipucu veya Bunu biliyor muydunuz?). Görseller için kapak alanındaki gibi yükleyin." }
+  - name: journal_en
+    label: "Journal (English)"
+    label_singular: "Article"
+    folder: src/content/journal/en
+    create: true
+    extension: md
+    format: frontmatter
+    slug: "{{slug}}"
+    media_folder: ../../../assets/journal
+    public_folder: ../../../assets/journal
+    summary: "{{title}} · {{category}} · {{publishDate}}"
+    sortable_fields: [publishDate, title, category]
+    view_filters:
+      - { label: "Drafts", field: draft, pattern: true }
+      - { label: "Featured", field: featured, pattern: true }
+    fields:
+      - { name: lang, widget: hidden, default: en }
+      - { label: "Başlık / Title", name: title, widget: string, hint: "10-110 karakter. Merak uyandıran ama abartısız; bilgi kaynakla doğrulanabilir olmalı.", pattern: ['^.{10,110}$', '10-110 karakter olmalı'] }
+      - { label: "SEO açıklaması / SEO description", name: description, widget: text, hint: "40-220 karakter. Arama sonuçlarında ve kartlarda görünür.", pattern: ['^[\s\S]{40,220}$', '40-220 karakter olmalı'] }
+      - { label: "Çeviri anahtarı / Translation key", name: translationKey, widget: string, hint: "TR ve EN karşılıklarında aynı olmalı (örn. japan-spring-sakura). Dil seçicisi ve hreflang bunu kullanır." }
+      - label: "Kategori / Category"
+        name: category
+        widget: select
+        options:
+          - { label: "World Routes", value: "dunya-rotalari" }
+          - { label: "Travel Culture", value: "seyahat-kulturu" }
+          - { label: "Little-Known", value: "bilinmeyenler" }
+          - { label: "Travel Guide", value: "seyahat-rehberi" }
+          - { label: "Travel News", value: "gundem" }
+      - label: "Ülke / Country"
+        name: country
+        widget: select
+        required: false
+        hint: "Seçilirse yazı sayfasında ülke kartı ve ülke rehberi bağlantısı gösterilir."
+        options:
+          - { label: "Türkiye", value: "TR" }
+          - { label: "United States", value: "US" }
+          - { label: "Japan", value: "JP" }
+          - { label: "Australia", value: "AU" }
+          - { label: "Austria", value: "AT" }
+          - { label: "Belgium", value: "BE" }
+          - { label: "Bulgaria", value: "BG" }
+          - { label: "Croatia", value: "HR" }
+          - { label: "Cyprus", value: "CY" }
+          - { label: "Czechia", value: "CZ" }
+          - { label: "Denmark", value: "DK" }
+          - { label: "Estonia", value: "EE" }
+          - { label: "Finland", value: "FI" }
+          - { label: "France", value: "FR" }
+          - { label: "Germany", value: "DE" }
+          - { label: "Greece", value: "GR" }
+          - { label: "Hungary", value: "HU" }
+          - { label: "Ireland", value: "IE" }
+          - { label: "Italy", value: "IT" }
+          - { label: "Latvia", value: "LV" }
+          - { label: "Lithuania", value: "LT" }
+          - { label: "Luxembourg", value: "LU" }
+          - { label: "Malta", value: "MT" }
+          - { label: "Netherlands", value: "NL" }
+          - { label: "Poland", value: "PL" }
+          - { label: "Portugal", value: "PT" }
+          - { label: "Romania", value: "RO" }
+          - { label: "Slovakia", value: "SK" }
+          - { label: "Slovenia", value: "SI" }
+          - { label: "Spain", value: "ES" }
+          - { label: "Sweden", value: "SE" }
+      - { label: "Etiketler / Tags", name: tags, widget: list, required: false, default: [] }
+      - { label: "Yazar / Author", name: author, widget: string, default: "TerraVisa Editorial" }
+      - { label: "Yayın tarihi / Publish date", name: publishDate, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD", hint: "Zamanlama: İleri bir tarih seçilirse yazı o tarihten sonraki ilk site derlemesinde yayına girer." }
+      - { label: "Güncellenme tarihi / Updated date", name: updatedDate, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD", required: false }
+      - { label: "Son kaynak kontrolü / Last checked", name: lastChecked, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD", required: false, hint: "Kaynaklar en son ne zaman kontrol edildi? Yazıda gösterilir." }
+      - { label: "Okuma süresi (dk) / Reading minutes", name: readingMinutes, widget: number, value_type: int, min: 1, max: 60 }
+      - { label: "Kapak görseli / Cover image", name: cover, widget: image, hint: "Serbest lisanslı ve HD olmalı; gösterdiği yer doğru olmalı." }
+      - { label: "Kapak alt metni / Cover alt text", name: coverAlt, widget: string, hint: "Görselde ne olduğunu doğru anlatın (SEO ve erişilebilirlik)." }
+      - { label: "Görsel kaynağı ve lisansı / Image credit", name: coverCredit, widget: string, default: "Wikimedia Commons, CC0" }
+      - { label: "Journal’da öne çıkar / Featured in Journal", name: featured, widget: boolean, default: false, required: false }
+      - { label: "Ana sayfada öne çıkar / Featured on home", name: featuredHome, widget: boolean, default: false, required: false }
+      - { label: "Taslak / Draft", name: draft, widget: boolean, default: true, hint: "Açıkken yazı canlı sitede görünmez. Yayına almak için kapatın." }
+      - label: "Kaynaklar / Sources"
+        name: sources
+        widget: list
+        hint: "Yazıdaki her bilgi bu resmî kaynaklarda doğrulanabilir olmalı."
+        fields:
+          - { label: "Kaynak adı / Title", name: title, widget: string }
+          - { label: "Bağlantı / URL", name: url, widget: string, pattern: ['^https://', 'https:// ile başlamalı'] }
+      - { label: "Metin / Body", name: body, widget: markdown, hint: "## ara başlık, - madde, > kutu (ipucu veya Bunu biliyor muydunuz?). Görseller için kapak alanındaki gibi yükleyin." }
