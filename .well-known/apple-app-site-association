@@ -1,0 +1,22 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "R4T29768H5.com.tidemobile.terravisa.yeni",
+          "R4T29768H5.com.tidemobile.terravisa"
+        ],
+        "components": [
+          {
+            "/": "/terravisa/tr/trip*",
+            "comment": "TerraVisa paylasilan seyahat plani"
+          },
+          {
+            "/": "/terravisa/en/trip*",
+            "comment": "TerraVisa shared trip plan"
+          }
+        ]
+      }
+    ]
+  }
+}

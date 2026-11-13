@@ -254,6 +254,20 @@ async function load() {
   if (['empty', 'invite', 'expired', 'revoked', 'invalid'].includes(state)) { showStatus(state, r); return; }
   showStatus('offline');
 }
+// "Uygulamada Aç" (Android ve iOS): uygulama yüklüyse plan uygulamada açılır. Android'de yüklü değilse bu sayfada kalınır.
+if (link) {
+  const ua = navigator.userAgent;
+  const ios = /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/i.test(ua) && navigator.maxTouchPoints > 1);
+  const a = $('tp-app');
+  if (/Android/i.test(ua)) {
+    const back = encodeURIComponent(location.href);
+    a.href = `intent://trip/${link.id}.${link.key}#Intent;scheme=terravisa;package=com.tidemobile.terravisa.yeni;S.browser_fallback_url=${back};end`;
+    a.hidden = false;
+  } else if (ios) {
+    a.href = `terravisa://trip/${link.id}.${link.key}`;
+    a.hidden = false;
+  }
+}
 setupInvite();
 window.addEventListener('hashchange', () => location.reload());
 load();
