@@ -261,7 +261,7 @@ if (link) {
   const a = $('tp-app');
   if (/Android/i.test(ua)) {
     const back = encodeURIComponent(location.href);
-    a.href = `intent://trip/${link.id}.${link.key}#Intent;scheme=terravisa;package=com.tidemobile.terravisa.yeni;S.browser_fallback_url=${back};end`;
+    a.href = `intent://trip/${link.id}.${link.key}#Intent;scheme=terravisa;package=com.tidemobile.terravisa;S.browser_fallback_url=${back};end`;
     a.hidden = false;
   } else if (ios) {
     a.href = `terravisa://trip/${link.id}.${link.key}`;
