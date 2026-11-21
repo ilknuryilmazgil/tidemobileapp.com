@@ -10,5 +10,18 @@
         "FA:C6:17:45:DC:09:03:78:6F:B9:ED:E6:2A:96:2B:39:9F:73:48:F0:BB:6F:89:9B:83:32:66:75:91:03:3B:9C"
       ]
     }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.tidemobile.terravisa",
+      "sha256_cert_fingerprints": [
+        "39:81:D9:E8:40:10:2C:04:2C:A6:94:1D:09:A2:D7:08:E2:B3:98:13:28:2E:15:1B:8D:78:5C:4F:D1:BF:A3:E2",
+        "4C:A8:E7:A0:BA:F2:07:5E:A8:E2:E6:C8:7D:FD:AC:F2:CB:D8:2E:C8:C3:B9:C4:5F:E5:88:18:09:40:59:0B:12"
+      ]
+    }
   }
 ]
